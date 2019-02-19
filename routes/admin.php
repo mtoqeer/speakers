@@ -32,6 +32,10 @@ Route::group(['namespace' => 'Admin'], function() {
         return view('admin.dashboard.inactive');
     })->name('inactive-speaker-page')->middleware('admin.auth:admin');
 
+    Route::get('/{speakername}', function(){
+        return view('admin.dashboard.profile');
+    })->name('speaker-profile')->middleware('admin.auth:admin');
+
 
 
 });
