@@ -81,7 +81,7 @@
               <td>183</td>
               <td>John Doe</td>
               <td>USA</td>
-              <td><span class="tag tag-success">English</span></td>
+              <td>English</td>
             </tr>
 
             <tr>

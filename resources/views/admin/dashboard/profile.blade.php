@@ -159,17 +159,23 @@
             <!-- /.tab-pane -->
             <div class="tab-pane" id="photos">
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                         <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-md-2">
+                  <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-md-2">
+                  <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
                 </div>
               </div>
             </div>
