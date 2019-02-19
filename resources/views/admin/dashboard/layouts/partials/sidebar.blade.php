@@ -3,7 +3,7 @@
     <a href="{{route('admin.dashboard')}}" class="brand-link">
       <img src="{{asset('adminassets/img/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin Dashboard</span>
+      <span class="brand-text font-weight-light">Home</span>
     </a>
 
     <!-- Sidebar -->
@@ -44,6 +44,13 @@
                   <p>Inactive Speakers</p>
                 </a>
               </li>
+
+              <li class="nav-item">
+                  <a href="{{route('speaker-profile', ['speakername' => 'Test-User'])}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Single Profile Profile</p>
+                  </a>
+                </li>
             </ul>
           </li>
           

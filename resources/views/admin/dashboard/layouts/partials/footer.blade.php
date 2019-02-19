@@ -4,5 +4,5 @@
       Version 1.0
     </div>
     <!-- Default to the left -->
-    Copyright &copy; 2019 <strong>Wisdom Speakers Bureau</strong> All rights reserved.
-  </footer>
+    Copyright &copy; {{ date('Y') }} <strong>Wisdom Speakers Bureau</strong> All rights reserved.
+</footer>

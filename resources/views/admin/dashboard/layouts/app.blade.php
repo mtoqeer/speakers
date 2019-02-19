@@ -1,3 +1,9 @@
+<?php
+use Carbon\Carbon;
+date_default_timezone_set("Asia/Karachi");
+$current = new Carbon();
+$current = Carbon::now();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
