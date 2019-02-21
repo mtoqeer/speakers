@@ -27,5 +27,17 @@ class HomeController extends Controller
     public function index() {
         return view('admin.dashboard.home');
     }
+    
+    public function showactivespeakers(){
+        return view('admin.dashboard.active');
+    }
+
+    public function showinactivespeakers(){
+        return view('admin.dashboard.inactive');
+    }
+
+    public function showprofilepage(){
+        return view('admin.dashboard.profile');
+    }
 
 }

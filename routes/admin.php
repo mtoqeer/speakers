@@ -24,18 +24,11 @@ Route::group(['namespace' => 'Admin'], function() {
     // Route::get('email/verify', 'Auth\VerificationController@show')->name('admin.verification.notice');
     // Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('admin.verification.verify');
 
-    Route::get('active-speakers', function(){
-        return view('admin.dashboard.active');
-    })->name('active-speaker-page')->middleware('admin.auth:admin');
-
-    Route::get('inactive-speakers', function(){
-        return view('admin.dashboard.inactive');
-    })->name('inactive-speaker-page')->middleware('admin.auth:admin');
-
-    Route::get('/{speakername}', function(){
-        return view('admin.dashboard.profile');
-    })->name('speaker-profile')->middleware('admin.auth:admin');
-
+    
+    // Admin Pages Routes
+    Route::get('active-speakers', 'HomeController@showactivespeakers')->name('active-speaker-page');
+    Route::get('inactive-speakers', 'HomeController@showinactivespeakers')->name('inactive-speaker-page');
+    Route::get('/{speakername}', 'HomeController@showprofilepage')->name('speaker-profile');
 
 
 });
