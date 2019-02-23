@@ -1,7 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.weblayout')
+@section('title', 'Login')
+@section('customstyles')
+    
+@endsection
 
-@section('content')
-<div class="container">
+@section('main-content')
+
+<!-- hero area start -->
+<section class="all-page-hero about-page">
+    <div class="page-content container">
+            <span class="about-active"> Login</span>
+        </div>
+</section>
+
+<!-- hero area end -->
+
+
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,4 +85,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('customjs')
+    
 @endsection

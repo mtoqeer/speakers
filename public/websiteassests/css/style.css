@@ -740,10 +740,10 @@ a.reg-btn:hover,
 }
 
 .contact-info input[type="submit"],
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="Message"] {
+.contact-info input[type="text"],
+.contact-info input[type="email"],
+.contact-info input[type="tel"],
+.contact-info input[type="Message"] {
     border: none;
     margin: 0 30px 46px 0;
     overflow: hidden;
