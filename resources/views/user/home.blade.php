@@ -3,4 +3,5 @@
 @section('pagename', 'Home')
 @section('main-content')
     <h1>User</h1>
+
 @endsection

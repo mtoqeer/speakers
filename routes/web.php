@@ -42,8 +42,4 @@ Route::get('/speakers', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('home');
-
-
-
-
+Route::get('/dashboard', 'HomeController@index')->name('userdashboard');

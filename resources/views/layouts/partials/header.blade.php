@@ -53,19 +53,20 @@
                                     <li><a href="{{route('webspeakers')}}">Speakers</a></li>
                                     <li><a href="{{route('webcontact')}}">contact</a></li>
                                     @guest
-                                    <li>
-                                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
                                     @if (Route::has('register'))
-                                    <li>
-                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
                                     @endif
+                                    
                                     @else
 
-                                    <li>
-                                        <a href="{{ route('home') }}">{{ __('Dashboard') }}</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ route('userdashboard') }}">{{ __('Dashboard') }}</a>
+                                        </li>
 
                                     @endguest
                                 </ul>
