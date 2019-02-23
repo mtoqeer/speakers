@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Pages
+
+// Admin Pages Routes
+Route::get('active-speakers', 'Admin\HomeController@showactivespeakers')->name('active-speaker-page');
+Route::get('inactive-speakers', 'Admin\HomeController@showinactivespeakers')->name('inactive-speaker-page');
+Route::get('/{speakername}', 'Admin\HomeController@showprofilepage')->name('speaker-profile');

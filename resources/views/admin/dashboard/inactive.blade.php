@@ -1,6 +1,6 @@
 @extends('admin.dashboard.layouts.app')
 @section('title','Admin - Active')
-@section('pagename', 'Active')
+@section('pagename', 'Inactive')
 @section('main-content')
 <div class="row">
         <div class="col-12">
