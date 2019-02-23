@@ -5,7 +5,7 @@
                 <div class="col-lg-2 col-md-12">
                     <div class="logo-text">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="assets/img/logo/logo2.png" alt="Logo"></a>
+                            <a href="index.html"><img src="{{asset('websiteassests/img/logo/logo2.png')}}" alt="Logo"></a>
                         </div>
                         <p style="font-size: 10px;">&copy; 2019 WisdomSpeakersBureau All Rights Reserved.</p>
                         <div class="footer-social">
@@ -85,17 +85,17 @@
 
 
     <!--========= js linkUp =========== -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script src="{{asset('websiteassests/js/jquery-3.3.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('websiteassests/js/popper.js')}}"></script>
     <!-- <script src="assets/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
-    <script src="assets/fonts/js/all.min.js"></script>
-    <script src="assets/js/slicknav.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('websiteassests/fonts/js/all.min.js')}}"></script>
+    <script src="{{asset('websiteassests/js/slicknav.min.js')}}"></script>
+    <script src="{{asset('websiteassests/js/wow.min.js')}}"></script>
+    <script src="{{asset('websiteassests/js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('websiteassests/js/plugins.js')}}"></script>
+    <script src="{{asset('websiteassests/js/main.js')}}"></script>
 <script type="text/javascript">
 
 $(function () {

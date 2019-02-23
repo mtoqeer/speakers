@@ -47,12 +47,12 @@
                             <nav class="nav-menu">
                                 <ul id="navigation">
 
-                                    <li class=""><a href="home.php">Home</a></li>
-                                    <li class=""><a href="login">Login Demo</a></li>
-                                    <li class=""><a href="single.php">Single Page Demo</a></li>
-                                    <li><a href="about.php">About</a></li>
-                                    <li><a href="speakers.php">Speakers</a></li>
-                                    <li><a href="contact.php">contact</a></li>
+                                    <li class=""><a href="{{route('webhome')}}">Home</a></li>
+                                    {{-- <li class=""><a href="login">Login Demo</a></li> --}}
+                                    <li class=""><a href="{{route('websingle')}}">Single Page Demo</a></li>
+                                    <li><a href="{{route('webabout')}}">About</a></li>
+                                    <li><a href="{{route('webspeakers')}}">Speakers</a></li>
+                                    <li><a href="{{route('webcontact')}}">contact</a></li>
                                 </ul>
                             </nav>
                         </div>

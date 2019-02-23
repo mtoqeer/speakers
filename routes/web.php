@@ -11,18 +11,41 @@
 |
 */
 
+
+// Website Pages
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('webhome');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('webabout');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('webcontact');
+
+Route::get('/faq', function () {
+    return view('faq');
+})->name('webfaq');
+
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('webprivacy');
+
+Route::get('/single', function () {
+    return view('single');
+})->name('websingle');
+
+Route::get('/speakers', function () {
+    return view('speakers');
+})->name('webspeakers');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-// Pages
 
-// Admin Pages Routes
-Route::get('active-speakers', 'Admin\HomeController@showactivespeakers')->name('active-speaker-page');
-Route::get('inactive-speakers', 'Admin\HomeController@showinactivespeakers')->name('inactive-speaker-page');
-Route::get('/{speakername}', 'Admin\HomeController@showprofilepage')->name('speaker-profile');
+

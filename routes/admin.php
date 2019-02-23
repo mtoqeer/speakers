@@ -24,7 +24,12 @@ Route::group(['namespace' => 'Admin'], function() {
     // Route::get('email/verify', 'Auth\VerificationController@show')->name('admin.verification.notice');
     // Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('admin.verification.verify');
 
-    
+    // Pages
+
+// Admin Pages Routes
+Route::get('active-speakers', 'HomeController@showactivespeakers')->name('active-speaker-page');
+Route::get('inactive-speakers', 'HomeController@showinactivespeakers')->name('inactive-speaker-page');
+Route::get('/{speakername}', 'HomeController@showprofilepage')->name('speaker-profile');
     
 
 
