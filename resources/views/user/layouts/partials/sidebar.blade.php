@@ -1,9 +1,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('webhome')}}" class="brand-link" target="_blank">
-      <img src="{{asset('adminassets/img/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">Visit Website</span>
+    <a href="{{ route('logout') }}" class="brand-link text-center" target="_blank" onclick="event.preventDefault();
+    document.getElementById('logout-form').submit();">
+      <i class="nav-icon fa fa-sign-out"></i> <span class="brand-text font-weight-light">{{ __('Logout') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -24,18 +23,122 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
+            <a href="{{route('userdashboard')}}" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-               Profile Details
+               Speakers Details
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
+            
             <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{{route('userdashboard')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Basic Details</p>
+                    </a>
+                  </li>
+
+
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('dashboard.generalinfo')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>General Details</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.expertise')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Expertise</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.achievements')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Achievements</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.articles')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Articles</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.awards')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Awards</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.books')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Books</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.current-positions')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Current Positions</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.degress')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Degrees</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.images')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Images</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.past-talks')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Past Talks</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.presentations')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Presentations</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.social-media-accounts')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Social Media Accounts</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.videos')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Videos</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.workshops')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Workshops</p>
                 </a>
               </li>
               
@@ -51,16 +154,6 @@
               </p>
             </a>
           </li> --}}
-
-          <li class="nav-item">
-            <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-              <i class="nav-icon fa fa-sign-out"></i>
-              <p>
-                {{ __('Logout') }}
-              </p>
-            </a>
-          </li>
 
         </ul>
       </nav>

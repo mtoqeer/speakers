@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-      <span class="nav-link">Wisdom Speakers Bureau - {{$current->toDayDateTimeString()}}</span>
+      <span class="nav-link">Wisdom Speakers Bureau - {{$current->toDayDateTimeString()}} | Your Profile is <span style="color:green;">{{ucfirst(auth()->user()->status)}}</span></span>
       </li>
 
     </ul>
