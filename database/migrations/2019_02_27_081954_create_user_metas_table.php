@@ -15,7 +15,21 @@ class CreateUserMetasTable extends Migration
     {
         Schema::create('user_metas', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('country');
+            $table->string('available_to');
+            $table->string('volunteer');
+            $table->string('languages');
+            $table->text('why_choose');
+            $table->text('bio');
+            $table->string('profile_img')->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
+
+
         });
     }
 

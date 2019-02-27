@@ -15,7 +15,18 @@ class CreateAvailableForsTable extends Migration
     {
         Schema::create('available_fors', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('conference');
+            $table->string('workshop');
+            $table->string('moderator');
+            $table->string('online');
+            $table->string('school');
+            $table->string('meetup');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
         });
     }
 

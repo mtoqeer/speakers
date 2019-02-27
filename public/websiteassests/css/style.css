@@ -739,28 +739,29 @@ a.reg-btn:hover,
     font-weight: 300;
 }
 
-.contact-info input[type="submit"],
-.contact-info input[type="text"],
-.contact-info input[type="email"],
-.contact-info input[type="tel"],
-.contact-info input[type="Message"] {
-    border: none;
-    margin: 0 30px 46px 0;
+.sign-up-area input[type="submit"],
+.sign-up-area input[type="text"],
+.sign-up-area input[type="email"],
+.sign-up-area input[type="tel"],
+.sign-up-area input[type="textarea"] {
+    margin: 0 15px 12px 0;
     overflow: hidden;
-    padding: 5px 0;
-    width: 47%;
-    border-bottom: 1px solid #DDDDDD;
+    padding: 10px 19px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+}
+.submit-btn {
+    margin-top: 10px !important;
 }
 
 .sign-up-area textarea {
-    border: none;
-    border-bottom: 1px solid #DDDDDD;
+    border: 1px solid #DDDDDD;
     float: left;
-    line-height: 12px;
+    line-height: 25px;
     margin-right: 30px;
-    padding: 0;
-    width: 70%;
-    margin-top: 25px;
+    padding: 10px 19px;
+    width: 100%;
+    margin-top: 12px;
 }
 
 .subscribe input[type="submit"],

@@ -15,7 +15,15 @@ class CreateCurrentPositionsTable extends Migration
     {
         Schema::create('current_positions', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('title');
+            $table->string('department');
             $table->timestamps();
+
+
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
         });
     }
 

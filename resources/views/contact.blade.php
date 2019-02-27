@@ -33,7 +33,7 @@
                                      <input class="mar-0" name="lname" type="text" placeholder="Last Name">
                                      <input name="email" type="email" placeholder="Email Address">
                                      <input class="mar-0" name="phone" type="tel" placeholder="Phone Number">
-                                     <textarea name="message" placeholder="Message"></textarea>
+                                     <textarea rows="10" name="message" placeholder="Message"></textarea>
                                      <input class="submit-btn" type="submit" value="send message">
                                  </form>
                              </div>

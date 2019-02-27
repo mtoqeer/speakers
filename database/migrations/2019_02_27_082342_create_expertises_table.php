@@ -15,8 +15,14 @@ class CreateExpertisesTable extends Migration
     {
         Schema::create('expertises', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->string('expertise_topic');
             $table->timestamps();
-        });
+
+            $table->foreign('user_id')
+                    ->references('id')->on('users')
+                    ->onDelete('cascade');
+        });  
     }
 
     /**
