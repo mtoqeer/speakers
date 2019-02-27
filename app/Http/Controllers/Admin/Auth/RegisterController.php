@@ -39,6 +39,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('admin.guest:admin');
+        
     }
 
     /**
@@ -76,10 +77,10 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showRegistrationForm()
-    {
-        return view('admin.auth.register');
-    }
+    // public function showRegistrationForm()
+    // {
+    //     return view('admin.auth.register');
+    // }
 
     /**
      * Get the guard to be used during registration.

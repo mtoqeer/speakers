@@ -40,4 +40,9 @@ class HomeController extends Controller
         return view('admin.dashboard.profile');
     }
 
+    public function showRegistrationForm()
+    {
+        return view('admin.auth.register');
+    }
+
 }
