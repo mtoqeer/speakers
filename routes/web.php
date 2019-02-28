@@ -101,3 +101,7 @@ Route::get('dashboard/videos', function(){
 Route::get('dashboard/workshops', function(){
     return view('user.workshops');
 })->name('dashboard.workshops')->middleware('auth');
+
+Route::get('dashboard/available-for', function(){
+    return view('user.available-for');
+})->name('dashboard.available-for')->middleware('auth');

@@ -10,6 +10,7 @@ Route::group(['namespace' => 'Admin'], function() {
     Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');
 
     // Register
+    // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('admin.register');
     Route::get('register', 'HomeController@showRegistrationForm')->name('admin.register');
     Route::post('register', 'Auth\RegisterController@register');
 

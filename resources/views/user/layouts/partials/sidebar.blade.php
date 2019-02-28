@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('logout') }}" class="brand-link text-center" target="_blank" onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();">
-      <i class="nav-icon fa fa-sign-out"></i> <span class="brand-text font-weight-light">{{ __('Logout') }}</span>
+    <a href="#" class="brand-link text-center" target="_blank">
+      <span class="brand-text font-weight-light">{{auth()->user()->name}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -63,6 +62,14 @@
                 </a>
               </li>
 
+
+              <li class="nav-item">
+                <a href="{{route('dashboard.available-for')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Available For</p>
+                </a>
+              </li>
+             
 
               <li class="nav-item">
                 <a href="{{route('dashboard.articles')}}" class="nav-link">
@@ -162,7 +169,3 @@
     <!-- /.sidebar -->
   </aside>
 
-{{-- Logout Button --}}
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
