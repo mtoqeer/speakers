@@ -16,13 +16,13 @@ class CreateSocialMediaAccountsTable extends Migration
         Schema::create('social_media_accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('instagram');
-            $table->string('youtube');
-            $table->string('linkdin');
-            $table->string('skype');
-            $table->string('website');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('linkdin')->nullable();
+            $table->string('skype')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
 
 
