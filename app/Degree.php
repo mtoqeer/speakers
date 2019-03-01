@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Degree extends Model
 {
     //
+
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

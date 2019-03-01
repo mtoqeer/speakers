@@ -7,4 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class User_meta extends Model
 {
     //
+
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
