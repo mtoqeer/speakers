@@ -39,5 +39,6 @@ $current = Carbon::now();
 <!-- ./wrapper -->
 
 @include('user.layouts.partials.script')
+@yield('scripts')
 </body>
 </html>

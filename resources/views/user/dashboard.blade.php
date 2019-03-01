@@ -5,8 +5,11 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-5">
-                <form action="">
-                        
+                <form method="POST" action="{{url('dashboard/update')}}">
+                        @csrf
+
+                        <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" value="{{auth()->user()->name}}" class="form-control">
@@ -15,7 +18,11 @@
                         <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" value="{{auth()->user()->email}}" class="form-control">
-                            </div>
+                        </div>
+
+                        @if (session('message'))
+                              <p id="update-message" class="alert alert-success">{{session('message')}}</p>
+                        @endif
     
                         <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Update</button>
     
@@ -38,4 +45,15 @@
     </div>
     
 
+@endsection
+
+
+@section('scripts')
+<script>
+
+$(document).ready(function(){
+    $("#update-message").delay(1500).slideUp(300);
+});
+
+</script>
 @endsection

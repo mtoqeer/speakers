@@ -105,3 +105,6 @@ Route::get('dashboard/workshops', function(){
 Route::get('dashboard/available-for', function(){
     return view('user.available-for');
 })->name('dashboard.available-for')->middleware('auth');
+
+// Basic Details Update Reqest
+Route::post('/dashboard/update', 'HomeController@update')->name('user-basic-update');
