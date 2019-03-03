@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Achievement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AchievementController extends Controller
 {
@@ -12,9 +13,37 @@ class AchievementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function userAchievementIndex()
     {
-        //
+
+        $userid = auth()->user()->id;
+        $getachievement = DB::table('users')
+            ->join('achievements', 'users.id', '=', 'achievements.user_id')
+            ->select('achievements.*')
+            ->where('achievements.user_id' , $userid)->get();
+        return view('user.achievements')->with('getachievement', $getachievement);
+    }
+
+    public function userAchievementSave(Request $request)
+    {
+        $expertise = new Achievement();
+        $expertise->title = $request->acheivement_title;
+        $expertise->description = $request->achievement_desc;
+        $expertise->user_id = $request->id;
+        $expertisesave = $expertise->save();
+
+        if($expertisesave){
+            return redirect('/dashboard/achievements')->with('message','Achievement Have Been Added');
+        }
+    }
+
+    public function userAchievementDelete($id){
+
+        $achievement = Achievement::find($id);
+        $achievementdeleted = $achievement->delete();
+        if($achievementdeleted){
+            return redirect('/dashboard/achievements')->with('deleted','Deleted Successfully!!');
+        }
     }
 
     /**

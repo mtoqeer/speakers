@@ -22,37 +22,37 @@ class User extends Authenticatable
         return $this->hasOne('App\Available_for');
     }
 
-    public function award()
+    public function awards()
     {
         return $this->hasMany('App\Award');
     }
 
-    public function book()
+    public function books()
     {
         return $this->hasMany('App\Book');
     }
 
-    public function current_position()
+    public function current_positions()
     {
         return $this->hasMany('App\Current_position');
     }
 
-    public function degree()
+    public function degrees()
     {
         return $this->hasMany('App\Degree');
     }
 
-    public function Expertise()
+    public function expertises()
     {
-        return $this->belongsToMany('App\Expertise');
+        return $this->hasMany('App\Expertise');
     }
 
-    public function image()
+    public function images()
     {
         return $this->hasMany('App\Image');
     }
 
-    public function past_talk()
+    public function past_talks()
     {
         return $this->hasMany('App\Past_talk');
     }
@@ -67,17 +67,17 @@ class User extends Authenticatable
         return $this->hasOne('App\Social_media_account');
     }
 
-    public function video()
+    public function videos()
     {
         return $this->hasMany('App\Video');
     }
 
-    public function workshop()
+    public function workshops()
     {
         return $this->hasMany('App\Workshop');
     }
 
-    public function achievement()
+    public function achievements()
     {
         return $this->hasMany('App\Achievement');
     }

@@ -48,25 +48,33 @@ Route::get('dashboard/generalinfo', function(){
     return view('user.general');
 })->name('dashboard.generalinfo')->middleware('auth');
 
-Route::get('dashboard/expertise', function(){
-    return view('user.expertise');
-})->name('dashboard.expertise')->middleware('auth');
+// User Expertise Routes
+Route::get('dashboard/expertise', 'ExpertiseController@userExpertiseIndex')->name('dashboard.expertise')->middleware('auth');
+Route::post('dashboard/expertise', 'ExpertiseController@userExpertiseSave')->name('userexpertisesave')->middleware('auth');
+Route::get('dashboard/expertise/{id}', 'ExpertiseController@userExpertiseDelete')->name('userexpertisedelete')->middleware('auth');
 
-Route::get('dashboard/achievements', function(){
-    return view('user.achievements');
-})->name('dashboard.achievements')->middleware('auth');
 
-Route::get('dashboard/articles', function(){
-    return view('user.articles');
-})->name('dashboard.articles')->middleware('auth');
+// User Achievements Routes
+Route::get('dashboard/achievements', 'AchievementController@userAchievementIndex')->name('dashboard.achievements')->middleware('auth');
+Route::post('dashboard/achievements', 'AchievementController@userAchievementSave')->name('userachievementsave')->middleware('auth');
+Route::get('dashboard/achievements/{id}', 'AchievementController@userAchievementDelete')->name('userachievementdelete')->middleware('auth');
 
-Route::get('dashboard/awards', function(){
-    return view('user.awards');
-})->name('dashboard.awards')->middleware('auth');
+// User Articlre Routes
+Route::get('dashboard/articles', 'ArticleController@userArticleIndex')->name('dashboard.articles')->middleware('auth');
+Route::post('dashboard/articles', 'ArticleController@userArticleSave')->name('userArticleSave')->middleware('auth');
+Route::get('dashboard/articles/{id}', 'ArticleController@userArticleDelete')->name('userArticleDelete')->middleware('auth');
 
-Route::get('dashboard/books', function(){
-    return view('user.books');
-})->name('dashboard.books')->middleware('auth');
+// User Award Routes
+Route::get('dashboard/awards', 'AwardController@userAwardIndex')->name('dashboard.awards')->middleware('auth');
+Route::post('dashboard/awards', 'AwardController@userAwardSave')->name('userAwardSave')->middleware('auth');
+Route::get('dashboard/awards/{id}', 'AwardController@userAwardDelete')->name('userAwardDelete')->middleware('auth');
+
+// User Books Routes
+Route::get('dashboard/books', 'BookController@userBookIndex')->name('dashboard.books')->middleware('auth');
+Route::post('dashboard/books', 'BookController@userBookSave')->name('userBookSave')->middleware('auth');
+Route::get('dashboard/books/{id}', 'BookController@userBookDelete')->name('userBookDelete')->middleware('auth');
+
+
 
 Route::get('dashboard/current-positions', function(){
     return view('user.current-positions');

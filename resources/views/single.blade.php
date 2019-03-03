@@ -351,28 +351,28 @@
                             <!-- photos End -->
         
         
-                               <!-- Books and article start -->
+                               <!-- Books start -->
                               <div class="row p-4 mb-3 mls-1  bg-white rounded">
-                                
                                     <div class="col-md-12">
-                                        <h5 class="mb-2">BOOKS AND ARTICLES</h5>
-                                            
+                                        <h5 class="mb-2">BOOKS</h5>
                                             <div class="book mt-2">
                                                 <a href=""><h5>The Ultimate EU Test Book Administrator (AD) Edition 2016</h5></a>
-                                                <p>John Harper Publishing, 2016</p>
                                             </div>
-        
-        
-                                            <div class="article mt-2">
-                                                <a href=""><h5>The Ultimate EU Test Book Administrator (AD) Edition 2016</h5></a>
-                                            </div>
-        
-        
+
                                     </div>    
-                                
-                                
                                 </div> 
-                            <!-- Books and article End -->
+                            <!-- Books End -->
+
+                             <!-- Article start -->
+                             <div class="row p-4 mb-3 mls-1  bg-white rounded">
+                                <div class="col-md-12">
+                                    <h5 class="mb-2">ARTICLES</h5>
+                                        <div class="article mt-2">
+                                            <a href=""><h5>The Ultimate EU Test Book Administrator (AD) Edition 2016</h5></a>
+                                        </div>
+                                </div>    
+                            </div> 
+                        <!-- Article End -->
         
         
                              <!-- Awards and Certificate start -->

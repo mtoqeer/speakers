@@ -100,7 +100,8 @@
 
                      </div>
 
-                     <hr>
+                     {{-- <hr>
+                     
                      <div class="avlfor mb-4">
                          
                          <div class="form-group">
@@ -111,7 +112,7 @@
                            </select>
                          </div> 
 
-                     </div>
+                     </div> --}}
 
                      <hr>
                      <div class="avlto mb-4">

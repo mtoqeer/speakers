@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
@@ -12,6 +13,42 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function userArticleIndex()
+    {
+
+        $userid = auth()->user()->id;
+        $getArticle = DB::table('users')
+            ->join('articles', 'users.id', '=', 'articles.user_id')
+            ->select('articles.*')
+            ->where('articles.user_id' , $userid)->get();
+        return view('user.articles')->with('getArticle', $getArticle);
+    }
+
+    public function userArticleSave(Request $request)
+    {
+        $article = new Article();
+        $article->title = $request->article_title;
+        $article->link = $request->article_link;
+        $article->user_id = $request->user_id;
+        $articleSave = $article->save();
+
+        if($articleSave){
+            return redirect('/dashboard/articles')->with('message','Article Have Been Added');
+        }
+    }
+
+    public function userArticleDelete($id){
+
+        $article = Article::find($id);
+        $articleDeleted = $article->delete();
+        if($articleDeleted){
+            return redirect('/dashboard/articles')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
+
+
     public function index()
     {
         //

@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Expertise;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 
 class ExpertiseController extends Controller
 {
@@ -12,9 +14,38 @@ class ExpertiseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function userExpertiseIndex()
     {
-        //
+
+        $userid = auth()->user()->id;
+        $getexpertise = DB::table('users')
+            ->join('expertises', 'users.id', '=', 'expertises.user_id')
+            ->select('expertises.expertise_topic','expertises.user_id','expertises.id')
+            ->where('expertises.user_id' , $userid)->get();
+        return view('user.expertise')->with('getexpertise', $getexpertise);
+    }
+
+    public function userExpertiseSave(Request $request)
+    {
+        $expertise = new Expertise();
+        $expertise->expertise_topic = $request->expertise;
+        $expertise->user_id = $request->id;
+        $expertisesave = $expertise->save();
+
+        if($expertisesave){
+            return redirect('/dashboard/expertise')->with('message','Expertise Have Been Added');
+        }
+
+    }
+
+    public function userExpertiseDelete($id){
+
+        $expertise = Expertise::find($id);
+        $expertisedeleted = $expertise->delete();
+
+        if($expertisedeleted){
+            return redirect('/dashboard/expertise')->with('deleted','Deleted Successfully!!');
+        }
     }
 
     /**
