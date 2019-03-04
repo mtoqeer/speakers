@@ -95,11 +95,16 @@ Route::get('dashboard/presentations', 'PresentationController@userPresentationIn
 Route::post('dashboard/presentations', 'PresentationController@userPresentationSave')->name('userPresentationSave')->middleware('auth');
 Route::get('dashboard/presentations/{id}', 'PresentationController@userPresentationDelete')->name('userPresentationDelete')->middleware('auth');
 
+// User Workshops Routes
+Route::get('dashboard/workshops', 'WorkshopController@userWorkshopIndex')->name('dashboard.workshops')->middleware('auth');
+Route::post('dashboard/workshops', 'WorkshopController@userWorkshopSave')->name('userWorkshopSave')->middleware('auth');
+Route::get('dashboard/workshops/{id}', 'WorkshopController@userWorkshopDelete')->name('userWorkshopDelete')->middleware('auth');
 
 
-// Route::get('dashboard/presentations', function(){
-//     return view('user.presentations');
-// })->name('dashboard.presentations')->middleware('auth');
+// Route::get('dashboard/workshops', function(){
+//     return view('user.workshops');
+// })->name('dashboard.workshops')->middleware('auth');
+
 
 
 Route::get('dashboard/images', function(){
@@ -116,9 +121,7 @@ Route::get('dashboard/videos', function(){
     return view('user.videos');
 })->name('dashboard.videos')->middleware('auth');
 
-Route::get('dashboard/workshops', function(){
-    return view('user.workshops');
-})->name('dashboard.workshops')->middleware('auth');
+
 
 Route::get('dashboard/available-for', function(){
     return view('user.available-for');

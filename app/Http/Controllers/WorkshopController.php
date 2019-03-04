@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Workshop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WorkshopController extends Controller
 {
@@ -12,6 +13,40 @@ class WorkshopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function userWorkshopIndex()
+    {
+        $userid = auth()->user()->id;
+        $getWorkshop = DB::table('users')
+            ->join('workshops', 'users.id', '=', 'workshops.user_id')
+            ->select('workshops.*')
+            ->where('workshops.user_id' , $userid)->get();
+        return view('user.workshops')->with('getWorkshop', $getWorkshop);
+    }
+
+    public function userWorkshopSave(Request $request)
+    {
+        $workshop = new Workshop();
+        $workshop->title = $request->workshop_title;
+        $workshop->hours = $request->workshop_hours;
+        $workshop->description = $request->workshop_desc;
+        $workshop->user_id = $request->user_id;
+        $workshopSave = $workshop->save();
+
+        if($workshopSave){
+            return redirect('/dashboard/workshops')->with('message','Record Have Been Added');
+        }
+    }
+
+    public function userWorkshopDelete($id){
+
+        $workshop = Workshop::find($id);
+        $workshopDeleted = $workshop->delete();
+        if($workshopDeleted){
+            return redirect('/dashboard/workshops')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
+
     public function index()
     {
         //
