@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
-@section('title','User - Home')
-@section('pagename', 'Home')
+@section('title','User - Books')
+@section('pagename', 'Books')
 @section('main-content')
 <div class="container">
     <div class="row">
@@ -31,8 +31,8 @@
 
         </div>
 
-        <div class="col-md-5 offset-md-1 border-left">
-            <h4>Awards</h4>
+        <div class="col-md-5 offset-md-1">
+            <h4>Books</h4>
             @foreach ($getBook as $book)
                 <div class="row">
                     <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">

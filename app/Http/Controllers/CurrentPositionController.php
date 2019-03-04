@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Current_position;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CurrentPositionController extends Controller
 {
@@ -12,6 +13,40 @@ class CurrentPositionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function userCurrentPositionIndex()
+    {
+        $userid = auth()->user()->id;
+        $getCurrentPoisition = DB::table('users')
+            ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
+            ->select('current_positions.*')
+            ->where('current_positions.user_id' , $userid)->get();
+        return view('user.current-positions')->with('getCurrentPoisition', $getCurrentPoisition);
+    }
+
+    public function userCurrentPositionSave(Request $request)
+    {
+        $currentPosition = new Current_position();
+        $currentPosition->title = $request->position_title;
+        $currentPosition->department = $request->position_department;
+        $currentPosition->user_id = $request->user_id;
+        $currentPositionSave = $currentPosition->save();
+
+        if($currentPositionSave){
+            return redirect('/dashboard/current-positions')->with('message','Record Have Been Added');
+        }
+    }
+
+    public function userCurrentPositionDelete($id){
+        $currentPosition = Current_position::find($id);
+        $currentPositionDeleted = $currentPosition->delete();
+        if($currentPositionDeleted){
+            return redirect('/dashboard/current-positions')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
+
+
+
     public function index()
     {
         //

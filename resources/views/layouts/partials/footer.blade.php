@@ -49,9 +49,6 @@
                             <li><a href="#">Keynote Speakers</a></li>
                             <li><a href="#">Corporate Speakers</a></li>
                             <li><a href="#">Celebrity Speakers</a></li>
-                            <li><a href="#">Top 50 Celebrity Speakers</a></li>
-                            <li><a href="#">Top 50 Celebrity Speakers</a></li>
-                            <li><a href="#">Top 50 Business Speakers</a></li>
 
 
                         </ul>

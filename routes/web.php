@@ -74,11 +74,11 @@ Route::get('dashboard/books', 'BookController@userBookIndex')->name('dashboard.b
 Route::post('dashboard/books', 'BookController@userBookSave')->name('userBookSave')->middleware('auth');
 Route::get('dashboard/books/{id}', 'BookController@userBookDelete')->name('userBookDelete')->middleware('auth');
 
+// User Current Position Routes
+Route::get('dashboard/current-positions', 'CurrentPositionController@userCurrentPositionIndex')->name('dashboard.current-positions')->middleware('auth');
+Route::post('dashboard/current-positions', 'CurrentPositionController@userCurrentPositionSave')->name('userCurrentPositionSave')->middleware('auth');
+Route::get('dashboard/current-positions/{id}', 'CurrentPositionController@userCurrentPositionDelete')->name('userCurrentPositionDelete')->middleware('auth');
 
-
-Route::get('dashboard/current-positions', function(){
-    return view('user.current-positions');
-})->name('dashboard.current-positions')->middleware('auth');
 
 Route::get('dashboard/degrees', function(){
     return view('user.degrees');

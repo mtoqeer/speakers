@@ -31,7 +31,7 @@
 
         </div>
 
-        <div class="col-md-5 offset-md-1 border-left">
+        <div class="col-md-5 offset-md-1">
             <h4>Articles</h4>
                 @foreach ($getArticle as $article)
                     <div class="row">

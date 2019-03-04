@@ -18,7 +18,7 @@
                                         <h2>Find The Perfect Speaker For Your Event</h2>
                                         <p>For events, training workshops or schools.</p>
                                         <div class="search-area">
-                                            <input type="text" class="search" placeholder="Search for a topic, speaker etc...">
+                                            <input type="text" class="search" placeholder="Search for a topic">
                                             <div class="search-icon">
                                                 <i class="fas fa-search"></i>
                                             </div>
