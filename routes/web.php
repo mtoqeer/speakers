@@ -79,10 +79,15 @@ Route::get('dashboard/current-positions', 'CurrentPositionController@userCurrent
 Route::post('dashboard/current-positions', 'CurrentPositionController@userCurrentPositionSave')->name('userCurrentPositionSave')->middleware('auth');
 Route::get('dashboard/current-positions/{id}', 'CurrentPositionController@userCurrentPositionDelete')->name('userCurrentPositionDelete')->middleware('auth');
 
+// User Degree Position Routes
+Route::get('dashboard/degrees', 'DegreeController@userDegreeIndex')->name('dashboard.degress')->middleware('auth');
+Route::post('dashboard/degrees', 'DegreeController@userDegreeSave')->name('userDegreeSave')->middleware('auth');
+Route::get('dashboard/degrees/{id}', 'DegreeController@userDegreeDelete')->name('userDegreeDelete')->middleware('auth');
 
-Route::get('dashboard/degrees', function(){
-    return view('user.degrees');
-})->name('dashboard.degress')->middleware('auth');
+
+// Route::get('dashboard/degrees', function(){
+//     return view('user.degrees');
+// })->name('dashboard.degress')->middleware('auth');
 
 Route::get('dashboard/images', function(){
     return view('user.images');
