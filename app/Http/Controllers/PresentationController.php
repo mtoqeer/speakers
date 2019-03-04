@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Presentation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PresentationController extends Controller
 {
@@ -12,6 +13,42 @@ class PresentationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function userPresentationIndex()
+    {
+
+        $userid = auth()->user()->id;
+        $getPresentation = DB::table('users')
+            ->join('presentations', 'users.id', '=', 'presentations.user_id')
+            ->select('presentations.*')
+            ->where('presentations.user_id' , $userid)->get();
+        return view('user.presentations')->with('getPresentation', $getPresentation);
+    }
+
+    public function userPresentationSave(Request $request)
+    {
+        $presentation = new Presentation();
+        $presentation->title = $request->presentation_title;
+        $presentation->description = $request->presentation_desc;
+        $presentation->user_id = $request->user_id;
+        $presentationSave = $presentation->save();
+
+        if($presentationSave){
+            return redirect('/dashboard/presentations')->with('message','Article Have Been Added');
+        }
+    }
+
+    public function userPresentationDelete($id){
+
+        $presentation = Presentation::find($id);
+        $presentationDeleted = $presentation->delete();
+        if($presentationDeleted){
+            return redirect('/dashboard/presentations')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
+
+
+
     public function index()
     {
         //

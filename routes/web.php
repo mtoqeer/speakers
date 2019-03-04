@@ -79,20 +79,27 @@ Route::get('dashboard/current-positions', 'CurrentPositionController@userCurrent
 Route::post('dashboard/current-positions', 'CurrentPositionController@userCurrentPositionSave')->name('userCurrentPositionSave')->middleware('auth');
 Route::get('dashboard/current-positions/{id}', 'CurrentPositionController@userCurrentPositionDelete')->name('userCurrentPositionDelete')->middleware('auth');
 
-// User Degree Degree Routes
+// User Degree Routes
 Route::get('dashboard/degrees', 'DegreeController@userDegreeIndex')->name('dashboard.degress')->middleware('auth');
 Route::post('dashboard/degrees', 'DegreeController@userDegreeSave')->name('userDegreeSave')->middleware('auth');
 Route::get('dashboard/degrees/{id}', 'DegreeController@userDegreeDelete')->name('userDegreeDelete')->middleware('auth');
 
-// User Degree Degree Routes
+// User Past Talks Routes
 Route::get('dashboard/past-talks', 'PastTalkController@userPastTaskIndex')->name('dashboard.past-talks')->middleware('auth');
 Route::post('dashboard/past-talks', 'PastTalkController@userPastTaskSave')->name('userPastTaskSave')->middleware('auth');
 Route::get('dashboard/past-talks/{id}', 'PastTalkController@userPastTaskDelete')->name('userPastTaskDelete')->middleware('auth');
 
 
-// Route::get('dashboard/past-talks', function(){
-//     return view('user.past-talks');
-// })->name('dashboard.past-talks')->middleware('auth');
+// User Presentations Routes
+Route::get('dashboard/presentations', 'PresentationController@userPresentationIndex')->name('dashboard.presentations')->middleware('auth');
+Route::post('dashboard/presentations', 'PresentationController@userPresentationSave')->name('userPresentationSave')->middleware('auth');
+Route::get('dashboard/presentations/{id}', 'PresentationController@userPresentationDelete')->name('userPresentationDelete')->middleware('auth');
+
+
+
+// Route::get('dashboard/presentations', function(){
+//     return view('user.presentations');
+// })->name('dashboard.presentations')->middleware('auth');
 
 
 Route::get('dashboard/images', function(){
@@ -100,12 +107,6 @@ Route::get('dashboard/images', function(){
 })->name('dashboard.images')->middleware('auth');
 
 
-
-
-
-Route::get('dashboard/presentations', function(){
-    return view('user.presentations');
-})->name('dashboard.presentations')->middleware('auth');
 
 Route::get('dashboard/social-media-accounts', function(){
     return view('user.social-media-accounts');
