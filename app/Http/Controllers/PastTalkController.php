@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Past_talk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PastTalkController extends Controller
 {
@@ -12,6 +13,43 @@ class PastTalkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function userPastTaskIndex()
+    {
+
+        $userid = auth()->user()->id;
+        $getPastTask = DB::table('users')
+            ->join('past_talks', 'users.id', '=', 'past_talks.user_id')
+            ->select('past_talks.*')
+            ->where('past_talks.user_id' , $userid)->get();
+        return view('user.past-talks')->with('getPastTask', $getPastTask);
+    }
+
+    public function userPastTaskSave(Request $request)
+    {
+        $pastTask = new Past_talk();
+        $pastTask->title = $request->talk_title;
+        $pastTask->location = $request->talk_location;
+        $pastTask->date = $request->talk_date;
+        $pastTask->user_id = $request->user_id;
+        $pastTaskSave = $pastTask->save();
+
+        if($pastTaskSave){
+            return redirect('/dashboard/past-talks')->with('message','Record Have Been Added');
+        }
+    }
+
+    public function userPastTaskDelete($id){
+
+        $pastTask = Past_talk::find($id);
+        $pastTaskDeleted = $pastTask->delete();
+        if($pastTaskDeleted){
+            return redirect('/dashboard/past-talks')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
+    
     public function index()
     {
         //

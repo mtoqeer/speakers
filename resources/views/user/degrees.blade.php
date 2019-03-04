@@ -12,7 +12,6 @@
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
 
-
                 <div class="form-group">
                     <label for="degree_title">Title</label>
                     <input type="text" name="degree_title" value="" class="form-control">

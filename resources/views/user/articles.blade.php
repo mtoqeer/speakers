@@ -8,6 +8,7 @@
             
             
             <form method="POST" action="{{route('userArticleSave')}}">
+                
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
                 
