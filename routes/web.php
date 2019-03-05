@@ -100,27 +100,24 @@ Route::get('dashboard/workshops', 'WorkshopController@userWorkshopIndex')->name(
 Route::post('dashboard/workshops', 'WorkshopController@userWorkshopSave')->name('userWorkshopSave')->middleware('auth');
 Route::get('dashboard/workshops/{id}', 'WorkshopController@userWorkshopDelete')->name('userWorkshopDelete')->middleware('auth');
 
-
-// Route::get('dashboard/workshops', function(){
-//     return view('user.workshops');
-// })->name('dashboard.workshops')->middleware('auth');
-
-
-
-Route::get('dashboard/images', function(){
-    return view('user.images');
-})->name('dashboard.images')->middleware('auth');
+// User Videos Routes
+Route::get('dashboard/videos', 'VideoController@userVideoIndex')->name('dashboard.videos')->middleware('auth');
+Route::post('dashboard/videos', 'VideoController@userVideoSave')->name('userVideoSave')->middleware('auth');
+Route::get('dashboard/videos/{id}', 'VideoController@userVideoDelete')->name('userVideoDelete')->middleware('auth');
 
 
+// User Images Routes
+Route::get('dashboard/images', 'ImageController@userImageIndex')->name('dashboard.images')->middleware('auth');
+Route::post('dashboard/images', 'ImageController@userImageSave')->name('userImageSave')->middleware('auth');
+Route::get('dashboard/images/{id}', 'ImageController@userImageDelete')->name('userImageDelete')->middleware('auth');
+
+// Route::get('dashboard/images', function(){
+//     return view('user.images');
+// })->name('dashboard.images')->middleware('auth');
 
 Route::get('dashboard/social-media-accounts', function(){
     return view('user.social-media-accounts');
 })->name('dashboard.social-media-accounts')->middleware('auth');
-
-Route::get('dashboard/videos', function(){
-    return view('user.videos');
-})->name('dashboard.videos')->middleware('auth');
-
 
 
 Route::get('dashboard/available-for', function(){

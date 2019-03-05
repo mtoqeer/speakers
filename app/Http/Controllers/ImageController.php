@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Image;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ImageController extends Controller
 {
@@ -12,6 +14,55 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function userImageIndex()
+    {
+        $userid = auth()->user()->id;
+        $getImage = DB::table('users')
+            ->join('images', 'users.id', '=', 'images.user_id')
+            ->select('images.*')
+            ->where('images.user_id' , $userid)->get();
+        return view('user.images')->with('getImage', $getImage);
+    }
+
+    public function userImageSave(Request $request)
+    {
+        $image = new Image();
+        $image->user_id = $request->user_id;
+
+        if ($request->hasFile('images')) {
+            $file = $request->file('images');
+            $extension = $file->getClientOriginalExtension(); //getting Image Extension
+            $filename = time() . '.' . $extension;
+            $file->move('adminassets/img/speakerimages', $filename);
+            $image->path = $filename;
+        } 
+
+        $imageSaved = $image->save();
+        if($imageSaved){
+                return redirect('/dashboard/images')->with('message','Image Have Been Added');
+        }
+
+
+    }
+
+    public function userImageDelete($id){
+
+        $images = Image::findOrFail($id);
+        
+        
+
+        if($images){
+            unlink(public_path() . DIRECTORY_SEPARATOR . 'adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerimages' . DIRECTORY_SEPARATOR . $images->path);
+            $images->delete();
+        }
+        
+        return redirect('/dashboard/images')->with('deleted','Deleted Successfully!!');
+
+ }
+
+
+
     public function index()
     {
         //

@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VideoController extends Controller
 {
@@ -12,6 +13,38 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function userVideoIndex()
+    {
+        $userid = auth()->user()->id;
+        $getVideo = DB::table('users')
+            ->join('videos', 'users.id', '=', 'videos.user_id')
+            ->select('videos.*')
+            ->where('videos.user_id' , $userid)->get();
+        return view('user.videos')->with('getVideo', $getVideo);
+    }
+
+    public function userVideoSave(Request $request)
+    {
+        $videos = new Video();
+        $videos->link = $request->speaker_video;
+        $videos->user_id = $request->user_id;
+        $VideoSave = $videos->save();
+
+        if($VideoSave){
+            return redirect('/dashboard/videos')->with('message','Record Have Been Added');
+        }
+    }
+
+    public function userVideoDelete($id){
+
+        $video = Video::find($id);
+        $videoDeleted = $video->delete();
+        if($videoDeleted){
+            return redirect('/dashboard/videos')->with('deleted','Deleted Successfully!!');
+        }
+    }
+
     public function index()
     {
         //
