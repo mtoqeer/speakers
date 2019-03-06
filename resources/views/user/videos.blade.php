@@ -37,7 +37,9 @@
             <div class="row">
                 @foreach ($getVideo as $video)
                     <div class="col-md-4 mb-5 text-center">
-                        <iframe width="100%" height="100%" src="{{$video->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                        <iframe width="100%" height="100%" src="{!! $video->link !!}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        
                         <a href="/dashboard/videos/{{$video->id}}" class="" style="color:red !important;">Delete</a>
                     </div>
                 @endforeach

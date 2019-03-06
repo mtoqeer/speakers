@@ -17,10 +17,11 @@ class CreateUserMetasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('country');
+            $table->string('fee');
             $table->string('available_to');
             $table->string('volunteer');
             $table->string('languages');
-            $table->text('why_choose');
+            $table->text('why_choose')->nullable();
             $table->text('bio');
             $table->string('profile_img')->nullable();
             $table->timestamps();

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Image;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,6 +26,15 @@ class ImageController extends Controller
 
     public function userImageSave(Request $request)
     {
+        $rules = [
+            'images' => 'required|image',
+        ];
+        $customMessages = [
+            'required' => 'You have not selected any image',
+            'image' => 'The file must be an image file',
+        ];   
+        $this->validate($request, $rules, $customMessages);
+
         $image = new Image();
         $image->user_id = $request->user_id;
 
@@ -49,14 +57,11 @@ class ImageController extends Controller
     public function userImageDelete($id){
 
         $images = Image::findOrFail($id);
-        
-        
-
         if($images){
             unlink(public_path() . DIRECTORY_SEPARATOR . 'adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerimages' . DIRECTORY_SEPARATOR . $images->path);
             $images->delete();
         }
-        
+
         return redirect('/dashboard/images')->with('deleted','Deleted Successfully!!');
 
  }

@@ -44,9 +44,13 @@ Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('userdashboard');
 
-Route::get('dashboard/generalinfo', function(){
-    return view('user.general');
-})->name('dashboard.generalinfo')->middleware('auth');
+
+// User User Meta Routes
+Route::get('dashboard/generalinfo', 'UserMetaController@userMetaIndex')->name('dashboard.generalinfo')->middleware('auth');
+Route::post('dashboard/generalinfo', 'UserMetaController@userMetaSave')->name('userMetaSave')->middleware('auth');
+// Route::get('dashboard/generalinfo/{id}', 'UserMetaController@userMetaDelete')->name('userMetaDelete')->middleware('auth');
+// User Meta Update Reqest
+Route::post('/dashboard/generalinfo/update', 'UserMetaController@userMetaupdate')->name('user-generalinfo-update');
 
 // User Expertise Routes
 Route::get('dashboard/expertise', 'ExpertiseController@userExpertiseIndex')->name('dashboard.expertise')->middleware('auth');
@@ -111,13 +115,12 @@ Route::get('dashboard/images', 'ImageController@userImageIndex')->name('dashboar
 Route::post('dashboard/images', 'ImageController@userImageSave')->name('userImageSave')->middleware('auth');
 Route::get('dashboard/images/{id}', 'ImageController@userImageDelete')->name('userImageDelete')->middleware('auth');
 
-// Route::get('dashboard/images', function(){
-//     return view('user.images');
-// })->name('dashboard.images')->middleware('auth');
 
-Route::get('dashboard/social-media-accounts', function(){
-    return view('user.social-media-accounts');
-})->name('dashboard.social-media-accounts')->middleware('auth');
+// User social-media-accounts Routes
+Route::get('dashboard/social-media-accounts', 'SocialMediaAccountController@userSocialMediaAccountIndex')->name('dashboard.social-media-accounts')->middleware('auth');
+Route::post('dashboard/social-media-accounts', 'SocialMediaAccountController@userSocialMediaAccountSave')->name('userSocialMediaAccountSave')->middleware('auth');
+Route::post('dashboard/social-media-accounts/update', 'SocialMediaAccountController@userSocialMediaAccountUpdate')->name('userSocialMediaAccountUpdate')->middleware('auth');
+
 
 
 Route::get('dashboard/available-for', function(){

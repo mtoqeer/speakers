@@ -16,6 +16,11 @@
                     <label for="images">Images</label>
                     <input type="file" name="images" value="" class="form-control">
                 </div>
+                @if ($errors->has('images'))
+                    <span role="alert">
+                       <strong class="text-danger">{{ $errors->first('images') }}</strong>
+                    </span>
+                @endif
 
                 @if (session('message'))
                 <p id="image_added" class="alert alert-success">{{session('message')}}</p>
