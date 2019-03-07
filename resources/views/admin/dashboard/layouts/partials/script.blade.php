@@ -6,3 +6,5 @@
 <script src="{{asset('adminassets/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminassets/js/adminlte.min.js')}}"></script>
+
+@yield('customscripts')

@@ -61,6 +61,9 @@
 
 {{-- Table --}}
 
+
+
+
 <div class="row">
     {{-- Active Spekaers --}}
     <div class="col-md-6">
@@ -74,18 +77,24 @@
             <tbody><tr>
               <th>ID</th>
               <th>Name</th>
+              <th>Email</th>
               <th>Country</th>
               <th>Language</th>
             </tr>
-            <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>USA</td>
-              <td>English</td>
-            </tr>
+            @foreach ($getApprovedSpeakers as $approvedSpeakers)
+              <tr>
+                <td>{{$approvedSpeakers->id}}</td>
+               
+                <td>{{$approvedSpeakers->name}}</td>
+                <td>{{$approvedSpeakers->email}}</td>
+                <td>{{$approvedSpeakers->country}}</td>
+                <td>{{$approvedSpeakers->languages}}</td>
+              </tr>
+            @endforeach
+            
 
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                 <div class="card-footer text-center">
                     <a href="{{route('active-speaker-page')}}">View All Users</a>
                 </div>
@@ -111,18 +120,28 @@
                   <tbody><tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Country</th>
                     <th>Language</th>
                   </tr>
+
+                  @if ($getUnapprovedSpeakers->count() == 0) 
+                        <tr>
+                          <td colspan="5" class="text-center">No Record Found</td>
+                        </tr>
+                  @else
+                    @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
+                    <tr>
+                      <td>{{$unapprovedSpeakers->id}}</td>
+                      <td>{{$unapprovedSpeakers->name}}</td>
+                      <td>{{$unapprovedSpeakers->email}}</td>
+                      <td>{{$unapprovedSpeakers->country}}</td>
+                      <td>{{$unapprovedSpeakers->languages}}</td>
+                    </tr>
+                    @endforeach 
+                  @endif 
                   <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>USA</td>
-                    <td><span class="tag tag-success">English</span></td>
-                  </tr>
-      
-                  <tr>
-                      <td colspan="4">
+                      <td colspan="5">
                       <div class="card-footer text-center">
                       <a href="{{route('inactive-speaker-page')}}">View All Users</a>
                       </div>
@@ -136,4 +155,7 @@
             <!-- /.card -->
           </div>
   </div>
+
+
 @endsection
+

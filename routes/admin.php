@@ -2,7 +2,7 @@
 
 Route::group(['namespace' => 'Admin'], function() {
 
-    Route::get('/', 'HomeController@index')->name('admin.dashboard');
+    Route::get('/', 'HomeController@adminIndex')->name('admin.dashboard');
 
     // Login
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('admin.login');
@@ -29,7 +29,15 @@ Route::group(['namespace' => 'Admin'], function() {
 
 // Admin Pages Routes
 Route::get('active-speakers', 'HomeController@showactivespeakers')->name('active-speaker-page');
+Route::get('active-speakers/{id}', 'HomeController@changeToUnapprovespeakers')->name('statusChangeToUnapproved');
+
+
 Route::get('inactive-speakers', 'HomeController@showinactivespeakers')->name('inactive-speaker-page');
+Route::get('inactive-speakers/{id}', 'HomeController@changeToApprovespeakers')->name('statusChangeToApproved');
+
+
+
+
 Route::get('/{speakername}', 'HomeController@showprofilepage')->name('speaker-profile');
     
 
