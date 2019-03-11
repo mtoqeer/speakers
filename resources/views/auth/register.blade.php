@@ -29,7 +29,7 @@
                         @csrf
 
                         <input id="status" type="hidden" class="form-control" name="status" value="unapproved">
-                        <input id="featured" type="hidden" class="form-control" name="featured" value="unfeatured">
+                        <input id="featured" type="hidden" class="form-control" name="featured" value="No">
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

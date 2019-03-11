@@ -31,34 +31,25 @@
                 <td>{{$approvedSpeakers->available_to}}</td>
                 <td>{{$approvedSpeakers->fee}}</td>
                 <td>
-                 <a href=""><button class="btn btn-success">View</button></a>
+                 <a href="/admin/profile/{{$approvedSpeakers->id}}"><button class="btn btn-success">View</button></a>
                  <a href="/admin/active-speakers/{{$approvedSpeakers->id}}"> <button class="btn btn-info">Disapprove</button></a>
-                 <a href=""><button  class="btn btn-danger">Delete</button></a>
+                 <a href="/admin/active-speakers/featured/{{$approvedSpeakers->id}}"> <button class="btn btn-primary">Featured</button></a>
                 </td>
               </tr>
             @endforeach
             
+               
+
           </tbody>
         </table>
 
-            <nav aria-label="Page navigation example" class="border-top">
-                <ul class="pagination justify-content-center  mt-2">
-                    <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
+           
         
         </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
+      {{ $getApprovedSpeakers->links() }}
     </div>
   </div>
 @endsection

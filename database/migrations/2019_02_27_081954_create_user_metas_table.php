@@ -21,6 +21,7 @@ class CreateUserMetasTable extends Migration
             $table->string('available_to');
             $table->string('volunteer');
             $table->string('languages');
+            $table->string('gender');
             $table->text('why_choose')->nullable();
             $table->text('bio');
             $table->string('profile_img')->nullable();
@@ -28,7 +29,8 @@ class CreateUserMetasTable extends Migration
 
             $table->foreign('user_id')
                     ->references('id')->on('users')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
 
 
         });

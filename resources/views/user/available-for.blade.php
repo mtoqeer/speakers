@@ -6,71 +6,130 @@
     <div class="row">
         <div class="col-md-5">
             
-            
-            <form action="">
-                    
+            @if ($getAvailabelFor->count() == 0 )
+                <form method="POST" action="{{route('userAvailableForSave')}}">
+                @csrf
+                <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
                 <div class="form-group">
                     <label for="confernce">Conference</label>
-                    <select class="form-control" id="confernce">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="confernce" name="conference">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="workshop">Workshop</label>
-                    <select class="form-control" id="workshop">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="workshop" name="workshop">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="moderator">Moderator</label>
-                    <select class="form-control" id="moderator">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="moderator" name="moderator">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="online">Online</label>
-                    <select class="form-control" id="online">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="online" name="online">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="school">School</label>
-                    <select class="form-control" id="school">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="school" name="school">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="meetup">Meetup</label>
-                    <select class="form-control" id="meetup">
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select class="form-control" id="meetup" name="meetup">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                @if (session('message'))
+                <p id="availableforsave_added" class="alert alert-success">{{session('message')}}</p>
+                @endif
+                <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Save</button>
+            </form>
+            @endif
+
+            @foreach ($getAvailabelFor as $availablefor)
+                @if ($getAvailabelFor->count() == 1 )
+
+            <form method="POST" action="{{route('userAvailableForUpdate')}}">
+                @csrf
+                <input type="hidden" name="id" value="{{$availablefor->id}}" class="form-control">
+
+                <div class="form-group">
+                    <label for="confernce">Conference</label>
+                    <select class="form-control" id="confernce" name="conference">
+                        <option value="Yes" {{ ($availablefor->conference == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->conference == 'No') ? "Selected" : " " }}>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workshop">Workshop</label>
+                    <select class="form-control" id="workshop" name="workshop">
+                        <option value="Yes" {{ ($availablefor->workshop == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->workshop == 'No') ? "Selected" : " " }}>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="moderator">Moderator</label>
+                    <select class="form-control" id="moderator" name="moderator">
+                        <option value="Yes" {{ ($availablefor->moderator == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->moderator == 'No') ? "Selected" : " " }}>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="online">Online</label>
+                    <select class="form-control" id="online" name="online">
+                        <option value="Yes" {{ ($availablefor->online == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->online == 'No') ? "Selected" : " " }}>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="school">School</label>
+                    <select class="form-control" id="school" name="school">
+                        <option value="Yes" {{ ($availablefor->school == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->school == 'No') ? "Selected" : " " }}>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="meetup">Meetup</label>
+                    <select class="form-control" id="meetup" name="meetup">
+                        <option value="Yes" {{ ($availablefor->meetup == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="No" {{ ($availablefor->meetup == 'No') ? "Selected" : " " }}>No</option>
                     </select>
                 </div>
 
-                
+                @if (session('message'))
+                        <p id="availableforupdate_added" class="alert alert-success">{{session('message')}}</p>
+                @endif
 
-                <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Save</button>
-
+                <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Update</button>
             </form>
-
+            @endif
+            @endforeach
         </div>
 
         <div class="col-md-5 offset-md-1">
-            <h4>No Awards Found</h4>
         </div>
     </div>
 </div>
-    
-    
+@endsection
 
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $("#availableforsave_added").delay(1500).slideUp(300);
+        $("#availableforupdate_added").delay(1500).slideUp(300);
+    });
+</script>
 @endsection

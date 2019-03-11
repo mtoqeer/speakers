@@ -11,9 +11,12 @@
 |
 */
 // Website Pages
-Route::get('/', function () {
-    return view('home');
-})->name('webhome');
+Route::get('/', 'UserMetaController@websiteHomePage')->name('webhome');
+
+
+// Route::get('/', function () {
+//     return view('home');
+// })->name('webhome');
 
 Route::get('/about', function () {
     return view('about');
@@ -122,10 +125,16 @@ Route::post('dashboard/social-media-accounts', 'SocialMediaAccountController@use
 Route::post('dashboard/social-media-accounts/update', 'SocialMediaAccountController@userSocialMediaAccountUpdate')->name('userSocialMediaAccountUpdate')->middleware('auth');
 
 
+// User AVailbale For Routes
+Route::get('dashboard/available-for', 'AvailableForController@userAvailableForIndex')->name('dashboard.available-for')->middleware('auth');
+Route::post('dashboard/available-for', 'AvailableForController@userAvailableForSave')->name('userAvailableForSave')->middleware('auth');
+Route::post('dashboard/available-for/update', 'AvailableForController@userAvailableForUpdate')->name('userAvailableForUpdate')->middleware('auth');
 
-Route::get('dashboard/available-for', function(){
-    return view('user.available-for');
-})->name('dashboard.available-for')->middleware('auth');
+
+
+// Route::get('dashboard/available-for', function(){
+//     return view('user.available-for');
+// })->name('dashboard.available-for')->middleware('auth');
 
 // Basic Details Update Reqest
 Route::post('/dashboard/update', 'HomeController@update')->name('user-basic-update');

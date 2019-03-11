@@ -8,34 +8,55 @@
       <!-- Profile Image -->
       <div class="card card-primary card-outline">
         <div class="card-body box-profile">
+        @foreach ($getGeneralInfo as $generalInfo)
           <div class="text-center">
-            <img class="profile-user-img img-fluid img-circle" src="{{asset('adminassets/img/user.jpg')}}" alt="User profile picture">
+          <img class="profile-user-img img-fluid img-circle" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" alt="User profile picture">
           </div>
-
-          <h3 class="profile-username text-center">Nina Mcintire</h3>
-
-          <p class="text-muted text-center">MBA</p>
+          
+          <h3 class="profile-username text-center">{{$generalInfo->name}}</h3>
+         
+          @if ($getSingleCurrentPosition)
+          <p class="text-muted text-center">{{$getSingleCurrentPosition->title}} - {{$getSingleCurrentPosition->department}}    </p>
+          @endif
 
           <ul class="list-group list-group-unbordered mb-3">
             
             <li class="list-group-item">
-              <b>Language</b> <a class="float-right">English, Spanish</a>
+              <b>Language</b> <a class="float-right">{{$generalInfo->languages}}</a>
             </li>
             <li class="list-group-item">
-              <b>Available To</b> <a class="float-right">Global</a>
+              <b>Available To</b> <a class="float-right">{{$generalInfo->available_to}}</a>
             </li>
             <li class="list-group-item">
-                <b>Fee</b> <a class="float-right">More Then $1000</a>
+                <b>Fee</b> <a class="float-right">{{$generalInfo->fee}}</a>
             </li>
             <li class="list-group-item">
-                <b>Volunteer</b> <a class="float-right">Yes</a>
+                <b>Volunteer</b> <a class="float-right">{{$generalInfo->volunteer}}</a>
             </li>
+            @endforeach {{-- generalInfo --}}
             <li class="list-group-item text-center">
-                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('adminassets/img/school-a.png')}}">
-                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('adminassets/img/school-a.png')}}">
-                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('adminassets/img/school-a.png')}}">
-                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('adminassets/img/school-a.png')}}">
-            </li>
+                    @foreach ($getAvailableFor as $Availablefor)
+                      @if ($Availablefor->conference == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
+                      @endif
+                      @if ($Availablefor->school == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
+                      @endif
+                      @if ($Availablefor->online == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
+                      @endif
+                      @if ($Availablefor->moderator == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
+                      @endif
+                      @if ($Availablefor->workshop == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
+                      @endif
+                      @if ($Availablefor->meetup == 'Yes')
+                        <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
+                      @endif
+                    @endforeach
+                 
+                  </li>
 
           </ul>
         </div>
@@ -51,26 +72,31 @@
         <!-- /.card-header -->
         <div class="card-body">
           <strong><i class="fa fa-map-marker mr-1"></i> Location</strong>
-
-          <p class="text-muted">USA</p>
+          @foreach ($getGeneralInfo as $generalinfo)
+          <p class="text-muted">{{$generalinfo->country}}</p>
+          @endforeach
+          
 
           <hr>
 
           <strong><i class="fa fa-pencil mr-1"></i> Expertise</strong>
 
           <p class="text-muted">
-            <span class="tag tag-danger">Leadership,</span>
-            <span class="tag tag-success">Business,</span>
-            <span class="tag tag-info">Personal Development</span>
+            @foreach ($getExpertises as $expertises)
+            <span class="tag tag-danger">{{$expertises->expertise_topic}}</span> <br>
+            @endforeach
+           
+    
           </p>
 
           <hr>
 
           <strong><i class="fa fa-file-text-o mr-1"></i> Why Choose Me</strong>
 
-          <p class="text-muted">Get actionable, practical insights on strategic & science 
-              communication, advocacy and public affairs
-        </p>
+          @foreach ($getGeneralInfo as $generalinfo)
+          <p class="text-muted">{{$generalinfo->why_choose}}</p>
+          @endforeach
+          
         </div>
         <!-- /.card-body -->
       </div>
@@ -94,101 +120,87 @@
                 <div class="row">
                     <div class="col-md-6 border-right">
                         <h5 class="text-primary">Bio</h5>
-                        <p>We empower others to get off their couch and find their Everest. As an Olympic 
-                            Coach, Shark Diver, Bobsledder, Pilot, and Adventurer, I have lived the life 
-                            of five men. Between stories of how I succeeded and failed, I have learned 
-                            the tools needed for all of us to follow all our dreams. We empower others 
-                            to get off their couch and find their Everest. As an Olympic Coach, Shark 
-                            Diver, Bobsledder, Pilot, and Adventurer, I have lived the life of five men. 
-                            Between stories of how I succeeded and failed, I have learned the tools needed 
-                            for all of us to follow all our dreams.
-                        </p>
+                        @foreach ($getGeneralInfo as $generalinfo)
+                          <p>{{$generalinfo->bio}}
+                          </p>
+                        @endforeach
+                        
                         
                         <h5 class="text-primary">Current Position</h5>
                         <div class="row">
-                           <div class="col-md-6">
-                                <h6><strong>CEO</strong></h6>
-                                <p>WELLthMovement.com
-                           </div>
-                           <div class="col-md-6">
-                                <h6><strong>CEO</strong></h6>
-                                <p>WELLthMovement.com
-                           </div>
-                           <div class="col-md-6">
-                                <h6><strong>CEO</strong></h6>
-                                <p>WELLthMovement.com
-                           </div>
+                          @foreach ($getCurrentPositions as $currentPostions)
+                            <div class="col-md-6">
+                                <h6><strong>{{$currentPostions->title}}</strong></h6>
+                                <p>{{$currentPostions->department}}</p>
+                          </div>
+                          @endforeach 
                         </div>
 
 
                         <h5 class="text-primary">Degrees</h5>
-                            <h6><strong>EdD, Adult Education - Training & Development</strong></h6>
-                            <p>NOVA SOUTHEASTERN UNIVERSITY <br> 1993 - 1996</p>
+                              @foreach ($getDegrees as $degress)
+                                <h6><strong>{{$degress->title}}</strong></h6>
+                                <p>{{$degress->university}} <br> {{$degress->year}}</p>
+                              @endforeach 
 
-                            <h6><strong>EdD, Adult Education - Training & Development</strong></h6>
-                            <p>NOVA SOUTHEASTERN UNIVERSITY <br> 1993 - 1996</p>
+
 
                         <h5 class="text-primary">Achievements</h5>
-                        <h6><strong>Amazon Best-selling Author</strong></h6>
-                        <p>My book, LIVE FROM YOUR CLASS: Everything I Learned About Teaching,
-                            I Learned from Working at SATURDAY NIGHT LIVE was a #1 Amazon best-seller.</p>
-                        <h6><strong>Amazon Best-selling Author</strong></h6>
-                        <p>My book, LIVE FROM YOUR CLASS: Everything I Learned About Teaching,
-                            I Learned from Working at SATURDAY NIGHT LIVE was a #1 Amazon best-seller.</p>  
+                        @foreach ($getAchievements as $achievements)
+                        <h6><strong>{{$achievements->title}}</strong></h6>
+                        <p>{{$achievements->description}}</p>
+                        @endforeach 
+
+                       
+                        
 
                     </div> {{-- col-md-6 end --}}
                     <div class="col-md-6">
 
                         <h5 class="text-primary">Presentations</h5>
-                        <h6><strong>TEDx Talk: How to Spot a Leader in Their Handwriting</strong></h6>
-                        <p>This talk was given at a local TEDx event, produced independently of the TED Conferences. 
-                            Do Steve Jobs and Nelson Mandela have anything extraordinary in common?.</p>
+                        @foreach ($getPresentations as $presentations)
+                        <h6><strong>{{$presentations->title}}</strong></h6>
+                        <p>{{$presentations->description}}</p>
+                        @endforeach
+                        
 
 
                         <h5 class="text-primary">Pask Talks</h5>
-                        <h6><strong>What Your Signature Says About the Kind of Leader You Are</strong></h6>
-                        <p>Rigor, Relevance, Relationships Leadership 
-                            Conference Houston, Texas January 10, 2018</p>
+                        @foreach ($getPastTalks as $pastTalks)
+                          <h6><strong>{{$pastTalks->title}}</strong></h6>
+                          <p>{{$pastTalks->location}} - {{$pastTalks->date}}</p>
+                        @endforeach
 
                          <h5 class="text-primary">Workshops</h5>
-                            <h6><strong>WHAT YOUR SIGNATURE SAYS ABOUT THE KIND OF LEADER YOU ARE</strong></h6>
-                            <p>1 hour <br> Theme: When your students are laughing, they’re learning. </p>
+                          @foreach ($getWorkShops as $workshop)
+                          <h6><strong>{{$workshop->title}}</strong></h6>
+                          <p><strong>{{$workshop->hours}}</strong></p>
+                          <p>{{$workshop->description}}</p>
+                          @endforeach
                     </div> {{-- col-md-6 end --}}
                 </div>
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="photos">
               <div class="row">
-                <div class="col-md-2">
-                    <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
-                <div class="col-md-2">
-                    <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
-                <div class="col-md-2">
-                    <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
-                <div class="col-md-2">
-                        <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
-                <div class="col-md-2">
-                  <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
-                <div class="col-md-2">
-                  <img src="{{asset('adminassets/img/p1.jpg')}}" alt="" class="img-thumbnail">
-                </div>
+                @foreach ($getImages as $image)
+                  <div class="col-md-3">
+                    <img src="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" alt="" class="img-thumbnail">
+                  </div>
+                @endforeach
+                
               </div>
             </div>
             <!-- /.tab-pane -->
 
             <div class="tab-pane" id="video">
               <div class="row">
+                @foreach ($getVideos as $video)
                   <div class="col-md-3">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ylyQQOK2FCQ" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-                  </div>
+                      <iframe width="100%" height="100%" src="{{$video->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                @endforeach
+                  
               </div>
             </div>
             <!-- /.tab-pane -->
@@ -208,16 +220,25 @@
 
 
             <div class="tab-pane" id="books">
-                <h5><a href="#">The Ultimate EU Test Book Administrator (AD) Edition 2016</a></h5>
-                <p>John Harper Publishing, 2016</p>
-                <hr>
-                <h5><a href="#">The Ultimate EU Test Book Administrator (AD) Edition 2016</a></h5>
+
+                  <h4>Books</h4>
+                  @foreach ($getBooks as $books)
+                  <h5><a href="{{$books->link}}" target="_blank">{{$books->title}}</a></h5>
+                  @endforeach   
+
+                  <h4>Articles</h4>
+                  @foreach ($getArticles as $articles)
+                  <h5><a href="{{$articles->link}}" target="_blank">{{$articles->title}}</a></h5>
+                  @endforeach   
             </div>
             <!-- /.tab-pane -->
 
             <div class="tab-pane" id="awards">
-                <h5>Licensed HeartMath Coach</h5>
-                <p>HeartMath LLC 2001</p>
+                @foreach ($getAwards as $awards)
+                  <h5>{{$awards->name}}</h5>
+                  <p>{{$awards->year}}</p>
+                @endforeach
+                
             </div>
             <!-- /.tab-pane -->
             </div>

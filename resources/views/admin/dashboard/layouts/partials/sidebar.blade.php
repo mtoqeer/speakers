@@ -46,11 +46,12 @@
               </li>
 
               <li class="nav-item">
-                  <a href="{{route('speaker-profile', ['speakername' => 'Test-User'])}}" class="nav-link">
+                  <a href="{{route('featured-speaker-page')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Single Profile Profile</p>
+                    <p>Featured Speakers</p>
                   </a>
                 </li>
+
             </ul>
           </li>
           

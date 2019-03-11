@@ -36,7 +36,7 @@
                     <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">
                     <h4>{{$currentPosition->title}}</h4>
                     <p>{{$currentPosition->department}}</p>
-                    <a href="/dashboard/current-position/{{$currentPosition->id}}" class="" style="color:red !important;">Delete</a>
+                    <a href="/dashboard/current-positions/{{$currentPosition->id}}" class="" style="color:red !important;">Delete</a>
                     </div>
                 </div>
             @endforeach

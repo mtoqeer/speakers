@@ -31,6 +31,13 @@
                         <input type="text" name="languages" value="" class="form-control">
                     </div>
                     <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender" class="form-control">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="why_choose">Why Choose</label>
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4"></textarea>
                     </div>
@@ -57,7 +64,7 @@
                 
                 
                 @foreach ($getUserMeta as $generalinfo)
-                    @if ($getUserMeta->count() == 1 )
+                    @if ($getUserMeta->count() == 1)
                 {{-- Update Form --}}
                 <form method="POST" action="{{url('dashboard/generalinfo/update')}}" enctype="multipart/form-data">
                     @csrf
@@ -83,6 +90,13 @@
                     <div class="form-group">
                         <label for="languages">Languages</label>
                         <input type="text" name="languages" value="{{$generalinfo->languages}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select name="gender" id="gender" class="form-control">
+                                <option value="male" {{ ($generalinfo->gender == 'Male') ? "Selected" : " " }}>Male</option>
+                                <option value="female" {{ ($generalinfo->gender == 'female') ? "Selected" : " " }}>Female</option>
+                            </select>
                     </div>
                     <div class="form-group">
                         <label for="why_choose">Why Choose</label>

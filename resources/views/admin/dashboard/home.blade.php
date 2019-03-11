@@ -9,7 +9,7 @@
         <span class="info-box-icon bg-info"><i class="fa fa-envelope-o"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Messages</span>
+        <span class="info-box-text">Messages</span>
           <span class="info-box-number">1,410</span>
         </div>
         <!-- /.info-box-content -->
@@ -23,7 +23,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Active Speakers</span>
-          <span class="info-box-number">410</span>
+          <span class="info-box-number">{{$getApprovedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -36,7 +36,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Inactive Speakers</span>
-          <span class="info-box-number">13,648</span>
+          <span class="info-box-number">{{$getUnapprovedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -49,7 +49,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Registered Speakers</span>
-          <span class="info-box-number">93,139</span>
+          <span class="info-box-number">{{$getUnapprovedSpeakers->count() + $getApprovedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -81,6 +81,11 @@
               <th>Country</th>
               <th>Language</th>
             </tr>
+            @if ($getApprovedSpeakers->count() == 0)
+              <tr>
+                <td colspan="5" class="text-center">No Record Found</td>
+              </tr>
+            @else
             @foreach ($getApprovedSpeakers as $approvedSpeakers)
               <tr>
                 <td>{{$approvedSpeakers->id}}</td>
@@ -91,15 +96,17 @@
                 <td>{{$approvedSpeakers->languages}}</td>
               </tr>
             @endforeach
+            @endif
+              @if (!$getApprovedSpeakers->count() == 0)
+              <tr>
+                  <td colspan="5">
+                  <div class="card-footer text-center">
+                      <a href="{{route('active-speaker-page')}}">View All Users</a>
+                  </div>
+              </td>
+              </tr>
+              @endif
             
-
-            <tr>
-                <td colspan="5">
-                <div class="card-footer text-center">
-                    <a href="{{route('active-speaker-page')}}">View All Users</a>
-                </div>
-            </td>
-            </tr>
           </tbody>
         </table>
         </div>
@@ -140,13 +147,15 @@
                     </tr>
                     @endforeach 
                   @endif 
-                  <tr>
+                  @if (!$getUnapprovedSpeakers->count() == 0) 
+                    <tr>
                       <td colspan="5">
                       <div class="card-footer text-center">
                       <a href="{{route('inactive-speaker-page')}}">View All Users</a>
                       </div>
                   </td>
                   </tr>
+                  @endif 
                 </tbody>
               </table>
               </div>

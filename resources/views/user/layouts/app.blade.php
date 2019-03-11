@@ -3,6 +3,7 @@ use Carbon\Carbon;
 date_default_timezone_set("Asia/Karachi");
 $current = new Carbon();
 $current = Carbon::now();
+use Illuminate\Support\Facades\DB;
 ?>
 
 <!DOCTYPE html>

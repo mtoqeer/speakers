@@ -18,12 +18,13 @@ class CreateDegreesTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('university');
-            $table->integer('year');
+            $table->string('year');
             $table->timestamps();
 
             $table->foreign('user_id')
                     ->references('id')->on('users')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
         });
     }
 

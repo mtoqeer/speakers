@@ -50,7 +50,7 @@
                   <div class="col-lg-4">
     
                       <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="assets/icons/search.svg"></div>
+                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/search.svg')}}"></div>
                         <p style="color: black;font-size: 15px;font-weight: bold;">Search</p>
                         <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
                       </a>
@@ -59,7 +59,7 @@
                   <div class="col-lg-4">
     
                     <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="assets/icons/support.svg"></div>
+                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/support.svg')}}"></div>
                         <p style="color: black;font-size: 15px;font-weight: bold;">Submit</p>
                         <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
                     </a>
@@ -68,7 +68,7 @@
                   <div class="col-lg-4">
     
                     <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="assets/icons/professional.svg"></div>
+                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/professional.svg')}}"></div>
                         <p style="color: black;font-size: 15px;font-weight: bold;">Connect</p>
                         <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
                     </a>
@@ -102,65 +102,49 @@
     
                 <div class="row">
                    
-    
-                   <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30">
-                        <div class="single-speaker">
-                            <div class="speaker-to-card">
-                                <img src="assets/img/speakers/speaker1.jpg" alt="Profile Pic">
-                                <ul class="speaker-social" style="width: 90%;left: 11px;">
-                                    <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">nt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p></li>
-                                    <li><i class="fas fa-map-marked-alt"></i> USA</li>
-                                    <li><i class="fas fa-plane-departure"></i> Global</li>
-                                    <li><i class="fas fa-globe"></i> English</li>
-    
-                                </ul>
-    
-                            </div>
-                            <div class="speaker-detail">
-                                <div class="speaker-detail-content">
-                                    <h4>Lucineida</h4>
-                                    <h5>Stanford Africa MBA Fellow</h5>
-                                    <div class="row" style="margin-top: -10px;">
-                                        <div class="col-md-12">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="assets/img/conference-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="assets/img/moderator-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="assets/img/workshop-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="assets/img/online-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School (Incl. Charity)" src="assets/img/school-a.png">
-                                        </div>
-                                    </div>
-                                    <a href="team.html" style="margin-top: 13px;" class="get-details">learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-    
-    
+                    @foreach ($getFeaturedSpeakers as $featuredSpeakers)
                     <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30">
                         <div class="single-speaker">
                             <div class="speaker-to-card">
-                                <img src="assets/img/speakers/speaker1.jpg" alt="Profile Pic">
+                                <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
                                 <ul class="speaker-social" style="width: 90%;left: 11px;">
-                                    <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">nt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p></li>
-                                    <li><i class="fas fa-map-marked-alt"></i> USA</li>
-                                    <li><i class="fas fa-plane-departure"></i> Global</li>
-                                    <li><i class="fas fa-globe"></i> English</li>
-    
+                                    <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$featuredSpeakers->why_choose}}</p></li>
+                                    <li><i class="fas fa-map-marked-alt"></i> {{$featuredSpeakers->country}}</li>
+                                    <li><i class="fas fa-plane-departure"></i> {{$featuredSpeakers->available_to}}</li>
+                                    <li><i class="fas fa-globe"></i> {{$featuredSpeakers->languages}}</li>
                                 </ul>
-    
                             </div>
                             <div class="speaker-detail">
                                 <div class="speaker-detail-content">
-                                    <h4>Lucineida</h4>
-                                    <h5>Stanford Africa MBA Fellow</h5>
+                                    <h4>{{$featuredSpeakers->name}}</h4>
+                                    @php
+                                        $getUserId = DB::table('users')
+                                            ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
+                                            ->select('current_positions.*')
+                                            ->where('current_positions.user_id' , $featuredSpeakers->id)->first();
+                                    @endphp
+                                    <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
                                     <div class="row" style="margin-top: -10px;">
                                         <div class="col-md-12">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="assets/img/conference-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="assets/img/moderator-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="assets/img/workshop-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="assets/img/online-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School (Incl. Charity)" src="assets/img/school-a.png">
+                                            @if ($featuredSpeakers->conference == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
+                                            @endif
+                                            @if ($featuredSpeakers->school == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
+                                            @endif
+                                            @if ($featuredSpeakers->moderator == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
+                                            @endif
+                                            @if ($featuredSpeakers->online == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
+                                            @endif
+                                            @if ($featuredSpeakers->workshop == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop (Incl. Charity)" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
+                                            @endif
+                                            @if ($featuredSpeakers->meetup == 'Yes')
+                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
+                                            @endif
+
                                         </div>
                                     </div>
                                     <a href="team.html" style="margin-top: 13px;" class="get-details">learn more</a>
@@ -168,77 +152,15 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                   
     
     
-                    <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30">
-                        <div class="single-speaker">
-                            <div class="speaker-to-card">
-                                <img src="assets/img/speakers/speaker1.jpg" alt="Profile Pic">
-                                <ul class="speaker-social" style="width: 90%;left: 11px;">
-                                    <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">nt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p></li>
-                                    <li><i class="fas fa-map-marked-alt"></i> USA</li>
-                                    <li><i class="fas fa-plane-departure"></i> Global</li>
-                                    <li><i class="fas fa-globe"></i> English</li>
-    
-                                </ul>
-    
-                            </div>
-                            <div class="speaker-detail">
-                                <div class="speaker-detail-content">
-                                    <h4>Lucineida</h4>
-                                    <h5>Stanford Africa MBA Fellow</h5>
-                                    <div class="row" style="margin-top: -10px;">
-                                        <div class="col-md-12">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="assets/img/conference-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="assets/img/moderator-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="assets/img/workshop-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="assets/img/online-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School (Incl. Charity)" src="assets/img/school-a.png">
-                                        </div>
-                                    </div>
-                                    <a href="team.html" style="margin-top: 13px;" class="get-details">learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-    
-                    <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30">
-                        <div class="single-speaker">
-                            <div class="speaker-to-card">
-                                <img src="assets/img/speakers/speaker1.jpg" alt="Profile Pic">
-                                <ul class="speaker-social" style="width: 90%;left: 11px;">
-                                    <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">nt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p></li>
-                                    <li><i class="fas fa-map-marked-alt"></i> USA</li>
-                                    <li><i class="fas fa-plane-departure"></i> Global</li>
-                                    <li><i class="fas fa-globe"></i> English</li>
-    
-                                </ul>
-    
-                            </div>
-                            <div class="speaker-detail">
-                                <div class="speaker-detail-content">
-                                    <h4>Lucineida</h4>
-                                    <h5>Stanford Africa MBA Fellow</h5>
-                                    <div class="row" style="margin-top: -10px;">
-                                        <div class="col-md-12">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="assets/img/conference-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="assets/img/moderator-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="assets/img/workshop-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="assets/img/online-a.png">
-                                            <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School (Incl. Charity)" src="assets/img/school-a.png">
-                                        </div>
-                                    </div>
-                                    <a href="team.html" style="margin-top: 13px;" class="get-details">learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
     
     
                     
     
-                    <div class="col-lg-4 offset-lg-4 text-center">
+                    <div class="col-lg-12 text-center">
                         <a href="team.html" class="biddaloy-btn mar-top-40">See All Speakers</a>
                     </div>
                 </div>
