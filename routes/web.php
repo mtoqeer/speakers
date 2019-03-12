@@ -13,10 +13,13 @@
 // Website Pages
 Route::get('/', 'UserMetaController@websiteHomePage')->name('webhome');
 
+// Single Profile Website
+Route::get('/singlespeaker/{id}', 'UserMetaController@ShowSingleProfileOnWbsite')->name('websingle');
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('webhome');
+// Route::get('/single', function () {
+//     return view('single');
+// })->name('websingle');
+
 
 Route::get('/about', function () {
     return view('about');
@@ -34,9 +37,7 @@ Route::get('/privacy', function () {
     return view('privacy');
 })->name('webprivacy');
 
-Route::get('/single', function () {
-    return view('single');
-})->name('websingle');
+
 
 Route::get('/speakers', function () {
     return view('speakers');

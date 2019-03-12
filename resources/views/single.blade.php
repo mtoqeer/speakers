@@ -34,16 +34,18 @@
         
             <!-- hero area end -->
         
-        
-                <div class="container mt-5">
+                @foreach ($getGeneralInfo as $generalInfo)
+                <div class="container mt-5">.
                     <div class="row speaker-top-bar p-5 mb-3 bg-white rounded">
                         <div class="col-md-2 col-sm-12 speaker-single-img text-center">
-                            <img src="assets/img/speakers/speaker1.jpg" alt="">
+                        <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" alt="">
                         </div>
                         <div class="col-md-6 single-page-speaker-details">
-                            <h2 class="mt-2">Michele Wucker</h2>
-                            <h4 class="mt-3">Founder & CEO</h4>
-                            <h6 class="mt-2">Gray Rhino & Company</h6>
+                            <h2 class="mt-2">{{$generalInfo->name}}</h2>
+                            @if ($getSingleCurrentPosition)
+                            <h4 class="mt-3">{{$getSingleCurrentPosition->title}}</h4>
+                            <h6 class="mt-2">{{$getSingleCurrentPosition->department}}</h6>
+                            @endif
                             <a href="" class="biddaloy-btn-sm mt-3" data-toggle="modal" data-target="#exampleModal">Contact Info</a>
                         </div>
                         <div class="col-md-4 single-page-speaker-details" style="border-left: 1px solid rgb(197,197,197)">
@@ -51,37 +53,52 @@
                             <tr>
                                 <th>COUNTRY</th>
                                 <td>&nbsp;</td>
-                                <td>&nbsp; United State</td>
+                                <td>&nbsp; {{$generalInfo->country}}</td>
                             </tr>
                             <tr>
                                 <th>AVAILABLE TO</th>
                                 <td>&nbsp;</td>
-                                <td>&nbsp; Global</td>
+                                <td>&nbsp; {{$generalInfo->available_to}}</td>
                             </tr>
                             <tr>
                                 <th>FEE</th>
                                 <td>&nbsp;</td>
-                                <td>&nbsp; More Then $1000</td>
+                                <td>&nbsp; {{$generalInfo->fee}}</td>
                             </tr>
                             <tr>
                                 <th>VOLUNTEER:</th>
                                 <td>&nbsp;</td>
-                                <td> &nbsp; Yes</td>
+                                <td> &nbsp; {{$generalInfo->volunteer}}</td>
                             </tr>
                             <tr>
                                 <th>LANGUAGES</th>
                                 <td>&nbsp;</td>
-                                <td>&nbsp; English, Spanish</td>
+                                <td>&nbsp; {{$generalInfo->languages}}</td>
                             </tr>
                         </table>
+                        
                             <div class="row">
                                 <div class="col-md-12">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="assets/img/meetup-a.png">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="assets/img/conference-a.png">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="assets/img/moderator-a.png">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="assets/img/workshop-a.png">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="assets/img/online-a.png">
-                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School (Incl. Charity)" src="assets/img/school-a.png">
+                                        @foreach ($getAvailableFor as $Availablefor)
+                                        @if ($Availablefor->conference == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
+                                        @endif
+                                        @if ($Availablefor->school == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
+                                        @endif
+                                        @if ($Availablefor->online == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
+                                        @endif
+                                        @if ($Availablefor->moderator == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
+                                        @endif
+                                        @if ($Availablefor->workshop == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
+                                        @endif
+                                        @if ($Availablefor->meetup == 'Yes')
+                                          <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
+                                        @endif
+                                      @endforeach
                                 </div>
                             </div>
                         </div>
@@ -96,18 +113,38 @@
                             <div class="row p-4 mb-3 bg-white rounded">
                                 <div class="col-md-12">
                                     <h5 class="mb-3">WHY CHOOSE ME?</h5>
-                                    <p>Get actionable, practical insights on strategic & science communication, advocacy and public affairs</p>
+                                <p>{{$generalInfo->why_choose}}</p>
                                 </div>
                             </div>
-        
+                            @endforeach {{-- $getGeneralInfo --}}
                             <div class="row p-4 mb-3 bg-white rounded">
                                 <div class="col-md-12">
                                     <h5>SOCIAL MEDIA</h5>
                                     <div class="social-info text-left">
                                         <ul>
-                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            @if ($getSocialMediaAccounts)
+                                                @if ($getSocialMediaAccounts->facebook !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->linkdin !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->linkdin}}" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->twitter !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->instagram !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->instagram}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->youtube !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->website !== NULL)
+                                                    <li><a href="{{$getSocialMediaAccounts->website}}" target="_blank"><i class="fas fa-globe-europe"></i></a></li>
+                                                @endif
+                                                @if ($getSocialMediaAccounts->skype !== NULL)
+                                                    <li><a href="skype:{{$getSocialMediaAccounts->skype}}?call"><i class="fab fa-skype"></i></a></li>
+                                                @endif
+                                            @endif
                                         </ul>
                                     </div>
                                 </div>                        
@@ -189,97 +226,84 @@
                                 <div class="tab-content" id="v-pills-tabContent">
                                     
                                     <div class="tab-pane fade show active mt-2" id="v-pills-bio" role="tabpanel" aria-labelledby="v-pills-bio-tab">
-                                    <p>We empower others to get off their couch and find their Everest. 
-                                    As an Olympic Coach, Shark Diver, Bobsledder, Pilot, and Adventurer, I have lived the life of five men. 
-                                    Between stories of how I succeeded and failed, I have learned the tools needed for all of us to follow all our dreams.
-                                    We empower others to get off their couch and find their Everest. 
-                                    As an Olympic Coach, Shark Diver, Bobsledder, Pilot, and Adventurer, I have lived the life of five men. 
-                                    Between stories of how I succeeded and failed, I have learned the tools needed for all of us to follow all our dreams.</p>
+                                    @foreach ($getGeneralInfo as $generalinfo)
+                                        <p>{{$generalinfo->bio}}</p>
+                                    @endforeach
                                     </div>
                                     
                                     <div class="tab-pane fade mt-2" id="v-pills-current-position" role="tabpanel" aria-labelledby="v-pills-current-position-tab">
                                         
                                         <div class="row">
-                                            <div class="col-md-6 mb-3">
-                                                <h5>CEO</h5>
-                                                <p>WELLthMovement.com</p>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <h5>Founding Member</h5>
-                                                <p>Evolutionary Business Council</p>
-                                            </div>
+                                            @foreach ($getCurrentPositions as $currentPostions)
+                                                <div class="col-md-6 mb-3">
+                                                    <h5>{{$currentPostions->title}}</h5>
+                                                    <p>{{$currentPostions->department}}</p>
+                                                </div>
+                                            @endforeach
+                                            
                                         </div>
                                         
                                     </div>
         
                                     <div class="tab-pane fade mt-2" id="v-pills-degrees" role="tabpanel" aria-labelledby="v-pills-degrees-tab">
                                         <!-- degree start -->
-                                        <div class="row mt-3">
-                                            <div class="col-md-12">
-                                                <h5>EdD, Adult Education - Training & Development</h5>
-                                                <p>NOVA SOUTHEASTERN UNIVERSITY</p>
-                                                <p>1993 to 1996</p>
-                                            </div>
-                                        </div>
-        
-                                        <!-- degree start -->
-                                        <div class="row mt-3">
-                                            <div class="col-md-12">
-                                                <h5>EdD, Adult Education - Training & Development</h5>
-                                                <p>NOVA SOUTHEASTERN UNIVERSITY</p>
-                                                <p>1993 to 1996</p>
-                                            </div>
-                                        </div>
-        
-        
+                                        <div class="row mt-2">
+                                            @foreach ($getDegrees as $degress)
+                                                <div class="col-md-12 mb-2">
+                                                    <h5>{{$degress->title}}</h5>
+                                                    <p>{{$degress->university}}</p>
+                                                    <p>{{$degress->year}}</p>
+                                                </div>
+                                            @endforeach
+                                        </div>        
                                     </div>
         
                                     <!-- achievments start -->
                                     <div class="tab-pane fade mt-2" id="v-pills-achievement" role="tabpanel" aria-labelledby="v-pills-achievement-tab">
-                                       
-                                       <div class="col-md-12 mb-3">
-                                           <h5>Amazon Best-selling Author</h5>
-                                            <p>My book, LIVE FROM YOUR CLASS: Everything I Learned About Teaching, I Learned from Working at SATURDAY NIGHT LIVE was a #1 Amazon best-seller.</p>
-                                       </div>
-        
-                                       <div class="col-md-12 mb-3">
-                                           <h5>Amazon Best-selling Author</h5>
-                                            <p>My book, LIVE FROM YOUR CLASS: Everything I Learned About Teaching, I Learned from Working at SATURDAY NIGHT LIVE was a #1 Amazon best-seller.</p>
-                                       </div>
+                                        @foreach ($getAchievements as $achievements)
+                                            <div class="col-md-12 mb-3">
+                                                <h5>{{$achievements->title}}</h5>
+                                                    <p>{{$achievements->description}}</p>
+                                            </div>
+                                        @endforeach
+    
         
                                     </div>
                                      <!-- achievments ends -->
         
                                      <!-- presentations starts -->
                                      <div class="tab-pane fade mt-2" id="v-pills-presentations" role="tabpanel" aria-labelledby="v-pills-presentations-tab">
-                                       
-                                       <div class="col-md-12 mb-3">
-                                           <h5>TEDx Talk: How to Spot a Leader in Their Handwriting</h5>
-                                            <p>This talk was given at a local TEDx event, produced independently of the TED Conferences. Do Steve Jobs and Nelson Mandela have anything extraordinary in common? </p>
-                                       </div>
+                                       @foreach ($getPresentations as $presentations)
+                                            <div class="col-md-12 mb-3">
+                                                <h5>{{$presentations->title}}</h5>
+                                                  <p>{{$presentations->description}}</p>
+                                            </div>
+                                        @endforeach
         
                                     </div>
                                     <!-- presentations ends -->
         
                                     <!-- pasttalks starts -->
                                      <div class="tab-pane fade mt-2" id="v-pills-pasttalks" role="tabpanel" aria-labelledby="v-pills-pasttalks-tab">
-                                       
-                                       <div class="col-md-12 mb-3">
-                                           <h5>What Your Signature Says About the Kind of Leader You Are</h5>
-                                            <p>Rigor, Relevance, Relationships Leadership Conference Houston, Texas January 10, 2018</p>
-                                       </div>
+                                    @foreach ($getPastTalks as $pastTalks)
+                                        <div class="col-md-12 mb-3">
+                                            <h5>{{$pastTalks->title}}</h5>
+                                                <p>{{$pastTalks->location}}, {{$pastTalks->date}}</p>
+                                        </div>
+                                    @endforeach
         
                                     </div>
                                     <!-- pasttalks ends -->
         
                                     <!-- workshops starts -->
                                      <div class="tab-pane fade mt-2" id="v-pills-workshops" role="tabpanel" aria-labelledby="v-pills-workshops-tab">
-                                       
-                                       <div class="col-md-12 mb-3">
-                                           <h5>WHAT YOUR SIGNATURE SAYS ABOUT THE KIND OF LEADER YOU ARE</h5>
-                                            <h5 class="mt-1">1 hour</h5>
-                                            <p>Theme: When your students are laughing, they’re learning.</p>
-                                       </div>
+                                       @foreach ($getWorkShops as $workshop)
+                                            <div class="col-md-12 mb-3">
+                                                <h5>{{$workshop->title}}</h5>
+                                                <h5 class="mt-1">{{$workshop->hours}}</h5>
+                                                <p>{{$workshop->description}}</p>
+                                            </div>
+                                        @endforeach
         
                                     </div>
                                     <!-- workshops ends -->
@@ -296,12 +320,11 @@
                                 <div class="col-md-12">
                                     <h5>VIDEOS</h5>
                                     <div class="row mt-3">
-                                        
-                                        <div class="col-md-4 mb-3">
-        
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ylyQQOK2FCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-                                        </div>
+                                        @foreach ($getVideos as $video)
+                                            <div class="col-md-4 mb-3">
+                                                <iframe width="100%" height="100%" src="{{$video->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        @endforeach
         
                                         
                                         
@@ -317,31 +340,13 @@
                                 <div class="col-md-12">
                                     <h5>PHOTOS</h5>
                                     <div class="row mt-3" id="lightgallery">
-                                        
-                                        <div class="col-md-3 mb-3">
-                                               <a href="assets/img/speakers/photo1.jpg" data-fancybox data-caption="">
-                                                  <img src="assets/img/speakers/photo1.jpg" class="img-thumbnail">
-                                              </a>
-                                        </div>
-        
-                                        <div class="col-md-3 mb-3">
-                                               <a href="assets/img/speakers/photo1.jpg" data-fancybox data-caption="">  
-                                                  <img src="assets/img/speakers/photo1.jpg" class="img-thumbnail">
-                                              </a>
-                                        </div>
-        
-                                        <div class="col-md-3 mb-3">
-                                               <a href="assets/img/speakers/photo1.jpg" data-fancybox data-caption="">
-                                                  <img src="assets/img/speakers/photo1.jpg" class="img-thumbnail">
-                                              </a>
-                                        </div>
-        
-        
-                                        <div class="col-md-3 mb-3">
-                                               <a href="assets/img/speakers/photo1.jpg" data-fancybox data-caption="">
-                                                  <img src="assets/img/speakers/photo1.jpg" class="img-thumbnail">
-                                              </a>
-                                        </div>
+                                        @foreach ($getImages as $image)
+                                            <div class="col-md-3 mb-3">
+                                                <a href="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" data-fancybox data-caption="">
+                                                    <img src="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" class="img-thumbnail">
+                                                </a>
+                                            </div>
+                                        @endforeach
         
                                        
                                     </div>
@@ -355,9 +360,11 @@
                               <div class="row p-4 mb-3 mls-1  bg-white rounded">
                                     <div class="col-md-12">
                                         <h5 class="mb-2">BOOKS</h5>
+                                        @foreach ($getBooks as $books)
                                             <div class="book mt-2">
-                                                <a href=""><h5>The Ultimate EU Test Book Administrator (AD) Edition 2016</h5></a>
+                                                <a href="{{$books->link}}" target="_blank"><h5>{{$books->title}}</h5></a>
                                             </div>
+                                        @endforeach
 
                                     </div>    
                                 </div> 
@@ -367,9 +374,12 @@
                              <div class="row p-4 mb-3 mls-1  bg-white rounded">
                                 <div class="col-md-12">
                                     <h5 class="mb-2">ARTICLES</h5>
+                                    @foreach ($getArticles as $article)
                                         <div class="article mt-2">
-                                            <a href=""><h5>The Ultimate EU Test Book Administrator (AD) Edition 2016</h5></a>
+                                            <a href="{{$article->link}}" target="_blank"><h5>{{$article->title}}</h5></a>
                                         </div>
+                                    @endforeach
+                                        
                                 </div>    
                             </div> 
                         <!-- Article End -->
@@ -379,13 +389,13 @@
                              <div class="row p-4 mb-3 mls-1  bg-white rounded">
                                 
                                 <div class="col-md-12">
-                                    <h5 class="mb-2">AWARDS AND CERTIFICATE</h5>
-                                        
+                                    <h5 class="mb-2">AWARDS</h5>
+                                    @foreach ($getAwards as $awards)
                                         <div class="book mt-2">
-                                           <h5>Licensed HeartMath Coach</h5>
-                                            <p>HeartMath LLC 2001</p>
+                                           <h5>{{$awards->name}}</h5>
+                                            <p>{{$awards->year}}</p>
                                         </div>
-        
+                                    @endforeach
                                 </div>    
                             
                             
@@ -393,19 +403,17 @@
                         <!-- Awards and Certificate End -->
         
                             <!-- Expertise -->
+                            @if ($getExpertises->count() > 0)
                             <div class="row p-4 mb-5 mls-1 bg-white rounded">
                                 <div class="col-md-12">
                                     <h5 class="mb-3">EXPERTISE</h5>
-                                    <span class="expertise">Leadership Development</span>
-                                    <span class="expertise">Personal Development</span>
-                                    <span class="expertise">Leadership</span>
-                                    <span class="expertise">Business</span>
-                                    <span class="expertise">Personal Development</span>
-                                    <span class="expertise">Leadership</span>
-                                    <span class="expertise">Business</span>
+                                    @foreach ($getExpertises as $expertises)
+                                        <span class="expertise">{{$expertises->expertise_topic}}</span>
+                                    @endforeach
                                 </div>                        
                             </div> 
                             <!-- Expertise End -->
+                            @endif
         
         
                           
@@ -442,9 +450,9 @@
                                     <input type="email" class="form-control" id="customer-email" placeholder="">
                                 </div>
         
-                               
-                                    <input type="hidden" class="form-control" id="customer-subject" name="customer-subject" placeholder="">
-        
+                                @foreach ($getGeneralInfo as $generalInfo)
+                                    <input type="hidden" class="form-control" id="customer-subject" name="customer-subject" placeholder="" value="{{$generalInfo->name}}">
+                                @endforeach
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-message">Message:</label>
                                     <textarea id="customer-message" name="customer-message" class="form-control" rows="4"></textarea>

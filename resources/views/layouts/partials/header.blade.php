@@ -48,7 +48,6 @@
                                 <ul id="navigation">
 
                                     <li class=""><a href="{{route('webhome')}}">Home</a></li>
-                                    <li class=""><a href="{{route('websingle')}}">Single Page Demo</a></li>
                                     <li><a href="{{route('webabout')}}">About</a></li>
                                     <li><a href="{{route('webspeakers')}}">Speakers</a></li>
                                     <li><a href="{{route('webcontact')}}">contact</a></li>

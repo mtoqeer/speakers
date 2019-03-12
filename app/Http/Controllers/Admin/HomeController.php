@@ -45,14 +45,21 @@ class HomeController extends Controller
         $getApprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
-        ->where('users.status' , 'approved')->get();
+        ->where('users.status' , 'approved')
+        ->where('users.featured' , 'No')->limit(20)->get();
 
         $getUnapprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
-        ->where('users.status' , 'unapproved')->limit(20)->get();
+        ->where('users.status' , 'unapproved')->limit(10)->get();
 
-        return view('admin.dashboard.home', compact('getApprovedSpeakers','getUnapprovedSpeakers'));
+        $getFeaturedSpeakers = DB::table('users')
+        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->select('user_metas.*', 'users.*')
+        ->where('users.featured' , 'Yes')
+        ->where('users.status' , 'approved')->limit(10)->get();
+
+        return view('admin.dashboard.home', compact('getApprovedSpeakers','getUnapprovedSpeakers','getFeaturedSpeakers'));
     }
 
     // Get Data On Active Speakers Page

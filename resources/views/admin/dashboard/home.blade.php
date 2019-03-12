@@ -9,8 +9,8 @@
         <span class="info-box-icon bg-info"><i class="fa fa-envelope-o"></i></span>
 
         <div class="info-box-content">
-        <span class="info-box-text">Messages</span>
-          <span class="info-box-number">1,410</span>
+        <span class="info-box-text">Featured Limit</span>
+          <span class="info-box-number">4</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -23,7 +23,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Active Speakers</span>
-          <span class="info-box-number">{{$getApprovedSpeakers->count()}}</span>
+          <span class="info-box-number">{{$getApprovedSpeakers->count() + $getFeaturedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -49,7 +49,7 @@
 
         <div class="info-box-content">
           <span class="info-box-text">Registered Speakers</span>
-          <span class="info-box-number">{{$getUnapprovedSpeakers->count() + $getApprovedSpeakers->count()}}</span>
+          <span class="info-box-number">{{$getUnapprovedSpeakers->count() + $getApprovedSpeakers->count() + $getFeaturedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -65,6 +65,56 @@
 
 
 <div class="row">
+
+        {{-- InActive Speakers --}}
+        <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Inactive Speakers</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table">
+                  <tbody><tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Language</th>
+                  </tr>
+
+                  @if ($getUnapprovedSpeakers->count() == 0) 
+                        <tr>
+                          <td colspan="5" class="text-center">No Record Found</td>
+                        </tr>
+                  @else
+                    @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
+                    <tr>
+                      <td>{{$unapprovedSpeakers->id}}</td>
+                      <td>{{$unapprovedSpeakers->name}}</td>
+                      <td>{{$unapprovedSpeakers->email}}</td>
+                      <td>{{$unapprovedSpeakers->country}}</td>
+                      <td>{{$unapprovedSpeakers->languages}}</td>
+                    </tr>
+                    @endforeach 
+                  @endif 
+                  @if (!$getUnapprovedSpeakers->count() == 0) 
+                    <tr>
+                      <td colspan="5">
+                      <div class="card-footer text-center">
+                      <a href="{{route('inactive-speaker-page')}}">View All Users</a>
+                      </div>
+                  </td>
+                  </tr>
+                  @endif 
+                </tbody>
+              </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+      </div>
+
     {{-- Active Spekaers --}}
     <div class="col-md-6">
       <div class="card">
@@ -115,54 +165,57 @@
       <!-- /.card -->
     </div>
 
-    {{-- InActive Speakers --}}
+    {{-- Featured Spekaers --}}
     <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Inactive Speakers</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table">
-                  <tbody><tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Country</th>
-                    <th>Language</th>
-                  </tr>
-
-                  @if ($getUnapprovedSpeakers->count() == 0) 
-                        <tr>
-                          <td colspan="5" class="text-center">No Record Found</td>
-                        </tr>
-                  @else
-                    @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
-                    <tr>
-                      <td>{{$unapprovedSpeakers->id}}</td>
-                      <td>{{$unapprovedSpeakers->name}}</td>
-                      <td>{{$unapprovedSpeakers->email}}</td>
-                      <td>{{$unapprovedSpeakers->country}}</td>
-                      <td>{{$unapprovedSpeakers->languages}}</td>
-                    </tr>
-                    @endforeach 
-                  @endif 
-                  @if (!$getUnapprovedSpeakers->count() == 0) 
-                    <tr>
-                      <td colspan="5">
-                      <div class="card-footer text-center">
-                      <a href="{{route('inactive-speaker-page')}}">View All Users</a>
-                      </div>
-                  </td>
-                  </tr>
-                  @endif 
-                </tbody>
-              </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Featured Speakers</h3>
           </div>
+          <!-- /.card-header -->
+          <div class="card-body table-responsive p-0">
+            <table class="table">
+              <tbody><tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Language</th>
+              </tr>
+              @if ($getFeaturedSpeakers->count() == 0)
+                <tr>
+                  <td colspan="5" class="text-center">No Record Found</td>
+                </tr>
+              @else
+              @foreach ($getFeaturedSpeakers as $featuredSpeakers)
+                <tr>
+                  <td>{{$featuredSpeakers->id}}</td>
+                 
+                  <td>{{$featuredSpeakers->name}}</td>
+                  <td>{{$featuredSpeakers->email}}</td>
+                  <td>{{$featuredSpeakers->country}}</td>
+                  <td>{{$featuredSpeakers->languages}}</td>
+                </tr>
+              @endforeach
+              @endif
+                @if (!$getFeaturedSpeakers->count() == 0)
+                <tr>
+                    <td colspan="5">
+                    <div class="card-footer text-center">
+                        <a href="{{route('featured-speaker-page')}}">View All Users</a>
+                    </div>
+                </td>
+                </tr>
+                @endif
+              
+            </tbody>
+          </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+
+
   </div>
 
 

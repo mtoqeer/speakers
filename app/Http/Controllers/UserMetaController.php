@@ -107,5 +107,87 @@ class UserMetaController extends Controller
         return view('home', compact('getFeaturedSpeakers'));
     }
 
+
+    // Single Page
+    public function ShowSingleProfileOnWbsite($id){
+
+        $getGeneralInfo = DB::table('users')
+        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->select('user_metas.*', 'users.*')
+        ->where('users.id' , $id)->get();
+
+        $getArticles = DB::table('articles')
+        ->select('articles.*')
+        ->where('articles.user_id' , $id)->get();
+        
+        $getAchievements = DB::table('achievements')
+        ->select('achievements.*')
+        ->where('achievements.user_id' , $id)->get();
+
+        $getAvailable_fors = DB::table('available_fors')
+        ->select('available_fors.*')
+        ->where('available_fors.user_id' , $id)->get();
+
+        $getAwards = DB::table('awards')
+        ->select('awards.*')
+        ->where('awards.user_id' , $id)->get();
+
+        $getBooks = DB::table('books')
+        ->select('books.*')
+        ->where('books.user_id' , $id)->get();
+
+        $getCurrentPositions = DB::table('current_positions')
+        ->select('current_positions.*')
+        ->where('current_positions.user_id' , $id)->get();
+
+        $getSingleCurrentPosition = DB::table('current_positions')
+        ->select('current_positions.*')
+        ->where('current_positions.user_id' , $id)->first();
+
+        $getDegrees = DB::table('degrees')
+        ->select('degrees.*')
+        ->where('degrees.user_id' , $id)->get();
+
+        $getExpertises = DB::table('expertises')
+        ->select('expertises.*')
+        ->where('expertises.user_id' , $id)->get();
+
+        $getImages = DB::table('images')
+        ->select('images.*')
+        ->where('images.user_id' , $id)->get();
+
+        $getPastTalks = DB::table('past_talks')
+        ->select('past_talks.*')
+        ->where('past_talks.user_id' , $id)->get();
+
+        $getPresentations = DB::table('presentations')
+        ->select('presentations.*')
+        ->where('presentations.user_id' , $id)->get();
+
+        $getSocialMediaAccounts = DB::table('social_media_accounts')
+        ->select('social_media_accounts.*')
+        ->where('social_media_accounts.user_id' , $id)->first();
+
+        $getVideos = DB::table('videos')
+        ->select('videos.*')
+        ->where('videos.user_id' , $id)->get();
+
+         $getWorkShops = DB::table('workshops')
+        ->select('workshops.*')
+        ->where('workshops.user_id' , $id)->get();
+
+        $getAvailableFor = DB::table('available_fors')
+        ->select('available_fors.*')
+        ->where('available_fors.user_id' , $id)->get();
+
+
+
+
+        return view('/single', compact('getGeneralInfo','getWorkShops', 'getVideos','getSocialMediaAccounts', 
+        'getPresentations', 'getPastTalks','getImages','getExpertises','getDegrees','getCurrentPositions',
+        'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor'));
+
+    }
+
    
 }

@@ -147,7 +147,7 @@
 
                                         </div>
                                     </div>
-                                    <a href="team.html" style="margin-top: 13px;" class="get-details">learn more</a>
+                                    <a href="/singlespeaker/{{$featuredSpeakers->id}}" style="margin-top: 13px;" class="get-details">learn more</a>
                                 </div>
                             </div>
                         </div>
