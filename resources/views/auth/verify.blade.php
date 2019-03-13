@@ -1,7 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.weblayout')
+@section('title', 'Login')
+@section('customstyles')
+    
+@endsection
 
-@section('content')
-<div class="container">
+@section('main-content')
+
+
+<!-- hero area start -->
+<section class="all-page-hero about-page">
+        <div class="page-content container">
+                <span class="about-active"> Please Verify</span>
+            </div>
+    </section>
+    
+    <!-- hero area end -->
+    
+<div class="container mb-5 mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -15,10 +30,14 @@
                     @endif
 
                     {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}" style="color:#007bff !important;">{{ __('click here to request another') }}</a>.
                 </div>
             </div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('customjs')
+    
 @endsection

@@ -39,9 +39,9 @@ Route::get('/privacy', function () {
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/dashboard', 'HomeController@index')->name('userdashboard');
+Route::get('/dashboard', 'HomeController@index')->name('userdashboard')->middleware('verified');
 
 
 // User User Meta Routes
