@@ -35,7 +35,7 @@
             <!-- hero area end -->
         
                 @foreach ($getGeneralInfo as $generalInfo)
-                <div class="container mt-5">.
+                <div class="container mt-5">
                     <div class="row speaker-top-bar p-5 mb-3 bg-white rounded">
                         <div class="col-md-2 col-sm-12 speaker-single-img text-center">
                         <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" alt="">
@@ -433,7 +433,8 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Contact Michele Wucker</h5>
+                                @foreach ($getGeneralInfo as $generalInfo)
+                            <h5 class="modal-title" id="exampleModalLabel">Contact {{$generalInfo->name}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -450,7 +451,7 @@
                                     <input type="email" class="form-control" id="customer-email" placeholder="">
                                 </div>
         
-                                @foreach ($getGeneralInfo as $generalInfo)
+                                
                                     <input type="hidden" class="form-control" id="customer-subject" name="customer-subject" placeholder="" value="{{$generalInfo->name}}">
                                 @endforeach
                                 <div class="form-group speaker-contact-form"">

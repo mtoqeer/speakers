@@ -102,9 +102,21 @@ class UserMetaController extends Controller
             ,'available_fors.meetup','user_metas.country','user_metas.why_choose','user_metas.available_to','user_metas.languages','user_metas.profile_img')
             ->where('users.featured','Yes')
             ->where('users.status','approved')->limit(4)->get();
-
-
         return view('home', compact('getFeaturedSpeakers'));
+    }
+
+    // All Speakers Page
+    public function ShowAllSpeakersOnWbsite(){
+        $getAllSpeakers = DB::table('users')
+            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->join('available_fors','users.id', '=','available_fors.user_id')
+            ->select('users.*','available_fors.conference',
+            'available_fors.workshop','available_fors.moderator'
+            ,'available_fors.online','available_fors.school'
+            ,'available_fors.meetup','user_metas.country','user_metas.fee','user_metas.why_choose','user_metas.available_to','user_metas.languages','user_metas.profile_img')
+            ->where('users.status','approved')->paginate(9);
+        return view('speakers', compact('getAllSpeakers'));
+
     }
 
 
@@ -179,9 +191,6 @@ class UserMetaController extends Controller
         $getAvailableFor = DB::table('available_fors')
         ->select('available_fors.*')
         ->where('available_fors.user_id' , $id)->get();
-
-
-
 
         return view('/single', compact('getGeneralInfo','getWorkShops', 'getVideos','getSocialMediaAccounts', 
         'getPresentations', 'getPastTalks','getImages','getExpertises','getDegrees','getCurrentPositions',

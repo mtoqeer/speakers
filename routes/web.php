@@ -16,9 +16,8 @@ Route::get('/', 'UserMetaController@websiteHomePage')->name('webhome');
 // Single Profile Website
 Route::get('/singlespeaker/{id}', 'UserMetaController@ShowSingleProfileOnWbsite')->name('websingle');
 
-// Route::get('/single', function () {
-//     return view('single');
-// })->name('websingle');
+// All Speakers Page
+Route::get('/speakers', 'UserMetaController@ShowAllSpeakersOnWbsite')->name('webspeakers');
 
 
 Route::get('/about', function () {
@@ -38,10 +37,6 @@ Route::get('/privacy', function () {
 })->name('webprivacy');
 
 
-
-Route::get('/speakers', function () {
-    return view('speakers');
-})->name('webspeakers');
 
 
 Auth::routes();
