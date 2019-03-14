@@ -1,11 +1,11 @@
     <!-- preloader start -->
-    <div id="preloader">
+    {{-- <div id="preloader">
         <div class="loader">
             <div class="circle item0"></div>
             <div class="circle item1"></div>
             <div class="circle item2"></div>
         </div>
-    </div>  
+    </div>   --}}
 
     <!-- preloader end -->
     <!-- header top area start -->
@@ -37,8 +37,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3">
                         <div class="logo">
-                            <a href="home.php">
-                               <h3>Wisdom Speakers Bureau</h3>
+                        <a href="{{route('webhome')}}">
+                                {{-- <img src="{{asset('websiteassests/img/logo/logo.png')}}" alt="">  --}}
+                                <h3><img src="{{asset('websiteassests/img/logo/wlogo1.png')}}" alt="" style="max-width:75% !important;"></h3>
                             </a>
                         </div>
                     </div>

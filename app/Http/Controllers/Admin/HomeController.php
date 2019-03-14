@@ -143,6 +143,7 @@ class HomeController extends Controller
         $getApprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
+        ->where('users.featured' , 'No')
         ->where('users.status' , 'approved')->paginate(13);
 
         return view('admin.dashboard.active', compact('getApprovedSpeakers'));
