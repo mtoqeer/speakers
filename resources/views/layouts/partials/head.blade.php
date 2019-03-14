@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="{{asset('websiteassests/fonts/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/slicknav.min.css')}}">
-    <link rel="stylesheet" href="{{asset('websiteassests/css/default.css?v=4')}}">
-    <link rel="stylesheet" href="{{asset('websiteassests/css/style.css?v=7')}}">
+    <link rel="stylesheet" href="{{asset('websiteassests/css/default.css?v=5')}}">
+    <link rel="stylesheet" href="{{asset('websiteassests/css/style.css?v=8')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/responsive.css?v=1')}}">

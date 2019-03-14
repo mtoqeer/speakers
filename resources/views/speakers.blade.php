@@ -7,6 +7,9 @@
     }
     .searchfilter {
      background: #F5F5F5;
+     margin-right: 17px;
+     margin-left: -18px;
+
     }
   </style>
 @endsection

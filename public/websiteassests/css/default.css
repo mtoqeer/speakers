@@ -131,7 +131,7 @@ img {
     height: auto;
 }
 
-button {}
+
 
 ul,
 ol {
@@ -151,18 +151,15 @@ ol {
 
 
 .slide-tab .search::placeholder {
-    color: #000;
-     !important
+    color: #000 !important;
 }
 
 .slide-tab .search:-ms-placeholder {
-    color: #000;
-     !important
+    color: #000 !important;
 }
 
 .slide-tab .search::placeholder {
-    color: #000;
-     !important
+  color: #000 !important;
 }
 
 ::placeholder {
@@ -194,7 +191,7 @@ textarea::-ms-input-placeholder{
 padding
 =============================================================*/
 .section-padding {
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 

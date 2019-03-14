@@ -11,7 +11,7 @@
             <div class="main-slider owl-carousel">
                 <div class="single-slider-item slider-bg-1">
                     <div class="slide-tab">
-                        <div class="slide-tab-cell" style="padding-top: 76px;text-align: center;">
+                        <div class="slide-tab-cell" style="padding-top: 22px;text-align: center;">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
@@ -124,7 +124,7 @@
                                             ->where('current_positions.user_id' , $featuredSpeakers->id)->first();
                                     @endphp
                                     <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
-                                    <div class="row" style="margin-top: -10px;">
+                                    <div class="row avl-for-icons" style="margin-top: -10px;">
                                         <div class="col-md-12">
                                             @if ($featuredSpeakers->conference == 'Yes')
                                                 <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
@@ -196,8 +196,8 @@
                             <h2 style="text-transform: uppercase;">Partners</h2>
                             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
                         </div>
-                <div class="row">
-                                
+                            
+                        <div class="row">        
                                 <div class="col-lg-2 mb-5">
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/google.png" class="img-responsive">
                                 </div>
@@ -221,8 +221,10 @@
                                 <div class="col-lg-2 mb-5">
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
                                 </div>
-    
-                                 <div class="col-lg-2 mb-5">
+                        </div>
+                        <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2 mb-5">
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/google.png" class="img-responsive">
                                 </div>
                                 
@@ -237,10 +239,10 @@
                                 <div class="col-lg-2 mb-5">
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
                                 </div>
-                                
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
+                                <div class="col-lg-2"></div>
+                             
+                        </div>
+                        <div class="row">
     
                                 <div class="col-lg-2 mb-5">
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
@@ -266,11 +268,7 @@
                                     <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
                                 </div>
     
-                                <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-    
-                            </div>
+                         </div>
                     </div>
                 </div>
                 </div>
