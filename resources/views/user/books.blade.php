@@ -14,12 +14,12 @@
 
                 <div class="form-group">
                     <label for="book_title">Title</label>
-                    <input type="text" name="book_title" value="" class="form-control">
+                    <input type="text" name="book_title" value="" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="book_link">Link</label>
-                    <input type="text" name="book_link" value="" class="form-control">
+                    <input type="text" name="book_link" value="" class="form-control" required>
                 </div>
                 @if (session('message'))
                 <p id="book_added" class="alert alert-success">{{session('message')}}</p>

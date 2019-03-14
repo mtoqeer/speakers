@@ -66,55 +66,7 @@
 
 <div class="row">
 
-        {{-- InActive Speakers --}}
-        <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Inactive Speakers</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table">
-                  <tbody><tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Country</th>
-                    <th>Language</th>
-                  </tr>
-
-                  @if ($getUnapprovedSpeakers->count() == 0) 
-                        <tr>
-                          <td colspan="5" class="text-center">No Record Found</td>
-                        </tr>
-                  @else
-                    @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
-                    <tr>
-                      <td>{{$unapprovedSpeakers->id}}</td>
-                      <td>{{$unapprovedSpeakers->name}}</td>
-                      <td>{{$unapprovedSpeakers->email}}</td>
-                      <td>{{$unapprovedSpeakers->country}}</td>
-                      <td>{{$unapprovedSpeakers->languages}}</td>
-                    </tr>
-                    @endforeach 
-                  @endif 
-                  @if (!$getUnapprovedSpeakers->count() == 0) 
-                    <tr>
-                      <td colspan="5">
-                      <div class="card-footer text-center">
-                      <a href="{{route('inactive-speaker-page')}}">View All Users</a>
-                      </div>
-                  </td>
-                  </tr>
-                  @endif 
-                </tbody>
-              </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-      </div>
-
+       
     {{-- Active Spekaers --}}
     <div class="col-md-6">
       <div class="card">
@@ -214,6 +166,56 @@
         </div>
         <!-- /.card -->
       </div>
+
+       {{-- InActive Speakers --}}
+       <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">Inactive Speakers</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body table-responsive p-0">
+            <table class="table">
+              <tbody><tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>Language</th>
+              </tr>
+
+              @if ($getUnapprovedSpeakers->count() == 0) 
+                    <tr>
+                      <td colspan="5" class="text-center">No Record Found</td>
+                    </tr>
+              @else
+                @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
+                <tr>
+                  <td>{{$unapprovedSpeakers->id}}</td>
+                  <td>{{$unapprovedSpeakers->name}}</td>
+                  <td>{{$unapprovedSpeakers->email}}</td>
+                  <td>{{$unapprovedSpeakers->country}}</td>
+                  <td>{{$unapprovedSpeakers->languages}}</td>
+                </tr>
+                @endforeach 
+              @endif 
+              @if (!$getUnapprovedSpeakers->count() == 0) 
+                <tr>
+                  <td colspan="5">
+                  <div class="card-footer text-center">
+                  <a href="{{route('inactive-speaker-page')}}">View All Users</a>
+                  </div>
+              </td>
+              </tr>
+              @endif 
+            </tbody>
+          </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+  </div>
+
 
 
   </div>

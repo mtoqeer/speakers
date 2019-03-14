@@ -14,17 +14,17 @@
 
                 <div class="form-group">
                     <label for="degree_title">Title</label>
-                    <input type="text" name="degree_title" value="" class="form-control">
+                    <input type="text" name="degree_title" value="" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="university">University</label>
-                    <input type="text" name="degree_university" value="" class="form-control">
+                    <input type="text" name="degree_university" value="" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="degree_year">Year</label>
-                    <input type="text" name="degree_year" value="" class="form-control">
+                    <input type="text" name="degree_year" value="" class="form-control" required>
                 </div>
 
                 @if (session('message'))

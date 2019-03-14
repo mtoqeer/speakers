@@ -184,7 +184,7 @@
                                             ->where('current_positions.user_id' , $AllSpeakers->id)->first();
                                     @endphp
                                     <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
-                                    <div class="row" style="margin-top: -10px;">
+                                    <div class="row avl-for-icons" style="margin-top: -10px;">
                                         <div class="col-md-12">
                                             @if ($AllSpeakers->conference == 'Yes')
                                                 <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
@@ -214,7 +214,7 @@
                     </div>
                     @endforeach
              </div>
-             <div class="row mt-5">
+             <div class="row mt-3 mb-3">
                  <div class="col-md-12" style="display: flex;justify-content: center;">
               
                             {{ $getAllSpeakers->links() }}

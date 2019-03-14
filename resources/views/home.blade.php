@@ -9,6 +9,7 @@
     <!-- hero area start -->
     <section class="hero-area" id="home">
             <div class="main-slider owl-carousel">
+
                 <div class="single-slider-item slider-bg-1">
                     <div class="slide-tab">
                         <div class="slide-tab-cell" style="padding-top: 22px;text-align: center;">
@@ -29,6 +30,29 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="single-slider-item slider-bg-1">
+                        <div class="slide-tab">
+                            <div class="slide-tab-cell" style="padding-top: 22px;text-align: center;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-8 offset-lg-2">
+                                            <h2>Find The Perfect Speaker For Your Event</h2>
+                                            <p>For events, training workshops or schools.</p>
+                                            <div class="search-area">
+                                                <input type="text" class="search" placeholder="Search for a topic">
+                                                <div class="search-icon">
+                                                    <i class="fas fa-search"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
             </div>
         </section>
     

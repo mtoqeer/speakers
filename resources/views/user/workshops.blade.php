@@ -13,12 +13,12 @@
                     
                 <div class="form-group">
                     <label for="workshop_title">Title</label>
-                    <input type="text" name="workshop_title" value="" class="form-control">
+                    <input type="text" name="workshop_title" value="" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                     <label for="workshop_hours">Hours</label>
-                    <input type="text" name="workshop_hours" value="" class="form-control">
+                    <input type="text" name="workshop_hours" value="" class="form-control" required>
                 </div>
 
                 <div class="form-group">
