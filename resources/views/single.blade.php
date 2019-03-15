@@ -73,7 +73,18 @@
                             <tr>
                                 <th>LANGUAGES</th>
                                 <td>&nbsp;</td>
-                                <td>&nbsp; {{$generalInfo->languages}}</td>
+                                <td>&nbsp; 
+                                    
+                                        @php
+                                        $getLang = DB::table('languages')
+                                            ->select('languages.language')
+                                            ->where('languages.user_id' , $generalInfo->id)->get();
+                                        @endphp
+                                        
+                                        @foreach ($getLang as $lang)
+                                            {{$lang->language}}
+                                        @endforeach
+                                    
                             </tr>
                         </table>
                         

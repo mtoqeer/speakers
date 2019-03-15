@@ -50,7 +50,7 @@
                                  ->get();
 
                                  $getFee = DB::table('user_metas')->distinct()->select('fee')->get();
-                                 $getlanguages = DB::table('user_metas')->distinct()->select('languages')->get();
+                                 $getlanguages = DB::table('languages')->distinct()->select('language')->get();
                                  $getCountry = DB::table('user_metas')->distinct()->select('country')->get();
                                  $getGender = DB::table('user_metas')->distinct()->select('gender')->get();
                                  $getAvlTo = DB::table('user_metas')->distinct()->select('available_to')->get();
@@ -74,7 +74,7 @@
                            <label for="language" style="font-weight: bold;">LANGUAGE</label>
                            <select class="form-control" id="language" name="language">
                                 @foreach ($getlanguages as $value)
-                                <option>{{ucfirst($value->languages)}}</option>
+                                <option>{{ucfirst($value->language)}}</option>
                                 @endforeach
                            </select>
                          </div>
@@ -171,7 +171,19 @@
                                     <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$AllSpeakers->why_choose}}</p></li>
                                     <li><i class="fas fa-map-marked-alt"></i> {{$AllSpeakers->country}}</li>
                                     <li><i class="fas fa-plane-departure"></i> {{$AllSpeakers->available_to}}</li>
-                                    <li><i class="fas fa-globe"></i> {{$AllSpeakers->languages}}</li>
+                                    <li><i class="fas fa-globe"></i> 
+
+                                        @php
+                                        $getLang = DB::table('languages')
+                                            ->select('languages.language')
+                                            ->where('languages.user_id' , $AllSpeakers->id)->get();
+                                        @endphp
+                                        
+                                        @foreach ($getLang as $lang)
+                                            {{$lang->language}}
+                                        @endforeach
+                                        
+                                    </li>
                                 </ul>
                             </div>
                             <div class="speaker-detail">

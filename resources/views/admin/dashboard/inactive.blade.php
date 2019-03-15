@@ -23,7 +23,6 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Country</th>
-                  <th>Language</th>
                   <th>Available To</th>
                   <th>Fee</th>
                   <th>Actions</th>
@@ -34,7 +33,6 @@
                     <td>{{$UnapprovedSpeakers->name}}</td>
                     <td>{{$UnapprovedSpeakers->email}}</td>
                     <td>{{$UnapprovedSpeakers->country}}</td>
-                    <td>{{$UnapprovedSpeakers->languages}}</td>
                     <td>{{$UnapprovedSpeakers->available_to}}</td>
                     <td>{{$UnapprovedSpeakers->fee}}</td>
                     <td>

@@ -48,6 +48,13 @@
               </li>
 
               <li class="nav-item">
+                  <a href="{{route('dashboard.language')}}" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Languages</p>
+                  </a>
+                </li>
+
+              <li class="nav-item">
                 <a href="{{route('dashboard.expertise')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Expertise</p>

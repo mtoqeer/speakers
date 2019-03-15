@@ -20,16 +20,20 @@
                     </div>
                     <div class="form-group">
                         <label for="fee">Fee</label>
-                        <input type="text" name="fee" value="" class="form-control">
+                        <select name="fee" id="fee" class="form-control">
+                            <option value="Free">Free</option>
+                            <option value="Up to $250">Up to $250</option>
+                            <option value="$250 - $1500">$250 - $1500</option>
+                            <option value="$1500 - $5000">$1500 - $5000</option>
+                            <option value="$5000 - $10,000">$5000 - $10,000</option>
+                            <option value="More than $10,000">More than $10,000</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="volunteer">Volunteer</label>
                         <input type="text" name="volunteer" value="" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="languages">Languages</label>
-                        <input type="text" name="languages" value="" class="form-control">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender" class="form-control">
@@ -37,6 +41,7 @@
                             <option value="female">Female</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="why_choose">Why Choose</label>
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4"></textarea>
@@ -79,18 +84,28 @@
                         <label for="available_to">Available To</label>
                         <input type="text" name="available_to" value="{{$generalinfo->available_to}}" class="form-control">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="fee">Fee</label>
                         <input type="text" name="fee" value="{{$generalinfo->fee}}" class="form-control">
+                    </div> --}}
+
+                    <div class="form-group">
+                            <label for="fee">Fee</label>
+                            <select name="fee" id="fee" class="form-control">
+                                <option value="Free" {{ ($generalinfo->fee == 'Free') ? "Selected" : " " }}>Free</option>
+                                <option value="Up to $250" {{ ($generalinfo->fee == 'Up to $250') ? "Selected" : " " }}>Up to $250</option>
+                                <option value="$250 - $1500" {{ ($generalinfo->fee == '$250 - $1500') ? "Selected" : " " }}>$250 - $1500</option>
+                                <option value="$1500 - $5000" {{ ($generalinfo->fee == '$1500 - $5000') ? "Selected" : " " }}>$1500 - $5000</option>
+                                <option value="$5000 - $10,000" {{ ($generalinfo->fee == '$5000 - $10,000') ? "Selected" : " " }}>$5000 - $10,000</option>
+                                <option value="More than $10,000" {{ ($generalinfo->fee == 'More than $10,000') ? "Selected" : " " }}>More than $10,000</option>
+                            </select>
                     </div>
+
                     <div class="form-group">
                         <label for="volunteer">Volunteer</label>
                         <input type="text" name="volunteer" value="{{$generalinfo->volunteer}}" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="languages">Languages</label>
-                        <input type="text" name="languages" value="{{$generalinfo->languages}}" class="form-control">
-                    </div>
+                    
                     <div class="form-group">
                             <label for="gender">Gender</label>
                             <select name="gender" id="gender" class="form-control">
@@ -140,7 +155,6 @@
                             <strong>COUNTRY:</strong> {{$generalinfo->country}} <br><br>
                             <strong>FEE:</strong> {{$generalinfo->fee}}<br><br>
                             <strong>Available To:</strong> {{$generalinfo->available_to}} <br><br>
-                            <strong>Languages:</strong> {{$generalinfo->languages}} <br> <br>
                        <h5><strong>Why Choose:</strong> </h5> 
                        <p>{{$generalinfo->why_choose}}</p>
                        <h5><strong>Bio:</strong></h5>

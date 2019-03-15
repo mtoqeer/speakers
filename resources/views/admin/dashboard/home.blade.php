@@ -81,7 +81,6 @@
               <th>Name</th>
               <th>Email</th>
               <th>Country</th>
-              <th>Language</th>
             </tr>
             @if ($getApprovedSpeakers->count() == 0)
               <tr>
@@ -95,13 +94,12 @@
                 <td>{{$approvedSpeakers->name}}</td>
                 <td>{{$approvedSpeakers->email}}</td>
                 <td>{{$approvedSpeakers->country}}</td>
-                <td>{{$approvedSpeakers->languages}}</td>
               </tr>
             @endforeach
             @endif
               @if (!$getApprovedSpeakers->count() == 0)
               <tr>
-                  <td colspan="5">
+                  <td colspan="4">
                   <div class="card-footer text-center">
                       <a href="{{route('active-speaker-page')}}">View All Users</a>
                   </div>
@@ -131,11 +129,10 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Country</th>
-                <th>Language</th>
               </tr>
               @if ($getFeaturedSpeakers->count() == 0)
                 <tr>
-                  <td colspan="5" class="text-center">No Record Found</td>
+                  <td colspan="4" class="text-center">No Record Found</td>
                 </tr>
               @else
               @foreach ($getFeaturedSpeakers as $featuredSpeakers)
@@ -145,13 +142,12 @@
                   <td>{{$featuredSpeakers->name}}</td>
                   <td>{{$featuredSpeakers->email}}</td>
                   <td>{{$featuredSpeakers->country}}</td>
-                  <td>{{$featuredSpeakers->languages}}</td>
                 </tr>
               @endforeach
               @endif
                 @if (!$getFeaturedSpeakers->count() == 0)
                 <tr>
-                    <td colspan="5">
+                    <td colspan="4">
                     <div class="card-footer text-center">
                         <a href="{{route('featured-speaker-page')}}">View All Users</a>
                     </div>
@@ -181,12 +177,11 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Country</th>
-                <th>Language</th>
               </tr>
 
               @if ($getUnapprovedSpeakers->count() == 0) 
                     <tr>
-                      <td colspan="5" class="text-center">No Record Found</td>
+                      <td colspan="4" class="text-center">No Record Found</td>
                     </tr>
               @else
                 @foreach ($getUnapprovedSpeakers as $unapprovedSpeakers)
@@ -195,13 +190,12 @@
                   <td>{{$unapprovedSpeakers->name}}</td>
                   <td>{{$unapprovedSpeakers->email}}</td>
                   <td>{{$unapprovedSpeakers->country}}</td>
-                  <td>{{$unapprovedSpeakers->languages}}</td>
                 </tr>
                 @endforeach 
               @endif 
               @if (!$getUnapprovedSpeakers->count() == 0) 
                 <tr>
-                  <td colspan="5">
+                  <td colspan="4">
                   <div class="card-footer text-center">
                   <a href="{{route('inactive-speaker-page')}}">View All Users</a>
                   </div>

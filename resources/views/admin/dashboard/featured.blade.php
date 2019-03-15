@@ -16,7 +16,6 @@
               <th>Name</th>
               <th>Email</th>
               <th>Country</th>
-              <th>Language</th>
               <th>Available To</th>
               <th>Fee</th>
               <th>Actions</th>
@@ -27,7 +26,6 @@
                 <td>{{$featuredSpeakers->name}}</td>
                 <td>{{$featuredSpeakers->email}}</td>
                 <td>{{$featuredSpeakers->country}}</td>
-                <td>{{$featuredSpeakers->languages}}</td>
                 <td>{{$featuredSpeakers->available_to}}</td>
                 <td>{{$featuredSpeakers->fee}}</td>
                 <td>

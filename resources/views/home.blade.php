@@ -127,7 +127,7 @@
                 <div class="row">
                    
                     @foreach ($getFeaturedSpeakers as $featuredSpeakers)
-                    <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30">
+                    <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30 owl-carousel">
                         <div class="single-speaker">
                             <div class="speaker-to-card">
                                 <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
@@ -135,7 +135,19 @@
                                     <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$featuredSpeakers->why_choose}}</p></li>
                                     <li><i class="fas fa-map-marked-alt"></i> {{$featuredSpeakers->country}}</li>
                                     <li><i class="fas fa-plane-departure"></i> {{$featuredSpeakers->available_to}}</li>
-                                    <li><i class="fas fa-globe"></i> {{$featuredSpeakers->languages}}</li>
+                                    <li><i class="fas fa-globe"></i>
+                                        
+                                        @php
+                                        $getLang = DB::table('languages')
+                                            ->select('languages.language')
+                                            ->where('languages.user_id' , $featuredSpeakers->id)->get();
+                                        @endphp
+                                        
+                                        @foreach ($getLang as $lang)
+                                            {{$lang->language}}
+                                        @endforeach
+                                        
+                                    </li>
                                 </ul>
                             </div>
                             <div class="speaker-detail">

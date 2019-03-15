@@ -39,7 +39,6 @@ class UserMetaController extends Controller
         $userMeta->fee = $request->fee;
         $userMeta->available_to = $request->available_to;
         $userMeta->volunteer = $request->volunteer;
-        $userMeta->languages = $request->languages;
         $userMeta->gender = $request->gender;
         $userMeta->why_choose = $request->why_choose;
         $userMeta->bio = $request->bio;
@@ -68,7 +67,6 @@ class UserMetaController extends Controller
         $generalinfo->fee = $request->fee;
         $generalinfo->available_to = $request->available_to;
         $generalinfo->volunteer = $request->volunteer;
-        $generalinfo->languages = $request->languages;
         $generalinfo->gender = $request->gender;
         $generalinfo->why_choose = $request->why_choose;
         $generalinfo->bio = $request->bio;
@@ -99,7 +97,7 @@ class UserMetaController extends Controller
             ->select('users.*','available_fors.conference',
             'available_fors.workshop','available_fors.moderator'
             ,'available_fors.online','available_fors.school'
-            ,'available_fors.meetup','user_metas.country','user_metas.why_choose','user_metas.available_to','user_metas.languages','user_metas.profile_img')
+            ,'available_fors.meetup','user_metas.country','user_metas.why_choose','user_metas.available_to','user_metas.profile_img')
             ->where('users.featured','Yes')
             ->where('users.status','approved')->limit(4)->get();
         return view('home', compact('getFeaturedSpeakers'));
@@ -113,7 +111,7 @@ class UserMetaController extends Controller
             ->select('users.*','available_fors.conference',
             'available_fors.workshop','available_fors.moderator'
             ,'available_fors.online','available_fors.school'
-            ,'available_fors.meetup','user_metas.country','user_metas.fee','user_metas.why_choose','user_metas.available_to','user_metas.languages','user_metas.profile_img')
+            ,'available_fors.meetup','user_metas.country','user_metas.fee','user_metas.why_choose','user_metas.available_to','user_metas.profile_img')
             ->where('users.status','approved')->paginate(9);
         return view('speakers', compact('getAllSpeakers'));
 

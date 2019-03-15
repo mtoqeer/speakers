@@ -22,7 +22,14 @@
           <ul class="list-group list-group-unbordered mb-3">
             
             <li class="list-group-item">
-              <b>Language</b> <a class="float-right">{{$generalInfo->languages}}</a>
+              
+              <b>Language</b> <a class="float-right">
+                  @foreach ($getLanguages as $language)
+                {{$language->language}} |
+                @endforeach
+              </a>
+             
+              
             </li>
             <li class="list-group-item">
               <b>Available To</b> <a class="float-right">{{$generalInfo->available_to}}</a>

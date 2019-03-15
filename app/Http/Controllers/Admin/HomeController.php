@@ -234,12 +234,16 @@ class HomeController extends Controller
         ->select('available_fors.*')
         ->where('available_fors.user_id' , $id)->get();
 
+        $getLanguages = DB::table('languages')
+        ->select('languages.*')
+        ->where('languages.user_id' , $id)->get();
+
 
 
 
         return view('admin.dashboard.profile', compact('getGeneralInfo','getWorkShops', 'getVideos','getSocialMediaAccounts', 
         'getPresentations', 'getPastTalks','getImages','getExpertises','getDegrees','getCurrentPositions',
-        'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor'));
+        'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor','getLanguages'));
 
     }
 

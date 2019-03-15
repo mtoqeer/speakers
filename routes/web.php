@@ -53,6 +53,11 @@ Route::get('dashboard/expertise', 'ExpertiseController@userExpertiseIndex')->nam
 Route::post('dashboard/expertise', 'ExpertiseController@userExpertiseSave')->name('userexpertisesave')->middleware('verified');
 Route::get('dashboard/expertise/{id}', 'ExpertiseController@userExpertiseDelete')->name('userexpertisedelete')->middleware('verified');
 
+// User Languages Routes
+Route::get('dashboard/languages', 'LanguageController@userLanguageIndex')->name('dashboard.language')->middleware('verified');
+Route::post('dashboard/languages', 'LanguageController@userLanguageSave')->name('userLanguagesave')->middleware('verified');
+Route::get('dashboard/languages/{id}', 'LanguageController@userLanguageDelete')->name('userLanguagedelete')->middleware('verified');
+
 
 // User Achievements Routes
 Route::get('dashboard/achievements', 'AchievementController@userAchievementIndex')->name('dashboard.achievements')->middleware('verified');
