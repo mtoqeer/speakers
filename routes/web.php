@@ -33,13 +33,13 @@ Route::get('/privacy', function () {
     return view('privacy');
 })->name('webprivacy');
 
+Route::post('/sendcontactform', 'AllFormsSubmissionController@sendContactFormsDetails')->name('contactform');
 
 
 
 Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'HomeController@index')->name('userdashboard')->middleware('verified');
-
 
 // User User Meta Routes
 Route::get('dashboard/generalinfo', 'UserMetaController@userMetaIndex')->name('dashboard.generalinfo')->middleware('verified');

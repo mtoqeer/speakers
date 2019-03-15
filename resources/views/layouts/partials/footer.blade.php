@@ -93,6 +93,7 @@
     <script src="{{asset('websiteassests/js/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('websiteassests/js/plugins.js')}}"></script>
     <script src="{{asset('websiteassests/js/main.js')}}"></script>
+
 <script type="text/javascript">
 
 $(function () {
