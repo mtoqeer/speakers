@@ -32,7 +32,7 @@ class AllFormsSubmissionController extends Controller
         
         Mail::to('toqeer.94@gmail.com')->send(new ContactForm($data));
         
-        return Response::json(['message'=>'Mail Has Been Send Successfully!!']);
+        return view('contact');
      
         
     }
