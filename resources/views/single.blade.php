@@ -474,7 +474,10 @@
                                 </div>
     
 
-                                <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;">Contact</button>
+                                <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;">Contact <i id="buttonloader" class=""></i></button>
+                                <div id="speakerscontactformalert" class="alert alert-success mt-3 text-center d-none">
+                                    <strong>Success!</strong> You Message Has Been Sent!!
+                                </div>
         
                             </form>
 
@@ -490,11 +493,18 @@
 
 <script>
 
+
+
+    $("button").click(function(){
+    $("#buttonloader").addClass("fa fa-spinner fa-spin");
+    });
+
     $(function(){
         $('.speakersContactForm').on('submit', function(event){
             event.preventDefault();
             $form = $(this);
             contactRequest($form);
+            
         });
     });
 
@@ -505,6 +515,9 @@
             data: $form.serialize(),
             success: function(response){
                 console.log(response.response);
+                $("#buttonloader").removeClass("fa fa-spinner fa-spin");
+                $('#speakerscontactformalert').removeClass('d-none');
+                $("#speakerscontactformalert").delay(1500).slideUp(300);
                 
             },error:function(response){ 
                     alert(response);
@@ -515,6 +528,7 @@
         });
     }
 
+   
 
 </script>
 
