@@ -152,7 +152,7 @@
 
                      </div>
 
-                     <input type="submit" class="biddaloy-btn-sm" name="" value="Search" style="width: 100%;border: 1px solid#C88B39;color: #fff;cursor: pointer;">
+                     <input type="submit" class="biddaloy-btn-sm" name="" value="Search" style="width: 100%;border: none;cursor: pointer;">
 
 
 

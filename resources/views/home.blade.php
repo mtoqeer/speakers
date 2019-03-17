@@ -12,13 +12,13 @@
 
                 <div class="single-slider-item slider-bg-1">
                     <div class="slide-tab">
-                        <div class="slide-tab-cell" style="padding-top: 22px;text-align: center;">
+                        <div class="slide-tab-cell" style="padding-top: 42px;text-align: center;">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
                                         <h2>Find The Perfect Speaker For Your Event</h2>
-                                        <p>For events, training workshops or schools.</p>
-                                        <div class="search-area">
+                                        {{-- <p>For events, training workshops or schools.</p> --}}
+                                        <div class="search-area mt-5">
                                             <input type="text" class="search" placeholder="Search for a topic">
                                             <div class="search-icon">
                                                 <i class="fas fa-search"></i>
@@ -33,13 +33,13 @@
 
                 <div class="single-slider-item slider-bg-1">
                         <div class="slide-tab">
-                            <div class="slide-tab-cell" style="padding-top: 22px;text-align: center;">
+                            <div class="slide-tab-cell" style="padding-top: 42px;text-align: center;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
                                             <h2>Find The Perfect Speaker For Your Event</h2>
-                                            <p>For events, training workshops or schools.</p>
-                                            <div class="search-area">
+                                            {{-- <p>For events, training workshops or schools.</p> --}}
+                                            <div class="search-area mt-5">
                                                 <input type="text" class="search" placeholder="Search for a topic">
                                                 <div class="search-icon">
                                                     <i class="fas fa-search"></i>

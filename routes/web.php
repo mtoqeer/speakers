@@ -33,6 +33,8 @@ Route::get('/privacy', function () {
     return view('privacy');
 })->name('webprivacy');
 
+
+// All Contact Forms Routes
 Route::post('/sendcontactform', 'AllFormsSubmissionController@sendContactFormsDetails')->name('contactform');
 
 

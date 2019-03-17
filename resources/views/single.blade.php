@@ -451,7 +451,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            
+                            <form class="speakersContactForm">
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-name">Name:</label>
                                     <input type="text" class="form-control" class="speaker-contact-form" id="customer-name" placeholder="">
@@ -470,9 +471,10 @@
                                     <textarea id="customer-message" name="customer-message" class="form-control" rows="4"></textarea>
                                 </div>
         
-                                <input class="biddaloy-btn-sm" type="submit" name="submit" value="Contact" style="color:white;cursor: pointer;border: none;width: 100%;">
+                                <input class="biddaloy-btn-sm" type="submit" name="submit" value="Contact" style="cursor: pointer;border: none;width: 100%;">
         
                             </form>
+
                         </div>
                         </div>
                     </div>
@@ -482,4 +484,22 @@
     
 @section('customjs')
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+
+<script>
+
+    $(function(){
+        $('.speakersContactForm').on('submit', function(event){
+            event.preventDefault();
+            $form = $(this);
+            contactRequest($form);
+        });
+    });
+
+    function contactRequest($form){
+        alert('Helo');
+    }
+
+
+</script>
+
 @endsection
