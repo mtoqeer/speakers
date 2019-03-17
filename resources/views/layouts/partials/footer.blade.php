@@ -60,11 +60,13 @@
                     <div class="footer-form">
                         <h6 style="color: #fff;">GET SPEAKERS TIPS & SO MUCH MORE!</h6>
                         <h6 style="color: #fff;" class="mb-2 mt-2">Once a week we send you speaking tips, training ideas, calls for speakers and lots of useful updates.</h6>
-                        <form>
-                            <input class="form-control" type="email" name="" placeholder="E-MAIL">
-                            <input class="form-control" type="text" name="" placeholder="FIRST NAME">
-                            <input class="form-control" type="text" name="" placeholder="LAST NAME">
-                            <input class="form-control" type="submit" name="" value="SUBSCRIBE">
+                        <form class="mailChimpForm" method="POST" action="/mailchimp">
+                            @csrf
+                            <input class="form-control" type="email" name="email" placeholder="E-MAIL">
+                            <input class="form-control" type="text" name="fname" placeholder="FIRST NAME">
+                            <input class="form-control" type="text" name="lname" placeholder="LAST NAME">
+                            <p style="color:white;font-weight:bold;text-align:center;" id="alertMailChimp" class="d-none">Testing</p>
+                            <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;border-radius:5px;">Subscribe <i id="buttonloader" class=""></i></button>
                         </form>
                     </div>
                 </div>
@@ -99,5 +101,40 @@
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
+       $("button").click(function(){
+        $("#buttonloader").addClass("fa fa-spinner fa-spin");
+        });
+    
+        $(function(){
+            $('.mailChimpForm').on('submit', function(event){
+                event.preventDefault();
+                $form = $(this);
+                MailChimpRequest($form);
+                
+            });
+        });
+    
+        function MailChimpRequest($form){
+            $.ajax({
+                url: $form.attr('action'),
+                method: $form.attr('method'),
+                data: $form.serialize(),
+                success: function(response){
+                    $("#buttonloader").removeClass("fa fa-spinner fa-spin");
+                    $('#alertMailChimp').html(response);
+                    $('#alertMailChimp').removeClass('d-none');
+                    $("#alertMailChimp").delay(1000).slideUp(300);
+                    
+                    
+                },error:function(response){ 
+                    $("#buttonloader").removeClass("fa fa-spinner fa-spin");
+                }
+            });
+        }
+ 
+
+
+
 </script>
       

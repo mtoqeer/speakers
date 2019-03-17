@@ -37,7 +37,8 @@ Route::get('/privacy', function () {
 // All Contact Forms Routes
 Route::post('/sendcontactform', 'AllFormsSubmissionController@sendContactFormsDetails')->name('contactform');
 Route::post('/speakerscontactform', 'AllFormsSubmissionController@speakersContactForm')->name('speakersContactForm');
-
+// MailChimp Form
+Route::post('/mailchimp', 'AllFormsSubmissionController@mailChimpSubscribe')->name('mailChimpSubscribe');
 
 
 Auth::routes(['verify' => true]);

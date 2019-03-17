@@ -312,5 +312,5 @@
 @endsection
     
 @section('customjs')
-    
+
 @endsection
