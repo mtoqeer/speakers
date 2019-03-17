@@ -36,4 +36,25 @@ class AllFormsSubmissionController extends Controller
      
         
     }
+
+    public function speakersContactForm(Request $request){
+
+        $request->validate([
+            'customer_name' => 'required',
+            'customer_email' => 'required',
+            'customer_subject' => 'required',
+            'customer_message' => 'required',
+        ]);
+
+        $data = array(
+            'name' => $request->customer_name,
+            'email' => $request->customer_email,
+            'subject' => $request->customer_subject,
+            'message' => $request->customer_message,
+        );
+
+        Mail::to('toqeer.94@gmail.com')->send(new \App\Mail\speakersContactForm($data));
+        
+        return Response::json(['response' => 'Success']);     
+    }
 }

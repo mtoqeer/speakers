@@ -452,26 +452,29 @@
                         </div>
                         <div class="modal-body">
                             
-                            <form class="speakersContactForm">
+                            <form class="speakersContactForm" method="POST" action="/speakerscontactform">
+                                @csrf
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-name">Name:</label>
-                                    <input type="text" class="form-control" class="speaker-contact-form" id="customer-name" placeholder="">
+                                    <input name="customer_name" type="text" class="form-control" class="speaker_contact-form" id="customer_name" placeholder="">
                                 </div>
         
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-email">Email:</label>
-                                    <input type="email" class="form-control" id="customer-email" placeholder="">
+                                    <input type="email" class="form-control" id="customer-email" placeholder="" name="customer_email">
                                 </div>
         
                                 
-                                    <input type="hidden" class="form-control" id="customer-subject" name="customer-subject" placeholder="" value="{{$generalInfo->name}}">
+                                    <input type="hidden" class="form-control" id="customer-subject" name="customer_subject" placeholder="" value="{{$generalInfo->name}}">
                                 @endforeach
+                                
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-message">Message:</label>
-                                    <textarea id="customer-message" name="customer-message" class="form-control" rows="4"></textarea>
+                                    <textarea id="customer-message" name="customer_message" class="form-control" rows="4"></textarea>
                                 </div>
-        
-                                <input class="biddaloy-btn-sm" type="submit" name="submit" value="Contact" style="cursor: pointer;border: none;width: 100%;">
+    
+
+                                <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;">Contact</button>
         
                             </form>
 
@@ -496,7 +499,20 @@
     });
 
     function contactRequest($form){
-        alert('Helo');
+        $.ajax({
+            url: $form.attr('action'),
+            method: $form.attr('method'),
+            data: $form.serialize(),
+            success: function(response){
+                console.log(response.response);
+                
+            },error:function(response){ 
+                    alert(response);
+                }
+                    
+        
+        
+        });
     }
 
 

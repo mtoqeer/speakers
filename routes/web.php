@@ -36,6 +36,7 @@ Route::get('/privacy', function () {
 
 // All Contact Forms Routes
 Route::post('/sendcontactform', 'AllFormsSubmissionController@sendContactFormsDetails')->name('contactform');
+Route::post('/speakerscontactform', 'AllFormsSubmissionController@speakersContactForm')->name('speakersContactForm');
 
 
 
