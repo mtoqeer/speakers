@@ -23,7 +23,8 @@ transition: all .4s ease;
 }
 .submit-form-button:hover{
     border-radius: 0;
-    background: black !important;
+    color: black !important;
+    background: #c4d3da;
 }
 </style>
 

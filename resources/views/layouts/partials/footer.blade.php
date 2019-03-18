@@ -129,6 +129,9 @@ $(function () {
                     
                 },error:function(response){ 
                     $("#buttonloader").removeClass("fa fa-spinner fa-spin");
+                    $('#alertMailChimp').html('All fields are required!!');
+                    $('#alertMailChimp').removeClass('d-none');
+                    $("#alertMailChimp").delay(1000).slideUp(300);
                 }
             });
         }

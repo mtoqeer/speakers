@@ -9,7 +9,6 @@
      background: #F5F5F5;
      margin-right: 17px;
      margin-left: -18px;
-
     }
   </style>
 @endsection
@@ -48,7 +47,6 @@
                                  ->distinct()
                                  ->select('expertise_topic')
                                  ->get();
-
                                  $getFee = DB::table('user_metas')->distinct()->select('fee')->get();
                                  $getlanguages = DB::table('languages')->distinct()->select('language')->get();
                                  $getCountry = DB::table('user_metas')->distinct()->select('country')->get();
@@ -135,7 +133,6 @@
                              <option>2</option>
                            </select>
                          </div> 
-
                      </div> --}}
 
                      <hr>
@@ -158,10 +155,14 @@
 
                  </form>
              </div>
-
+             @if (isset($getAllSpeakers))
+                 
+             
              <div class="col-lg-9">
                  <div class="row">
-                     
+                     @if ($getAllSpeakers->count() == 0)
+                         <h3>No Speaker Found</h3>
+                     @endif
                     @foreach ($getAllSpeakers as $AllSpeakers)
                     <div class="col-lg-4 col-md-6 col-sm-6 mob-to-res-30 mb-3">
                         <div class="single-speaker">
@@ -226,17 +227,13 @@
                     </div>
                     @endforeach
              </div>
-             <div class="row mt-3 mb-3">
-                 <div class="col-md-12" style="display: flex;justify-content: center;">
-              
-                            {{ $getAllSpeakers->links() }}
-             
-                        
-                 </div>
-               
+                <div class="row mt-3 mb-3">
+                    <div class="col-md-12" style="display: flex;justify-content: center;">
+                                {{ $getAllSpeakers->links() }}
+                    </div>
+                </div>      
              </div>
-                           
-             </div>
+             @endif
      </div>
  </section>
  <!-- All speakers area end -->

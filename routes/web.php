@@ -40,6 +40,9 @@ Route::post('/speakerscontactform', 'AllFormsSubmissionController@speakersContac
 // MailChimp Form
 Route::post('/mailchimp', 'AllFormsSubmissionController@mailChimpSubscribe')->name('mailChimpSubscribe');
 
+// Search Quries Controller
+Route::post('/homepagesearch', 'AllSearchQueriesController@homePageSearch')->name('homepagesearch');
+
 
 Auth::routes(['verify' => true]);
 

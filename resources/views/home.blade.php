@@ -19,10 +19,13 @@
                                         <h2>Find The Perfect Speaker For Your Event</h2>
                                         {{-- <p>For events, training workshops or schools.</p> --}}
                                         <div class="search-area mt-5">
-                                            <input type="text" class="search" placeholder="Search for a topic">
+                                        <form method="POST" action="{{route('homepagesearch')}}">
+                                            @csrf
+                                            <input type="text" name="search_query" class="search" placeholder="Search for a topic">
                                             <div class="search-icon">
-                                                <i class="fas fa-search"></i>
+                                                <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
                                             </div>
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
@@ -40,10 +43,13 @@
                                             <h2>Find The Perfect Speaker For Your Event</h2>
                                             {{-- <p>For events, training workshops or schools.</p> --}}
                                             <div class="search-area mt-5">
-                                                <input type="text" class="search" placeholder="Search for a topic">
-                                                <div class="search-icon">
-                                                    <i class="fas fa-search"></i>
-                                                </div>
+                                                    <form method="POST" action="{{route('homepagesearch')}}">
+                                                            @csrf
+                                                        <input type="text" name="search_query" class="search" placeholder="Search for a topic">
+                                                        <div class="search-icon">
+                                                                <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
+                                                        </div>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
