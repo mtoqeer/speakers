@@ -16,9 +16,9 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
-                                        <h2>Find The Perfect Speaker For Your Event</h2>
+                                        <h2>Find The Best Speaker For Your Event</h2>
                                         {{-- <p>For events, training workshops or schools.</p> --}}
-                                        <div class="search-area mt-5">
+                                        <div class="search-area mt-3">
                                         <form method="POST" action="{{route('homepagesearch')}}">
                                             @csrf
                                             <input type="text" name="search_query" class="search" placeholder="Search for a topic">
@@ -39,16 +39,15 @@
                             <div class="slide-tab-cell" style="padding-top: 42px;text-align: center;">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-8 offset-lg-2">
-                                            <h2>Find The Perfect Speaker For Your Event</h2>
+                                        <div class="col-lg-8 offset-lg-3">
+                                            <h2>Find The Best Speaker For Your Event</h2>
                                             {{-- <p>For events, training workshops or schools.</p> --}}
-                                            <div class="search-area mt-5">
+                                            <div class="search-area mt-2">
                                                     <form method="POST" action="{{route('homepagesearch')}}">
                                                             @csrf
                                                         <input type="text" name="search_query" class="search" placeholder="Search for a topic">
                                                         <div class="search-icon">
-                                                                <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
-                                                        </div>
+                                                                <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>                                                        </div>
                                                     </form>
                                             </div>
                                         </div>

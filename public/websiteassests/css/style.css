@@ -295,8 +295,9 @@ header {
 
 .slide-tab-cell h2 {
     color: #fff;
-    font-size: 40px;
+    font-size: 57px;
     font-weight: 600;
+    line-height: 60px;
 }
 
 .slide-tab-cell p {
