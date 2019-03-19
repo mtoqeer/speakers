@@ -35,8 +35,7 @@
          <!-- First Row -->
          <div class="row">
              <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30  shadow p-4 searchfilter" style="max-height: 732px;">
-                 <form method="POST" action="{{route('speakerssearch')}}">
-                    @csrf
+                 <form method="GET" action="{{route('speakerssearch')}}">
                      <div class="fee mb-4">
                     
                          <div class="form-group">
