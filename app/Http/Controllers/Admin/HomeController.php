@@ -46,18 +46,18 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.status' , 'approved')
-        ->where('users.featured' , 'No')->limit(20)->get();
+        ->where('users.featured' , 'No')->limit(5)->get();
 
         $getUnapprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
-        ->where('users.status' , 'unapproved')->limit(10)->get();
+        ->where('users.status' , 'unapproved')->limit(5)->get();
 
         $getFeaturedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
-        ->where('users.status' , 'approved')->limit(10)->get();
+        ->where('users.status' , 'approved')->limit(5)->get();
 
         return view('admin.dashboard.home', compact('getApprovedSpeakers','getUnapprovedSpeakers','getFeaturedSpeakers'));
     }
@@ -69,7 +69,7 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
-        ->where('users.status' , 'approved')->paginate(13);
+        ->where('users.status' , 'approved')->paginate(9);
         return view('admin.dashboard.active' , compact('getApprovedSpeakers'));
     }
 
@@ -80,7 +80,7 @@ class HomeController extends Controller
         $getUnapprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
-        ->where('users.status' , 'unapproved')->paginate(13);
+        ->where('users.status' , 'unapproved')->paginate(9);
         return view('admin.dashboard.inactive', compact('getUnapprovedSpeakers'));
     }
 
@@ -90,7 +90,7 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
-        ->where('users.status' , 'approved')->paginate(13);
+        ->where('users.status' , 'approved')->paginate(9);
         return view('admin.dashboard.featured', compact('getFeaturedSpeakers'));
     }
 
@@ -102,7 +102,7 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
-        ->where('users.status' , 'approved')->paginate(13);
+        ->where('users.status' , 'approved')->paginate(9);
         
         return view('admin.dashboard.active' , compact('getApprovedSpeakers'));
     }
@@ -115,7 +115,7 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
-        ->where('users.status' , 'approved')->paginate(13);
+        ->where('users.status' , 'approved')->paginate(9);
         return view('admin.dashboard.featured', compact('getFeaturedSpeakers'));
     }
 
@@ -128,7 +128,7 @@ class HomeController extends Controller
         $getUnapprovedSpeakers = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
-        ->where('users.status' , 'unapproved')->paginate(13);
+        ->where('users.status' , 'unapproved')->paginate(9);
 
         return view('admin.dashboard.inactive', compact('getUnapprovedSpeakers'));
         
@@ -144,7 +144,7 @@ class HomeController extends Controller
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
-        ->where('users.status' , 'approved')->paginate(13);
+        ->where('users.status' , 'approved')->paginate(9);
 
         return view('admin.dashboard.active', compact('getApprovedSpeakers'));
        

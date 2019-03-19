@@ -19,11 +19,10 @@
                                         <h2>Find The Best Speaker For Your Event</h2>
                                         {{-- <p>For events, training workshops or schools.</p> --}}
                                         <div class="search-area mt-3">
-                                        <form method="POST" action="{{route('homepagesearch')}}">
-                                            @csrf
+                                        <form method="GET" action="{{route('homepagesearch')}}">
                                             <input type="text" name="search_query" class="search" placeholder="Search for a topic">
                                             <div class="search-icon">
-                                                <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
+                                                <button type="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
                                             </div>
                                         </form>
                                         </div>
@@ -43,11 +42,10 @@
                                             <h2>Find The Best Speaker For Your Event</h2>
                                             {{-- <p>For events, training workshops or schools.</p> --}}
                                             <div class="search-area mt-3">
-                                            <form method="POST" action="{{route('homepagesearch')}}">
-                                                @csrf
+                                            <form method="GET" action="{{route('homepagesearch')}}">
                                                 <input type="text" name="search_query" class="search" placeholder="Search for a topic">
                                                 <div class="search-icon">
-                                                    <button type="submit" name="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
+                                                    <button type="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
                                                 </div>
                                             </form>
                                             </div>

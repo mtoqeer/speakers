@@ -45,7 +45,7 @@ Route::post('/speakerscontactform', 'AllFormsSubmissionController@speakersContac
 Route::post('/mailchimp', 'AllFormsSubmissionController@mailChimpSubscribe')->name('mailChimpSubscribe');
 
 // Search Quries Controller
-Route::post('/homepagesearch', 'AllSearchQueriesController@homePageSearch')->name('homepagesearch');
+Route::get('/homepagesearch', 'AllSearchQueriesController@homePageSearch')->name('homepagesearch');
 Route::post('/speakerssearch', 'AllSearchQueriesController@speakerssearch')->name('speakerssearch');
 
 
