@@ -42,6 +42,7 @@ Route::post('/mailchimp', 'AllFormsSubmissionController@mailChimpSubscribe')->na
 
 // Search Quries Controller
 Route::post('/homepagesearch', 'AllSearchQueriesController@homePageSearch')->name('homepagesearch');
+Route::post('/speakerssearch', 'AllSearchQueriesController@speakerssearch')->name('speakerssearch');
 
 
 Auth::routes(['verify' => true]);

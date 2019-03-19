@@ -166,50 +166,47 @@
                                     <h5>SIMILAR SPEAKERS</h5>
                                     <hr>
                                     
-                                    <div class="row mb-4">
-                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                            <img src="assets/img/speakers/speaker1.jpg" class="rounded-circle" alt="">
-                                        </div>
-                                        <div class="col-md-9 single-page-speaker-details">
-                                            <h5 class="mt-2">Michele Wucker</h5>
-                                            <p class="">Founder & CEO</p>
-                                            <p class="">Gray Rhino & Company</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="row mb-4">
-                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                            <img src="assets/img/speakers/speaker1.jpg" class="rounded-circle" alt="">
-                                        </div>
-                                        <div class="col-md-9 single-page-speaker-details">
-                                            <h5 class="mt-2">Michele Wucker</h5>
-                                            <p class="">Founder & CEO</p>
-                                            <p class="">Gray Rhino & Company</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="row mb-4">
-                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                            <img src="assets/img/speakers/speaker1.jpg" class="rounded-circle" alt="">
-                                        </div>
-                                        <div class="col-md-9 single-page-speaker-details">
-                                            <h5 class="mt-2">Michele Wucker</h5>
-                                            <p class="">Founder & CEO</p>
-                                            <p class="">Gray Rhino & Company</p>
-                                        </div>
-                                    </div>
-        
-                                    <div class="row mb-4">
-                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                            <img src="assets/img/speakers/speaker1.jpg" class="rounded-circle" alt="">
-                                        </div>
-                                        <div class="col-md-9 single-page-speaker-details">
-                                            <h5 class="mt-2">Michele Wucker</h5>
-                                            <p class="">Founder & CEO</p>
-                                            <p class="">Gray Rhino & Company</p>
-                                        </div>
-                                    </div>
+                                    @foreach ($getGeneralInfo as $generalInfo)
+                                    @php
+                                        $country = $generalInfo->country;
+                                        $getRelated = DB::table('users')
+                                        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+                                        ->select('user_metas.country','users.name','user_metas.profile_img','users.id')
+                                        ->where('user_metas.country' , $country)->limit(6)->get();
+
+                                            $getCp = DB::table('users')
+                                            ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
+                                            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+                                            ->select('current_positions.title','current_positions.department','user_metas.country')
+                                            ->where('user_metas.country' , $country)->first();
+
+
+                                    @endphp
                                     
+
+                                    @foreach ($getRelated as $item)
+                                        
+                                    <div class="row mb-4">
+                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
+                                           <a href="/singlespeaker/{{$item->id}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" class="rounded-circle" alt=""></a>
+                                        </div>
+                                        <div class="col-md-9 single-page-speaker-details">
+                                            <a href="/singlespeaker/{{$item->id}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
+                                            @php
+                                                $getCp = DB::table('users')
+                                                ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
+                                                ->select('current_positions.title','current_positions.department','current_positions.user_id')
+                                                ->where('current_positions.user_id' , $item->id)->first();
+                                            @endphp
+                                            
+                                                <p class="">{{$getCp->title}}</p>
+                                                <p class="">{{$getCp->department}}</p>
+                                            
+                                           
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @endforeach
                                 </div>                        
                             </div>
         

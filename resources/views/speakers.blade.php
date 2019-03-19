@@ -35,8 +35,8 @@
          <!-- First Row -->
          <div class="row">
              <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30  shadow p-4 searchfilter" style="max-height: 732px;">
-                 <form>
-
+                 <form method="POST" action="{{route('speakerssearch')}}">
+                    @csrf
                      <div class="fee mb-4">
                     
                          <div class="form-group">
@@ -55,9 +55,12 @@
                           
                                @endphp
                            <select class="form-control" id="fee" name="fee">
-                                @foreach ($getFee as $value)
-                                <option>{{$value->fee}}</option>
-                                @endforeach
+                                <option value="Free">Free</option>
+                                <option value="Up to $250">Up to $250</option>
+                                <option value="$250 - $1500">$250 - $1500</option>
+                                <option value="$1500 - $5000">$1500 - $5000</option>
+                                <option value="$5000 - $10,000">$5000 - $10,000</option>
+                                <option value="More than $10,000">More than $10,000</option>
                            </select>
                            
                          </div>             
@@ -72,7 +75,7 @@
                            <label for="language" style="font-weight: bold;">LANGUAGE</label>
                            <select class="form-control" id="language" name="language">
                                 @foreach ($getlanguages as $value)
-                                <option>{{ucfirst($value->language)}}</option>
+                                <option value="{{$value->language}}">{{ucfirst($value->language)}}</option>
                                 @endforeach
                            </select>
                          </div>
@@ -86,7 +89,7 @@
                            <label for="country" style="font-weight: bold;">COUNTRY</label>
                            <select class="form-control" id="country" name="country">
                                 @foreach ($getCountry as $value)
-                                <option>{{ucfirst($value->country)}}</option>
+                                <option value="{{$value->country}}">{{ucfirst($value->country)}}</option>
                                 @endforeach
                            </select>
                          </div>  
@@ -100,7 +103,7 @@
                            <label for="topic" style="font-weight: bold;">TOPIC</label>
                            <select class="form-control" id="topic" name="topic">
                                @foreach ($getExpertise as $expertise)
-                               <option>{{ucfirst($expertise->expertise_topic)}}</option>
+                               <option value="{{$expertise->expertise_topic}}">{{ucfirst($expertise->expertise_topic)}}</option>
                                @endforeach
                              
                            </select>
@@ -115,7 +118,7 @@
                            <label for="gender" style="font-weight: bold;">GENDER</label>
                            <select class="form-control" id="gender" name="gender">
                                 @foreach ($getGender as $value)
-                                <option>{{ucfirst($value->gender)}}</option>
+                                <option value="{{$value->gender}}">{{ucfirst($value->gender)}}</option>
                                 @endforeach
                            </select>
                          </div>      
@@ -140,16 +143,16 @@
                          
                          <div class="form-group">
                            <label for="available-to" style="font-weight: bold;">AVAILABLE TO</label>
-                           <select class="form-control" id="available-to" name="gender">
+                           <select class="form-control" id="available-to" name="available_to">
                                 @foreach ($getAvlTo as $value)
-                                <option>{{$value->available_to}}</option>
+                                <option value="{{$value->available_to}}">{{$value->available_to}}</option>
                                 @endforeach
                            </select>
                          </div> 
 
                      </div>
 
-                     <input type="submit" class="biddaloy-btn-sm" name="" value="Search" style="width: 100%;border: none;cursor: pointer;">
+                     <input type="submit" class="biddaloy-btn-sm" name="submit" value="Search" style="width: 100%;border: none;cursor: pointer;">
 
 
 
