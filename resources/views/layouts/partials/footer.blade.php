@@ -22,10 +22,10 @@
                 <div class="col-lg-2 col-md-3 col-sm-4 col-6 offset-lg-0 offset-md-0 offset-sm-2" style="border-left: 1px solid rgba(255,255,255,0.1);">
                     <nav class="footer-nav res-pad-top-30">
                         <ul>
-                            <li><a href="speakers.php">Speakers</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="faq.php">FAQ's</a></li>
-                            <li><a href="privacy.php">Privacy Policy</a></li>
+                            <li><a href="{{route('webspeakers')}}">Speakers</a></li>
+                            <li><a href="{{route('webabout')}}">About Us</a></li>
+                            <li><a href="{{route('webfaq')}}">FAQ's</a></li>
+                            <li><a href="{{route('webprivacy')}}">Privacy Policy</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -33,9 +33,9 @@
                 <div class="col-lg-2 col-md-4 col-sm-6 col-6 pa-0 res-pad-top-30">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="index.php">Home</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Partners</a></li>
+                            <li><a href="{{route('webhome')}}">Home</a></li>
+                            <li><a href="{{route('webterms')}}">Terms & Conditions</a></li>
+                            
                         </ul>
                     </nav>
                 </div>
