@@ -188,14 +188,14 @@
 
                                         </div>
                                     </div>
-                                    <a href="/singlespeaker/{{$featuredSpeakers->id}}" style="margin-top: 13px;" class="get-details">learn more</a>
+                                <a href="{{route('websingle', ['id' => $featuredSpeakers->id, 'name' => str_slug($featuredSpeakers->name, '-')])}}" style="margin-top: 13px;" class="get-details">learn more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                   
-    
+                    
+                    {{-- /singlespeaker/{{$featuredSpeakers->id}}  --}}
     
     
     

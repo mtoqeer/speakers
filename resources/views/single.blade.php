@@ -449,7 +449,7 @@
                         </div>
                         <div class="modal-body">
                             
-                            <form class="speakersContactForm" method="POST" action="/speakerscontactform">
+                            <form class="speakersContactForm" method="POST" action="/speakerscontactform" id="speakercontact">
                                 @csrf
                                 <div class="form-group speaker-contact-form"">
                                     <label for="customer-name">Name:</label>
@@ -511,10 +511,13 @@
             method: $form.attr('method'),
             data: $form.serialize(),
             success: function(response){
-                console.log(response.response);
+                
                 $("#buttonloader").removeClass("fa fa-spinner fa-spin");
                 $('#speakerscontactformalert').removeClass('d-none');
                 $("#speakerscontactformalert").delay(1500).slideUp(300);
+                
+                document.getElementById("speakercontact").reset();
+                
                 
             },error:function(response){ 
                     alert(response);

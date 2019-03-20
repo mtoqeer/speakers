@@ -13,7 +13,7 @@
 // Website Pages
 Route::get('/', 'UserMetaController@websiteHomePage')->name('webhome');
 // Single Profile Website
-Route::get('/singlespeaker/{id}', 'UserMetaController@ShowSingleProfileOnWbsite')->name('websingle');
+Route::get('/speaker/{id}/{name}', 'UserMetaController@ShowSingleProfileOnWbsite')->name('websingle');
 // All Speakers Page
 Route::get('/speakers', 'UserMetaController@ShowAllSpeakersOnWbsite')->name('webspeakers');
 

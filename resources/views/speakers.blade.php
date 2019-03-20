@@ -222,7 +222,7 @@
 
                                         </div>
                                     </div>
-                                    <a href="/singlespeaker/{{$AllSpeakers->id}}" style="margin-top: 13px;" class="get-details">learn more</a>
+                                    <a href="{{route('websingle', ['id' => $AllSpeakers->id, 'name' => str_slug($AllSpeakers->name, '-')])}}" style="margin-top: 13px;" class="get-details">learn more</a>
                                 </div>
                             </div>
                         </div>

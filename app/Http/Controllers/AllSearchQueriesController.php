@@ -31,6 +31,7 @@ class AllSearchQueriesController extends Controller
 
 
     public function speakerssearch(Request $request){
+        
         $searchFee = $request->fee;
         $searchLang = $request->language;
         $searchCountry = $request->country;

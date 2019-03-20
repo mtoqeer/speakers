@@ -119,7 +119,7 @@ class UserMetaController extends Controller
 
 
     // Single Page
-    public function ShowSingleProfileOnWbsite($id){
+    public function ShowSingleProfileOnWbsite(Request $request, $id){
 
         $getGeneralInfo = DB::table('users')
         ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
