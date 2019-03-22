@@ -1286,3 +1286,11 @@ margin-right: 12px;
 
 }
 
+
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #e2a738;
+    border-color: #e2a738; 
+}
