@@ -295,16 +295,16 @@ header {
 
 .slide-tab-cell h2 {
     color: #fff;
-    font-size: 57px;
+    font-size: 59px;
     font-weight: 600;
-    line-height: 60px;
+    line-height: 73px;
 }
 
 .slide-tab-cell p {
     color: #dbdbdb;
     font-family: 'Open Sans', sans-serif;
     padding: 4px 0 30px;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .slide-tab .search {
@@ -503,9 +503,9 @@ a.reg-btn:hover,
 }*/
 
 .icon-wrapper img {
-        margin-right: -2px;
-    height: 52px;
-    margin-bottom: 14px;
+        margin-right: 2px;
+    height: 66px;
+    margin-bottom: 5px;
 }
 /*=================
 1.7  Our speaker Area Start

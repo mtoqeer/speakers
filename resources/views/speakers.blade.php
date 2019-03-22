@@ -39,7 +39,7 @@
                      <div class="fee mb-4">
                     
                          <div class="form-group">
-                           <label for="fee" style="font-weight: bold;">FEE</label>
+                           <label for="fee" style="font-weight: bold;">Fee Range</label>
                            @php
                                 
                                  $getExpertise = DB::table('expertises')
@@ -54,6 +54,7 @@
                           
                                @endphp
                            <select class="form-control" id="fee" name="fee">
+                                <option value="Any">Any</option>
                                 <option value="Free">Free</option>
                                 <option value="Up to $250">Up to $250</option>
                                 <option value="$250 - $1500">$250 - $1500</option>
@@ -74,7 +75,7 @@
                            <label for="language" style="font-weight: bold;">LANGUAGE</label>
                            <select class="form-control" id="language" name="language">
                                 @foreach ($getlanguages as $value)
-                                <option value="{{$value->language}}">{{ucfirst($value->language)}}</option>
+                                <option value="{{$value->language}}" {{ ($value->language == 'English') ? "Selected" : " " }}>{{ucfirst($value->language)}}</option>
                                 @endforeach
                            </select>
                          </div>
@@ -116,9 +117,9 @@
                          <div class="form-group">
                            <label for="gender" style="font-weight: bold;">GENDER</label>
                            <select class="form-control" id="gender" name="gender">
-                                @foreach ($getGender as $value)
-                                <option value="{{$value->gender}}">{{ucfirst($value->gender)}}</option>
-                                @endforeach
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="no preferences">No Preference</option>
                            </select>
                          </div>      
 
@@ -141,7 +142,7 @@
                      <div class="avlto mb-4">
                          
                          <div class="form-group">
-                           <label for="available-to" style="font-weight: bold;">AVAILABLE TO</label>
+                           <label for="available-to" style="font-weight: bold;">AVAILABILITY</label>
                            <select class="form-control" id="available-to" name="available_to">
                                 @foreach ($getAvlTo as $value)
                                 <option value="{{$value->available_to}}">{{$value->available_to}}</option>

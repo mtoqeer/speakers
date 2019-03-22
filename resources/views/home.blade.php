@@ -16,16 +16,9 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
-                                        <h2>Find The Best Speaker For Your Event</h2>
-                                        {{-- <p>For events, training workshops or schools.</p> --}}
-                                        <div class="search-area mt-3">
-                                        <form method="GET" action="{{route('homepagesearch')}}">
-                                            <input type="text" name="search_query" class="search" placeholder="Search for a topic">
-                                            <div class="search-icon">
-                                                <button type="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
-                                            </div>
-                                        </form>
-                                        </div>
+                                        <h2>The Best Speakers make The BEST Events</h2>
+                                        <p>Find Your Best Speakers Now</p> 
+                                        <a style="opacity: 1;" href="{{route('webspeakers')}}" class="biddaloy-btn animated fadeInLeft">Find The PERFECT Speaker</a>
                                     </div>
                                 </div>
                             </div>
@@ -39,16 +32,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
-                                            <h2>Find The Best Speaker For Your Event</h2>
-                                            {{-- <p>For events, training workshops or schools.</p> --}}
-                                            <div class="search-area mt-3">
-                                            <form method="GET" action="{{route('homepagesearch')}}">
-                                                <input type="text" name="search_query" class="search" placeholder="Search for a topic">
-                                                <div class="search-icon">
-                                                    <button type="submit" style="border:none;background:white;cursor:pointer;color:#e2a738;"><i class="fas fa-search"></i></button>
-                                                </div>
-                                            </form>
-                                            </div>
+                                            <h2>The Best Speakers make The BEST Events</h2>
+                                            <p>Find Your Best Speakers Now</p>
+                                            <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +57,9 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
                             <h2 style="text-transform: uppercase;">Wisdom Speakers Bureau</h2>
-                            <p>Unt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Unt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                            <p>A collection of handpicked pros all chosen with one singular goal in mind: To make YOUR event 
+                                the one everyone talks about this year! Not only will our experienced collection of thought leaders 
+                                deliver the top tier content you seek, They will be a breeze to work with and make you SO glad you chose them for your gathering!</p>
                         </div>
                     </div>
                 </div>
@@ -79,37 +68,34 @@
                   <div class="col-lg-4">
     
                       <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/search.svg')}}"></div>
-                        <p style="color: black;font-size: 15px;font-weight: bold;">Search</p>
-                        <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
+                        <div class="icon-wrapper"><a href="{{route('webspeakers')}}"><img src="{{asset('websiteassests/icons/search.svg')}}"></a></div>
+                        <p><a href="{{route('webspeakers')}}" style="margin-top: 13px;width:38%;" class="get-details mb-2">SEARCH</a></p>
+                        <p class="text-center">Quickly find the PERFECT  speakers<br> for your upcoming event!</p>
                       </a>
     
                   </div>
                   <div class="col-lg-4">
     
                     <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/support.svg')}}"></div>
-                        <p style="color: black;font-size: 15px;font-weight: bold;">Submit</p>
-                        <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
+                        <div class="icon-wrapper"><a href="{{ route('register') }}"><img src="{{asset('websiteassests/icons/support.svg')}}"></a></div>
+                        <p><a href="{{ route('register') }}" style="margin-top: 13px;width:38%;" class="get-details mb-2">SUBMIT</a></p>
+                        <p class="text-center">Speaker? Apply here to create your <br> own profile for FREE!</p>
                     </a>
     
                   </div>
                   <div class="col-lg-4">
     
                     <a href="speaker.php">
-                        <div class="icon-wrapper"><img src="{{asset('websiteassests/icons/professional.svg')}}"></div>
-                        <p style="color: black;font-size: 15px;font-weight: bold;">Connect</p>
-                        <p class="text-center">Used by event organizers from 83<br>countries around the world</p>
+                        <div class="icon-wrapper"><a href="{{route('webcontact')}}"><img src="{{asset('websiteassests/icons/professional.svg')}}"></a></div>
+                        <p><a href="{{route('webcontact')}}" style="margin-top: 13px;width:38%;" class="get-details mb-2">CONNECT</a></p>
+                        <p class="text-center">Quickly find the PERFECT speakers <br> for your upcoming event!</p>
                     </a>
     
                   </div>
                   
                 </div>
                 <!-- icons ends -->
-    
-                <div class="col-lg-4 offset-lg-4 text-center">
-                        <a href="team.html" class="biddaloy-btn mar-top-40">Learn More</a>
-                </div>
+
     
             </div>
         </section>
@@ -202,7 +188,7 @@
                     
     
                     <div class="col-lg-12 text-center">
-                        <a href="team.html" class="biddaloy-btn mar-top-40">See All Speakers</a>
+                        <a href="{{route('webspeakers')}}" class="biddaloy-btn mar-top-40">See All Speakers</a>
                     </div>
                 </div>
             </div>
@@ -234,7 +220,7 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
-                            <h2 style="text-transform: uppercase;">Partners</h2>
+                            <h2 style="text-transform: uppercase;">Resources</h2>
                             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
                         </div>
                             

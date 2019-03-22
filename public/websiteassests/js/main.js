@@ -53,12 +53,14 @@
     $(".main-slider").on("translate.owl.carousel", function () {
         $(".slide-tab-cell h2").removeClass("animated fadeInDown").css("opacity", "0");
         $(".slide-tab-cell p").removeClass("animated fadeInRight").css("opacity", "0");
+        $(".slide-tab-cell a").removeClass("animated fadeInLeft").css("opacity", "0");
         $(".search-area").removeClass("animated fadeInUp").css("opacity", "0");
     });
 
     $(".main-slider").on("translated.owl.carousel", function () {
         $(".slide-tab-cell h2").addClass("animated fadeInDown").css("opacity", "1");
         $(".slide-tab-cell p").addClass("animated fadeInRight").css("opacity", "1");
+        $(".slide-tab-cell a").addClass("animated fadeInLeft").css("opacity", "1");
         $(".search-area").addClass("animated fadeInUp").css("opacity", "1");
     });
 

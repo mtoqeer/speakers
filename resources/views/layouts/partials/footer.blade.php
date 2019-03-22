@@ -4,11 +4,16 @@
                 
                 <div class="col-lg-2 col-md-12">
                     <div class="logo-text">
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="{{asset('websiteassests/img/logo/logo2.png')}}" alt="Logo"></a>
+                        <div class="footer-logo text-center">
+                            <a href="index.html"><img src="{{asset('websiteassests/img/logo/logo2.png')}}" alt="Logo" width="60%"></a>
                         </div>
-                        <p style="font-size: 10px;">&copy; 2019 WisdomSpeakersBureau All Rights Reserved.</p>
-                        <div class="footer-social">
+                        <p style="font-size: 10px;" class="text-center">&copy; 2019 Wisdom Speakers Bureau <br> All Rights Reserved <br> Designed by <a style="font-size:11px !important;" href="">Launch Your Soul</a></p>
+                        <p style="font-size: 10px;" class="text-center">Powered by Speak & Grow Reach</p>
+                        <div class="footer-logo mt-2 mb-2 text-center">
+                                <a href="index.html"><img src="{{asset('websiteassests/img/logo/poweredby.png')}}" alt="Logo" width="60%"></a>
+                        </div>
+                        
+                        <div class="footer-social text-center">
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -16,6 +21,8 @@
                                 <li><a href="#"><i class="fab fa-behance"></i></a></li>
                             </ul>
                         </div>
+                        
+                        
                     </div>
                 </div>
                 
@@ -74,6 +81,7 @@
 
 
             </div>
+            
         </div>
     </footer>
     <!-- footer area end -->

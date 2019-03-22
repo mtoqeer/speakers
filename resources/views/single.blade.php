@@ -12,7 +12,7 @@
          text-transform: uppercase;
         }
         .nav-pills .nav-link.active {
-            background:#C88B39;
+            background:#e2a738;
         }
         body {
          background: #F5F5F5;
@@ -40,15 +40,16 @@
                         <div class="col-md-2 col-sm-12 speaker-single-img text-center">
                         <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" alt="">
                         </div>
-                        <div class="col-md-6 single-page-speaker-details">
+                        <div class="col-md-5 single-page-speaker-details">
                             <h2 class="mt-2">{{$generalInfo->name}}</h2>
                             @if ($getSingleCurrentPosition)
                             <h4 class="mt-3">{{$getSingleCurrentPosition->title}}</h4>
                             <h6 class="mt-2">{{$getSingleCurrentPosition->department}}</h6>
                             @endif
-                            <a href="" class="biddaloy-btn-sm mt-3" data-toggle="modal" data-target="#exampleModal">Contact Info</a>
+                            {{-- <a href="" class="biddaloy-btn-sm mt-3" data-toggle="modal" data-target="#exampleModal">Contact Info</a> --}}
+                            <a href="{{route('webcontact')}}" class="biddaloy-btn-sm mt-3">Contact Info</a>
                         </div>
-                        <div class="col-md-4 single-page-speaker-details" style="border-left: 1px solid rgb(197,197,197)">
+                        <div class="col-md-5 single-page-speaker-details" style="border-left: 1px solid rgb(197,197,197)">
                         <table>
                             <tr>
                                 <th>COUNTRY</th>
@@ -56,7 +57,7 @@
                                 <td>&nbsp; {{$generalInfo->country}}</td>
                             </tr>
                             <tr>
-                                <th>AVAILABLE TO</th>
+                                <th>AVAILABILITY</th>
                                 <td>&nbsp;</td>
                                 <td>&nbsp; {{$generalInfo->available_to}}</td>
                             </tr>
@@ -65,13 +66,13 @@
                                 <td>&nbsp;</td>
                                 <td>&nbsp; {{$generalInfo->fee}}</td>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 <th>VOLUNTEER:</th>
                                 <td>&nbsp;</td>
                                 <td> &nbsp; {{$generalInfo->volunteer}}</td>
-                            </tr>
+                            </tr> --}}
                             <tr>
-                                <th>LANGUAGES</th>
+                                <th>LANGUAGE/S:</th>
                                 <td>&nbsp;</td>
                                 <td>&nbsp; 
                                     
@@ -188,10 +189,10 @@
                                         
                                     <div class="row mb-4">
                                         <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                           <a href="/singlespeaker/{{$item->id}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" class="rounded-circle" alt=""></a>
+                                           <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" class="rounded-circle" alt=""></a>
                                         </div>
                                         <div class="col-md-9 single-page-speaker-details">
-                                            <a href="/singlespeaker/{{$item->id}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
+                                            <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
                                             @php
                                                 $getCp = DB::table('users')
                                                 ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
@@ -225,7 +226,7 @@
                                 <a class="nav-link" id="v-pills-achievement-tab" data-toggle="pill" href="#v-pills-achievement" role="tab" aria-controls="v-pills-messages" aria-selected="false">Achievements</a>
                                 <a class="nav-link" id="v-pills-presentations-tab" data-toggle="pill" href="#v-pills-presentations" role="tab" aria-controls="v-pills-messages" aria-selected="false">Presentations</a>
         
-                                <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Pask Talks</a>
+                                <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Previous Clients</a>
                                 <a class="nav-link" id="v-pills-workshops-tab" data-toggle="pill" href="#v-pills-workshops" role="tab" aria-controls="v-pills-messages" aria-selected="false">Workshops</a>
                                 </div>
         
@@ -414,7 +415,7 @@
                             @if ($getExpertises->count() > 0)
                             <div class="row p-4 mb-5 mls-1 bg-white rounded">
                                 <div class="col-md-12">
-                                    <h5 class="mb-3">EXPERTISE</h5>
+                                    <h5 class="mb-3">TOPICS / EXPERTISE</h5>
                                     @foreach ($getExpertises as $expertises)
                                         <span class="expertise">{{$expertises->expertise_topic}}</span>
                                     @endforeach
@@ -437,7 +438,7 @@
                 <!-- Speaker Contact Info -->
         
                 <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -481,14 +482,14 @@
                         </div>
                         </div>
                     </div>
-                    </div>
+                    </div> --}}
                 <!-- Speakers Contact Info End -->
 @endsection
     
 @section('customjs')
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
-<script>
+{{-- <script>
 
 
 
@@ -530,6 +531,6 @@
 
    
 
-</script>
+</script> --}}
 
 @endsection

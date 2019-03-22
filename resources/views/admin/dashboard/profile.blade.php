@@ -37,9 +37,9 @@
             <li class="list-group-item">
                 <b>Fee</b> <a class="float-right">{{$generalInfo->fee}}</a>
             </li>
-            <li class="list-group-item">
+            {{-- <li class="list-group-item">
                 <b>Volunteer</b> <a class="float-right">{{$generalInfo->volunteer}}</a>
-            </li>
+            </li> --}}
             @endforeach {{-- generalInfo --}}
             <li class="list-group-item text-center">
                     @foreach ($getAvailableFor as $Availablefor)
