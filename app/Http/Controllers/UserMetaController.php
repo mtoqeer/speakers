@@ -27,11 +27,11 @@ class UserMetaController extends Controller
     public function userMetaSave(Request $request)
     {
         $rules = [
-            'profile_image' => 'required|image',
+            'profile_image' => 'image|dimensions:width=270,height=308',
         ];
         $customMessages = [
-            'required' => 'You have not selected any image',
             'image' => 'The file must be an image file',
+            'dimensions' => 'Images Must be 270x308',
         ];   
         $this->validate($request, $rules, $customMessages);
         $userMeta = new User_meta();
@@ -61,6 +61,17 @@ class UserMetaController extends Controller
     }
 
     public function userMetaupdate(Request $request){
+        $rules = [
+            'profile_image' => 'required|image|dimensions:width=270,height=308',
+        ];
+        $customMessages = [
+            'required' => 'You have not selected any image',
+            'image' => 'The file must be an image file',
+            'dimensions:width=270,height=308' => 'Images Must be 270x308',
+        ];   
+        $this->validate($request, $rules, $customMessages);
+
+
         $generalinfo = User_meta::find($request->id);
         
         $generalinfo->country = $request->country;

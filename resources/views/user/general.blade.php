@@ -322,7 +322,7 @@
                         <label for="country">Country</label>
                         <select name="country" class="form-control"> 
                                 <option value="" selected="selected">Select Country</option> 
-                                <option value="United States">United States</option> 
+                                <option value="United States" selected>United States</option> 
                                 <option value="United Kingdom">United Kingdom</option> 
                                 <option value="Afghanistan">Afghanistan</option> 
                                 <option value="Albania">Albania</option> 
