@@ -44,19 +44,12 @@ transition: all .4s ease;
                  <div class="container">
                      <div class="row">
                          <div class="col">
-                                <h3>You’re looking for a world class speaker. The more information you give, the better we can help you.</h3>
+                                <h3 style="color: #26436c;font-size: 38px;line-height: 52px;text-align: center;">You’re looking for a world class speaker. <br>The more information you give, the better we can help you.</h3>
                          </div>
                      </div>
                      <div class="row">
-                         <div class="col-lg-4">
-                             <div class="contact-info">
-                                 <h3>contact information</h3>
-                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-                                 <h5>Address: <span>Address Will Goes Here. Its Just a Dummy.</span></h5>
-                                 <h5>Number: (+000) 000-000-000</h5>
-                             </div>
-                         </div>
-                         <div class="col-lg-7 offset-lg-1 res-pad-top-30">
+                         
+                         <div class="col-lg-10 offset-lg-1 res-pad-top-30">
                              
                              <div class="sign-up-area">
                                  

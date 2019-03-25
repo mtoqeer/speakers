@@ -16,7 +16,7 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
-                                        <h2>The Best Speakers make The BEST Events</h2>
+                                        <h2>The BEST SPEAKERS make The BEST EVENTS</h2>
                                         <p>Find Your Best Speakers Now</p> 
                                         <a style="opacity: 1;" href="{{route('webspeakers')}}" class="biddaloy-btn animated fadeInLeft">Find The PERFECT Speaker</a>
                                     </div>
@@ -32,7 +32,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
-                                            <h2>The Best Speakers make The BEST Events</h2>
+                                            <h2>The BEST SPEAKERS make The BEST EVENTS</h2>
                                             <p>Find Your Best Speakers Now</p>
                                             <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
 
