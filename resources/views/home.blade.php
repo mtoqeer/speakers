@@ -26,13 +26,31 @@
                     </div>
                 </div>
 
-                <div class="single-slider-item slider-bg-1">
+                <div class="single-slider-item slider-bg-2">
                         <div class="slide-tab">
                             <div class="slide-tab-cell" style="padding-top: 42px;text-align: center;">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
-                                            <h2>The BEST SPEAKERS make The BEST EVENTS</h2>
+                                            <h2>Your Event Is About To Get A LOT More Interesting (And Easier To Manage)</h2>
+                                            <p>Find Your Best Speakers Now</p>
+                                            <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="single-slider-item slider-bg-3">
+                        <div class="slide-tab">
+                            <div class="slide-tab-cell" style="padding-top: 42px;text-align: center;">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-8 offset-lg-2">
+                                            <h2>Wisdom Speakers Bureau Is The PERFECT Answer For Your Next Event</h2>
                                             <p>Find Your Best Speakers Now</p>
                                             <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
 

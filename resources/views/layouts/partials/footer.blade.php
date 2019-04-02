@@ -7,7 +7,7 @@
                         <div class="footer-logo text-center">
                             <a href="index.html"><img src="{{asset('websiteassests/img/logo/logo2.png')}}" alt="Logo" width="40%"></a>
                         </div>
-                        <p style="font-size: 10px;" class="text-center">&copy; 2019 Wisdom Speakers Bureau <br> All Rights Reserved <br> Designed by <a style="font-size:11px !important;" href="">Launch Your Soul</a></p>
+                        <p style="font-size: 10px;" class="text-center">&copy; 2019 Wisdom Speakers Bureau <br> All Rights Reserved <br> Designed by <a style="font-size:11px !important;" href="https://launchyoursoul.com" target="_blank">Launch Your Soul</a></p>
                         <p style="font-size: 10px;" class="text-center">Powered by Speak & Grow Reach</p>
                         <div class="footer-logo mt-2 mb-2 text-center">
                                 <a href="index.html"><img src="{{asset('websiteassests/img/logo/poweredby.png')}}" alt="Logo" width="40%"></a>

@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label for="confernce">Conference</label>
                     <select class="form-control" id="confernce" name="conference">
-                        <option value="Yes" {{ ($availablefor->conference == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="Sports" {{ ($availablefor->conference == 'Yes') ? "Selected" : " " }}>Yes</option>
                         <option value="No" {{ ($availablefor->conference == 'No') ? "Selected" : " " }}>No</option>
                     </select>
                 </div>

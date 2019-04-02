@@ -70,6 +70,7 @@
                                 <option value="Spanish">Spanish</option>
                                 <option value="Swahili">Swahili</option>
                                 <option value="Swedish ">Swedish </option>
+                                <option value="Tagalog">Tagalog</option>
                                 <option value="Tamil">Tamil</option>
                                 <option value="Tatar">Tatar</option>
                                 <option value="Telugu">Telugu</option>
