@@ -18,18 +18,25 @@
          <section class="popular-courses section-padding vision-area">
              <div class="container">
                  <div class="row">
-                     <div class="col-lg-12">
+                     <div class="col-lg-6">
                          <div class="section-heading ">
-                             <h2>Ut enim ad minim: Quis nostrud exercitation</h2>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
+                             <h2>About the Founder</h2>
+                             <p>Founder, Gail Kingsbury has been in the event and public speaking industry for 30 years.  
+                                 Working with companies such as Kodak, Pizza Hut, Inc. Magazine and local events around the world. 
+                                 And speakers like Tony Robbins, Brendon Burchard, Dr. Barbara DeAngelis, Seth Godin, sales trainer, motivation, etc.   
+                                 Assisting with everything from initial event planning for 10 to 20,000 people focusing on making sure 
+                                 the right people are on the stage helping the right audience,</p>
      
                              <h2>OUR MISSION</h2>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
+                             <p>Wisdom Speakers Bureau is here to make finding the right speaker for your event simple.  We will work 
+                                 with you directly to see what specific outcomes you are looking for within your budget and make sure 
+                                 that your audience leaves with the tools and resources they need.</p>
      
-                             <h2>OUR VISION</h2>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
-                         
+
                          </div>
+                     </div>
+                     <div class="col-md-6">
+                        <img src="{{url('websiteassests/img/aboutus.jpg')}}" alt="">
                      </div>
                  </div>
              </div>

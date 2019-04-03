@@ -82,17 +82,17 @@
                     </div>
                 </div>
                 <!-- icons start-->
-                <div class="row text-center">
+                <div class="row text-center justify-content-md-center">
                   <div class="col-lg-4">
     
                       <a href="speaker.php">
                         <div class="icon-wrapper"><a href="{{route('webspeakers')}}"><img src="{{asset('websiteassests/icons/search.svg')}}"></a></div>
                         <p><a href="{{route('webspeakers')}}" style="margin-top: 13px;width:38%;" class="get-details mb-2">SEARCH</a></p>
-                        <p class="text-center">Quickly find the PERFECT  speakers<br> for your upcoming event!</p>
+                        <p class="text-center">Quickly find the PERFECT speakers <br> for your upcoming event!</p>
                       </a>
     
                   </div>
-                  <div class="col-lg-4">
+                  {{-- <div class="col-lg-4">
     
                     <a href="speaker.php">
                         <div class="icon-wrapper"><a href="{{ route('register') }}"><img src="{{asset('websiteassests/icons/support.svg')}}"></a></div>
@@ -100,13 +100,13 @@
                         <p class="text-center">Speaker? Apply here to create your <br> own profile for FREE!</p>
                     </a>
     
-                  </div>
+                  </div> --}}
                   <div class="col-lg-4">
     
                     <a href="speaker.php">
                         <div class="icon-wrapper"><a href="{{route('webcontact')}}"><img src="{{asset('websiteassests/icons/professional.svg')}}"></a></div>
                         <p><a href="{{route('webcontact')}}" style="margin-top: 13px;width:38%;" class="get-details mb-2">CONNECT</a></p>
-                        <p class="text-center">Quickly find the PERFECT speakers <br> for your upcoming event!</p>
+                        <p class="text-center">Reach out to us so we can assist you in <br> your search, We would LOVE to help!</p>
                     </a>
     
                   </div>
@@ -128,7 +128,7 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
                             <h2 style="text-transform: uppercase;">Featured Speakers</h2>
-                            <p>Unt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                            <p>Below are a few of our Favorite speakers guaranteed to make your next event spectacular!</p>
                         </div>
                     </div>
                 </div>
@@ -219,12 +219,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-9 col-md-9">
-                        <h2 class="h2-light">Unt in culpa qui officia</h2>
-                        <h2>voluptatem accusantium doloremque laudantium.</h2>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                        <h2 class="h2-bold">Are you a speaker? Join us now!</h2>
+                        <h2 class="h2-light">We are looking for great speakers with great content to help our planning community. 
+                            Please click the button to apply. We look forward to hearing from you!</h2>
+         
                     </div>
                     <div class="col-lg-3 col-md-3 text-right">
-                        <a href="courses.html" class="biddaloy-btn">get detail</a>
+                        <a href="{{route('webhome')}}" class="biddaloy-btn">Apply</a>
                     </div>
     
                 </div>
@@ -239,7 +240,9 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
                             <h2 style="text-transform: uppercase;">Resources</h2>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                            <p>We are always looking for great resources for our 
+                                Planners and Promoters.  Here are a few we have found that 
+                                have great information or assistance.</p>
                         </div>
                             
                         <div class="row">        
