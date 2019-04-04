@@ -49,9 +49,12 @@ Route::post('privacyedit/{id}', 'PrivacyContentController@savecontent')->name('s
 // Route::get('inactive-speakers/delete/{id}', 'HomeController@userDelete')->name('userDelete');
 
 Route::get('termsedit', 'AboutContentController@showpage')->name('about-edit-page')->middleware('admin.auth:admin');
-Route::post('termsedit/{id}', 'AboutContentController@savecontent')->name('savecontent-privacy')->middleware('admin.auth:admin');;
+Route::post('termsedit/{id}', 'AboutContentController@savecontent')->name('savecontent-privacy')->middleware('admin.auth:admin');
 // Route::get('inactive-speakers/delete/{id}', 'HomeController@userDelete')->name('userDelete');
     
+Route::get('updates', function(){
+    return view('admin.dashboard.updates');
+})->name('updatespage')->middleware('admin.auth:admin');;
 
 
 });

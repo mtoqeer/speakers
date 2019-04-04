@@ -68,6 +68,14 @@
                     </a>
                   </li>
 
+                  
+                <li class="nav-item">
+                    <a href="{{route('updatespage')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Updates</p>
+                    </a>
+                  </li>
+
             </ul>
           </li>
           
