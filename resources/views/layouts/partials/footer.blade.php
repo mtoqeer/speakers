@@ -31,8 +31,8 @@
                         <ul>
                             <li><a href="{{route('webspeakers')}}">Speakers</a></li>
                             <li><a href="{{route('webabout')}}">About Us</a></li>
-                            <li><a href="{{route('webfaq')}}">FAQ's</a></li>
-                            <li><a href="{{route('webprivacy')}}">Privacy Policy</a></li>
+                            
+                            
                         </ul>
                     </nav>
                 </div>
@@ -41,7 +41,7 @@
                     <nav class="footer-nav">
                         <ul>
                             <li><a href="{{route('webhome')}}">Home</a></li>
-                            <li><a href="{{route('webterms')}}">Terms & Conditions</a></li>
+                            <li><a href="{{route('webfaq')}}">FAQ's</a></li>
                             
                         </ul>
                     </nav>
@@ -50,14 +50,8 @@
                 <div class="col-lg-3 col-md-5 col-sm-12 res-pad-top-30" style="border-left: 1px solid rgba(255,255,255,0.1);">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="index.php">Motivational Speaker</a></li>
-                            <li><a href="#">Leadership Speakers</a></li>
-                            <li><a href="#">Business Speakers</a></li>
-                            <li><a href="#">Keynote Speakers</a></li>
-                            <li><a href="#">Corporate Speakers</a></li>
-                            <li><a href="#">Celebrity Speakers</a></li>
-
-
+                            <li><a href="{{route('webterms')}}">Terms & Conditions</a></li>
+                            <li><a href="{{route('webprivacy')}}">Privacy Policy</a></li>
                         </ul>
                     </nav>
                 </div>
