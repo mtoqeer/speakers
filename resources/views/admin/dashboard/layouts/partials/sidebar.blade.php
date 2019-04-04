@@ -46,11 +46,27 @@
               </li>
 
               <li class="nav-item">
-                  <a href="{{route('featured-speaker-page')}}" class="nav-link">
+                <a href="{{route('featured-speaker-page')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Featured Speakers</p>
+                </a>
+              </li>
+
+
+              <li class="nav-item">
+                  <a href="{{route('about-edit-page')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Featured Speakers</p>
+                    <p>Edit About Us</p>
                   </a>
                 </li>
+
+
+                <li class="nav-item">
+                    <a href="{{route('privacy-edit-page')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Edit Terms</p>
+                    </a>
+                  </li>
 
             </ul>
           </li>

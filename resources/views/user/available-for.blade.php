@@ -69,7 +69,7 @@
                 <div class="form-group">
                     <label for="confernce">Conference</label>
                     <select class="form-control" id="confernce" name="conference">
-                        <option value="Sports" {{ ($availablefor->conference == 'Yes') ? "Selected" : " " }}>Yes</option>
+                        <option value="Yes" {{ ($availablefor->conference == 'Yes') ? "Selected" : " " }}>Yes</option>
                         <option value="No" {{ ($availablefor->conference == 'No') ? "Selected" : " " }}>No</option>
                     </select>
                 </div>
@@ -120,6 +120,28 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
+        @foreach ($getAvailabelFor as $availablefor)
+           @if ($availablefor->conference == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
+            @endif
+            @if ($availablefor->school == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
+            @endif
+            @if ($availablefor->moderator == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
+            @endif
+            @if ($availablefor->online == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
+            @endif
+            @if ($availablefor->workshop == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop (Incl. Charity)" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
+            @endif
+            @if ($availablefor->meetup == 'Yes')
+                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
+            @endif
+        @endforeach
+
+
         </div>
     </div>
 </div>

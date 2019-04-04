@@ -9,7 +9,7 @@ Route::group(['namespace' => 'Admin'], function() {
     Route::post('login', 'Auth\LoginController@login');
     Route::post('logout', 'Auth\LoginController@logout')->name('admin.logout');
 
-    // Register
+    // Register first one for first time admin creation
     // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('admin.register');
     Route::get('register', 'HomeController@showRegistrationForm')->name('admin.register');
     Route::post('register', 'Auth\RegisterController@register');
@@ -44,7 +44,13 @@ Route::get('/featured/{id}', 'HomeController@changeToUnfeaturedSpeakers')->name(
 
 Route::get('/profile/{id}', 'HomeController@showProfilePage')->name('speaker-profile');
 
+Route::get('privacyedit', 'PrivacyContentController@showpage')->name('privacy-edit-page')->middleware('admin.auth:admin');
+Route::post('privacyedit/{id}', 'PrivacyContentController@savecontent')->name('savecontent-privacy')->middleware('admin.auth:admin');;
+// Route::get('inactive-speakers/delete/{id}', 'HomeController@userDelete')->name('userDelete');
 
+Route::get('termsedit', 'AboutContentController@showpage')->name('about-edit-page')->middleware('admin.auth:admin');
+Route::post('termsedit/{id}', 'AboutContentController@savecontent')->name('savecontent-privacy')->middleware('admin.auth:admin');;
+// Route::get('inactive-speakers/delete/{id}', 'HomeController@userDelete')->name('userDelete');
     
 
 

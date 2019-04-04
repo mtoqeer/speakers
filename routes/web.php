@@ -29,13 +29,10 @@ Route::get('/faq', function () {
     return view('faq');
 })->name('webfaq');
 
-Route::get('/privacy', function () {
-    return view('privacy');
-})->name('webprivacy');
+Route::get('/privacy','Admin\PrivacyContentController@showebsitepage')->name('webprivacy');
 
-Route::get('/terms-and-conditions', function () {
-    return view('terms');
-})->name('webterms');
+Route::get('/terms-and-conditions','Admin\AboutContentController@showebsitepage')->name('webterms');
+
 
 
 // All Contact Forms Routes

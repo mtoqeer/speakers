@@ -285,7 +285,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="why_choose">Why Choose</label>
+                        <label for="why_choose">Why Choose (250 Characters Max)</label>
+                        @if ($errors->has('why_choose'))
+                            <p style="color:red;">
+                            {{ $errors->first('why_choose') }}
+                            </p>
+                        @endif
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4"></textarea>
                     </div>
                     <div class="form-group">
@@ -598,7 +603,14 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="why_choose">Why Choose</label>
+                        <label for="why_choose">Why Choose (250 Characters Max)</label>
+                    
+                        @if ($errors->has('why_choose'))
+                            <p style="color:red;">
+                            {{ $errors->first('why_choose') }}
+                            </p>
+                        @endif
+                        
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4">{{$generalinfo->why_choose}}</textarea>
                     </div>
                     <div class="form-group">

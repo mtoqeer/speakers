@@ -10,4 +10,21 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     @yield('customcss')
+    <style>
+    li.activee{
+        background-color:#0069d9 !important;
+       
+    }
+    .heee p {
+        color:white !important;
+    }
+
+     /* li.active:hover p {
+        color:black !important;
+    } */
+    li.menu-open {
+        background: rgba(75, 84, 92) !important;
+    } 
+    
+    </style>
 </head>
