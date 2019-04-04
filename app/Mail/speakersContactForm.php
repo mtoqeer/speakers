@@ -30,7 +30,7 @@ class speakersContactForm extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com')
+        return $this->from('admin@wisdomspeakersbureau.com')
         ->view('mails.speakerscontactform')->with('data', $this->data);
     }
 }

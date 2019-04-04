@@ -67,7 +67,7 @@ class AllFormsSubmissionController extends Controller
             'additional_details' => $request->additional_details
 
         );
-        Mail::to('toqeer.94@gmail.com')->send(new ContactForm($data));    
+        Mail::to('admin@wisdomspeakersbureau.com')->send(new ContactForm($data));    
         return view('contact');
     }
 
