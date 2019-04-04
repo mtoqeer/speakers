@@ -27,7 +27,7 @@
                                  Assisting with everything from initial event planning for 10 to 20,000 people focusing on making sure 
                                  the right people are on the stage helping the right audience,</p>
      
-                             <h2>OUR MISSION</h2>
+                             <h2>Our Mission</h2>
                              <p>Wisdom Speakers Bureau is here to make finding the right speaker for your event simple.  We will work 
                                  with you directly to see what specific outcomes you are looking for within your budget and make sure 
                                  that your audience leaves with the tools and resources they need.</p>

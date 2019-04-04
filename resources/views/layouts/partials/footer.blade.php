@@ -65,13 +65,18 @@
 
                 <div class="col-lg-3 col-md-5 col-sm-12 res-pad-top-30" style="border-left: 1px solid rgba(255,255,255,0.1);">
                     <div class="footer-form">
-                        <h6 style="color: #fff;">GET SPEAKERS TIPS & SO MUCH MORE!</h6>
-                        <h6 style="color: #fff;" class="mb-2 mt-2">Once a week we send you speaking tips, training ideas, calls for speakers and lots of useful updates.</h6>
-                        <form class="mailChimpForm" method="POST" action="/mailchimp">
+                        <h6 style="color: #fff;">GET PLANNING TIPS & SO MUCH MORE</h6>
+                        <h6 style="color: #fff;" class="mb-2 mt-2">Once a month we will send articles and resources we
+                             find to help make your meetings the most
+                             successful possible. *We never sell your information.</h6>
+                        <form accept-charset="UTF-8" action="https://gail.infusionsoft.com/app/form/process/f9316db8bc3138da13626f9db997ceb4" class="infusion-form" id="inf_form_f9316db8bc3138da13626f9db997ceb4" method="POST">
                             @csrf
-                            <input class="form-control" type="email" name="email" placeholder="E-MAIL">
-                            <input class="form-control" type="text" name="fname" placeholder="FIRST NAME">
-                            <input class="form-control" type="text" name="lname" placeholder="LAST NAME">
+                            <input name="inf_form_xid" type="hidden" value="f9316db8bc3138da13626f9db997ceb4" />
+                            <input name="inf_form_name" type="hidden" value="wisdomspeakersbureau" />
+                            <input name="infusionsoft_version" type="hidden" value="1.70.0.91310" />
+                            <input class="form-control infusion-field-input" id="inf_field_Email" type="email" name="inf_field_Email" placeholder="E-MAIL">
+                            <input class="form-control infusion-field-input" type="text" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="FIRST NAME">
+                            <input class="form-control infusion-field-input" id="inf_field_LastName" type="text" name="inf_field_LastName" placeholder="LAST NAME">
                             <p style="color:white;font-weight:bold;text-align:center;" id="alertMailChimp" class="d-none">Testing</p>
                             <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;border-radius:5px;">Subscribe <i id="buttonloader" class=""></i></button>
                         </form>
@@ -103,6 +108,8 @@
     <script src="{{asset('websiteassests/js/isotope.pkgd.min.js')}}"></script>
     <script src="{{asset('websiteassests/js/plugins.js')}}"></script>
     <script src="{{asset('websiteassests/js/main.js')}}"></script>
+    <script type="text/javascript" src="https://gail.infusionsoft.app/app/webTracking/getTrackingCode"></script>
+<script type="text/javascript" src="https://gail.infusionsoft.com/app/timezone/timezoneInputJs?xid=f9316db8bc3138da13626f9db997ceb4"></script>
 
 <script type="text/javascript">
 

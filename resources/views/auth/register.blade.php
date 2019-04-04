@@ -15,7 +15,16 @@
 
 <!-- hero area end -->
 
-
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <p style="color:black;">If you are a speaker, please apply below.  We are looking for great speakers with great content to 
+                help our planning community.  We will go through your materials and 
+                get back to you quickly.  There is no fee to be included in our bureau.  We look forward to 
+                hearing from you!</p>
+        </div>
+    </div>
+</div>
 
 
 <div class="container mt-5 mb-5">
