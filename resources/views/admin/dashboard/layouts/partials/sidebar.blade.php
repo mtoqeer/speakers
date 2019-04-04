@@ -56,7 +56,7 @@
               <li class="nav-item">
                   <a href="{{route('about-edit-page')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Edit About Us</p>
+                    <p>Edit Terms</p>
                   </a>
                 </li>
 
@@ -64,7 +64,7 @@
                 <li class="nav-item">
                     <a href="{{route('privacy-edit-page')}}" class="nav-link">
                       <i class="fa fa-circle-o nav-icon"></i>
-                      <p>Edit Terms</p>
+                      <p>Edit Policy</p>
                     </a>
                   </li>
 
