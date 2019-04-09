@@ -43,18 +43,18 @@ class HomeController extends Controller
     public function adminIndex(){
         
         $getApprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.status' , 'approved')
         ->where('users.featured' , 'No')->limit(5)->get();
 
         $getUnapprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.status' , 'unapproved')->limit(5)->get();
 
         $getFeaturedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
         ->where('users.status' , 'approved')->limit(5)->get();
@@ -66,7 +66,7 @@ class HomeController extends Controller
 
     public function showactivespeakers(){
         $getApprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
         ->where('users.status' , 'approved')->paginate(9);
@@ -78,7 +78,7 @@ class HomeController extends Controller
 
     public function showinactivespeakers(){
         $getUnapprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.status' , 'unapproved')->paginate(9);
         return view('admin.dashboard.inactive', compact('getUnapprovedSpeakers'));
@@ -87,7 +87,7 @@ class HomeController extends Controller
     // Show Featured
     public function showFeaturedSpeaker(){
         $getFeaturedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
         ->where('users.status' , 'approved')->paginate(9);
@@ -99,7 +99,7 @@ class HomeController extends Controller
         DB::table('users')->where('id', $request->id)->update(['featured' => 'Yes']);
         
         $getApprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
         ->where('users.status' , 'approved')->paginate(9);
@@ -112,7 +112,7 @@ class HomeController extends Controller
         DB::table('users')->where('id', $request->id)->update(['featured' => 'No']);
         
         $getFeaturedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'Yes')
         ->where('users.status' , 'approved')->paginate(9);
@@ -126,7 +126,7 @@ class HomeController extends Controller
         DB::table('users')->where('id', $request->id)->update(['status' => 'approved']);
         
         $getUnapprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.status' , 'unapproved')->paginate(9);
 
@@ -141,7 +141,7 @@ class HomeController extends Controller
         DB::table('users')->where('id', $request->id)->update(['status' => 'unapproved']);
 
         $getApprovedSpeakers = DB::table('users')
-        ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+        ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
         ->select('user_metas.*', 'users.*')
         ->where('users.featured' , 'No')
         ->where('users.status' , 'approved')->paginate(9);

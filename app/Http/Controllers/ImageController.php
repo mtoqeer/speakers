@@ -58,7 +58,7 @@ class ImageController extends Controller
 
         $images = Image::findOrFail($id);
         if($images){
-            unlink(public_path() . DIRECTORY_SEPARATOR . 'adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerimages' . DIRECTORY_SEPARATOR . $images->path);
+            unlink('adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerimages' . DIRECTORY_SEPARATOR . $images->path);
             $images->delete();
         }
 
