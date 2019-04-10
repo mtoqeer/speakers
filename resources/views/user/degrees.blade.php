@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
-@section('title','User - Academic Degree')
-@section('pagename', 'Academic Degree')
+@section('title','User - Education')
+@section('pagename', 'Education')
 @section('main-content')
 <div class="container">
     <div class="row">
@@ -13,7 +13,7 @@
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
 
                 <div class="form-group">
-                    <label for="degree_title">Title</label>
+                    <label for="degree_title">Academic Degree</label>
                     <input type="text" name="degree_title" value="" class="form-control" required>
                 </div>
 
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
-            <h4>Academic Degree</h4>
+            <h4>Education</h4>
             @foreach ($getDegree as $degree)
                 <div class="row">
                     <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">
