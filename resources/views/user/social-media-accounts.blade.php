@@ -49,10 +49,10 @@
                     <input type="text" name="website_link" value="" class="form-control">
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="skype_link">Skype</label>
                     <input type="text" name="skype_link" value="" class="form-control">
-                </div>
+                </div> --}}
 
                 @if (session('message'))
                 <p id="social_added" class="alert alert-success">{{session('message')}}</p>
@@ -100,10 +100,10 @@
                             <input type="text" name="website_link" value="{{$sociallinks->website}}" class="form-control">
                         </div>
         
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="skype_link">Skype</label>
                             <input type="text" name="skype_link" value="{{$sociallinks->skype}}" class="form-control">
-                        </div>
+                        </div> --}}
         
                         @if (session('message'))
                         <p id="social_added" class="alert alert-success">{{session('message')}}</p>
