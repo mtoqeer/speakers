@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
-@section('title','User - Degrees')
-@section('pagename', 'Degrees')
+@section('title','User - Academic Degree')
+@section('pagename', 'Academic Degree')
 @section('main-content')
 <div class="container">
     <div class="row">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
-            <h4>Articles</h4>
+            <h4>Academic Degree</h4>
             @foreach ($getDegree as $degree)
                 <div class="row">
                     <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">

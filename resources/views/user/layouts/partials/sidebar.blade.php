@@ -109,7 +109,7 @@
               <li class="nav-item">
                 <a href="{{route('dashboard.degress')}}" class="nav-link heee">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Degrees</p>
+                  <p>Education</p>
                 </a>
               </li>
 
