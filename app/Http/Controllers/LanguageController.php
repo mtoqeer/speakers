@@ -29,7 +29,7 @@ class LanguageController extends Controller
         $languagesSave = $languages->save();
 
         if($languagesSave){
-            return redirect('/dashboard/languages')->with('message','Expertise Have Been Added');
+            return redirect('/dashboard/languages')->with('message','Language Have Been Added');
         }
 
     }
