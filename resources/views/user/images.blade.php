@@ -12,7 +12,7 @@
                     
                     @csrf
                     <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                        
+                    
                     <div class="form-group">
                         <label for="images">Images</label>
                         <input type="file" name="images" value="" class="form-control">
@@ -22,12 +22,12 @@
                         <strong class="text-danger">{{ $errors->first('images') }}</strong>
                         </span>
                     @endif
-
+                    <h5>Please add a maximum of three photos under 5MB</h5>
                     @if (session('message'))
                     <p id="image_added" class="alert alert-success">{{session('message')}}</p>
                     @endif
                     <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Add</button>
-
+                    
                 </form>
             @else
                 <h4 class="alert alert-danger">You Have Reached Your Limit Of 3 Images</h4>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
-            <h4>Articles</h4>
+            <h4>Photos</h4>
             <div class="row">
             @foreach ($getImage as $image)
                     <div class="col-md-4 bg-light mb-3 shadow" style="padding:10px;">
