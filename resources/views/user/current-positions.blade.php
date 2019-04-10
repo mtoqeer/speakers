@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 @section('title','User - Current Positions')
-@section('pagename', 'Current Positions')
+@section('pagename', 'Current Position/s')
 @section('main-content')
 <div class="container">
     <div class="row">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-md-5 offset-md-1">
-            <h4>Current Postions</h4>
+            <h4>Current Postion/s</h4>
             @foreach ($getCurrentPoisition as $currentPosition)
                 <div class="row">
                     <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">

@@ -102,7 +102,7 @@
               <li class="nav-item">
                 <a href="{{route('dashboard.current-positions')}}" class="nav-link heee">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Current Positions</p>
+                  <p>Current Position/s</p>
                 </a>
               </li>
 
