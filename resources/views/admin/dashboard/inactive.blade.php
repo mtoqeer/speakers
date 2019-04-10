@@ -23,8 +23,8 @@
                   <th>Name</th>
                   <th>Email</th>
                   <th>Country</th>
-                  <th>Available To</th>
-                  <th>Fee</th>
+                  <th>Payment Info</th>
+                  <th>Payment Status</th>
                   <th>Actions</th>
                 </tr>
                 @foreach ($getUnapprovedSpeakers as $UnapprovedSpeakers)
@@ -33,8 +33,8 @@
                     <td>{{$UnapprovedSpeakers->name}}</td>
                     <td>{{$UnapprovedSpeakers->email}}</td>
                     <td>{{$UnapprovedSpeakers->country}}</td>
-                    <td>{{$UnapprovedSpeakers->available_to}}</td>
-                    <td>{{$UnapprovedSpeakers->fee}}</td>
+                    <td><a href="#"><button class="btn btn-warning">Send Email</button></a></td>
+                    <td>Unpaid</td> 
                     <td>
                       <a href="/admin/profile/{{$UnapprovedSpeakers->id}}"><button class="btn btn-success">View</button></a>
                       <a href="/admin/inactive-speakers/{{$UnapprovedSpeakers->id}}"><button class="btn btn-info">Approve</button></a>
