@@ -25,7 +25,7 @@
             <a href="{{route('userdashboard')}}" class="nav-link">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-               Speakers Details
+               Speaker Profile
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -35,7 +35,7 @@
                 <li class="nav-item activee">
                     <a href="{{route('userdashboard')}}" class="nav-link heee">
                       <i class="fa fa-circle-o nav-icon"></i>
-                      <p>Basic Details</p>
+                      <p>Name & Email</p>
                     </a>
                   </li>
 
