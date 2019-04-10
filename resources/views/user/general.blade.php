@@ -14,7 +14,7 @@
                         <label for="country">Country</label>
                         <select name="country" class="form-control"> 
                                 <option value="" selected="selected">Select Country</option> 
-                                <option value="United States">United States</option> 
+                                <option value="United States" selected>United States</option> 
                                 <option value="United Kingdom">United Kingdom</option> 
                                 <option value="Afghanistan">Afghanistan</option> 
                                 <option value="Albania">Albania</option> 
@@ -258,8 +258,11 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="available_to">Available To</label>
-                        <input type="text" name="available_to" value="" class="form-control">
+                        <label for="available_to">Availability</label>
+                            <select name="available_to" class="form-control">
+                                <option value="Global">Global</option>
+                                <option value="Local">Local</option>
+                            </select>
                     </div>
                     <div class="form-group">
                         <label for="fee">Fee</label>
@@ -285,7 +288,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="why_choose">Why Choose (250 Characters Max)</label>
+                        <label for="why_choose">Why Choose Me (250 Characters Max)</label>
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">
                             {{ $errors->first('why_choose') }}
@@ -571,8 +574,11 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="available_to">Available To</label>
-                        <input type="text" name="available_to" value="{{$generalinfo->available_to}}" class="form-control">
+                        <label for="available_to">Availability</label>
+                        <select name="available_to" class="form-control">
+                            <option value="Global" {{ ($generalinfo->available_to == 'Global') ? "Selected" : " " }}>Global</option>
+                            <option value="Local" {{ ($generalinfo->available_to == 'Local') ? "Selected" : " " }}>Local</option>
+                        </select>
                     </div>
                     {{-- <div class="form-group">
                         <label for="fee">Fee</label>
@@ -603,7 +609,7 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="why_choose">Why Choose (250 Characters Max)</label>
+                        <label for="why_choose">Why Choose Me (250 Characters Max)</label>
                     
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">
@@ -650,7 +656,7 @@
                     <div class="col-md-12 mt-4">
                             <strong>COUNTRY:</strong> {{$generalinfo->country}} <br><br>
                             <strong>FEE:</strong> {{$generalinfo->fee}}<br><br>
-                            <strong>Available To:</strong> {{$generalinfo->available_to}} <br><br>
+                            <strong>Availability:</strong> {{$generalinfo->available_to}} <br><br>
                        <h5><strong>Why Choose:</strong> </h5> 
                        <p>{{$generalinfo->why_choose}}</p>
                        <h5><strong>Bio:</strong></h5>
