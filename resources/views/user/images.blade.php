@@ -14,7 +14,7 @@
                     <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
                     
                     <div class="form-group">
-                        <label for="images">Images</label>
+                        <label for="images">Upload Image</label>
                         <input type="file" name="images" value="" class="form-control">
                     </div>
                     @if ($errors->has('images'))
