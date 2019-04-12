@@ -33,7 +33,7 @@ class PaymentEmailController extends Controller
         Mail::to($email)->send(new PaymentDetailsMail($data));
        
         
-        Session::flash('EmailSend', "Email has been SENT successfully!");
+        Session::flash('EmailSend', "Email has been sent successfully!");
         return Redirect::back();
         
     }
@@ -51,7 +51,7 @@ class PaymentEmailController extends Controller
 
         Mail::to($email)->send(new PaymentDetailsMail($data));
        
-        Session::flash('EmailSend', "Email has been SENT successfully!");
+        Session::flash('EmailSend', "Email has been sent successfully!");
         return Redirect::back();
     }
 
