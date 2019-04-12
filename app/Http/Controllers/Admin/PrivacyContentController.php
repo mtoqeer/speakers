@@ -29,9 +29,6 @@ class PrivacyContentController extends Controller
         DB::table('privacy_contents')->where('id', $request->id)->update(['privacy_policy' => $request->privacy_policy]);
         
         $privacycontent = DB::table('privacy_contents')->select('privacy_policy','id')->first();
-        // $privacy = new PrivacyContent();
-        // $privacy->privacy_policy = $request->privacy_policy;
-        // $privacySave = $privacy->save();
 
             return redirect('/admin/privacyedit')->with('message','Privacy Policy Has Been Update');
     }

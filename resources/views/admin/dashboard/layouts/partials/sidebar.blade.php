@@ -68,6 +68,13 @@
                     </a>
                   </li>
 
+                  <li class="nav-item">
+                    <a href="{{route('email-edit-page')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Edit Email</p>
+                    </a>
+                  </li>
+
                   
                 <li class="nav-item">
                     <a href="{{route('updatespage')}}" class="nav-link">

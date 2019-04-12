@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Session;
 use App\PaymentEmail;
 use Illuminate\Http\Request;
@@ -44,9 +43,13 @@ class PaymentEmailController extends Controller
 
         $email = $mailsend->email;
 
+        $emailcontent = DB::table('payment_info_email_contents')->select('email_content','id')->first();
+        
+        $emailcontenthtml = $emailcontent->email_content;
 
         $data = array(
-            'name' => $request->name
+            'name' => $request->name,
+            'email_content' => $emailcontenthtml
         );
 
         Mail::to($email)->send(new PaymentDetailsMail($data));

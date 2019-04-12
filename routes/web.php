@@ -150,3 +150,14 @@ Route::get('admin/paymentemailsend/{id}', 'PaymentEmailController@PaymentEmailSe
 
 // Send Again
 Route::get('admin/paymentemailsendagain/{id}', 'PaymentEmailController@PaymentEmailSendAgain')->name('PaymentEmailSendAgain')->middleware('admin.auth:admin');
+
+
+
+
+
+
+
+// Email Content Payment Info
+
+Route::get('admin/emailedit', 'PaymentInfoEmailContentController@showpage')->name('email-edit-page')->middleware('admin.auth:admin');
+Route::post('admin/emailedit/{id}', 'PaymentInfoEmailContentController@savecontent')->name('savecontent-email')->middleware('admin.auth:admin');
