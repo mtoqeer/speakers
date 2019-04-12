@@ -3,6 +3,9 @@
 @section('pagename', 'Pending')
 @section('main-content')
 <div class="row">
+          @if (Session::has('EmailSend'))
+          <div class="alert alert-info" id="EmailSend">{{ Session::get('EmailSend') }}</div>
+        @endif
         <div class="col-12">
           <div class="card">
             <div class="card-header">
@@ -12,6 +15,11 @@
                 <span id="deleted" style="color:red;">{{session('deleted')}}</span>
                 @endif
 
+               
+
+                {{-- @if (session('EmailSend'))
+                <span id="EmailSend" style="color:red;">{{session('EmailSend')}}</span>
+                @endif --}}
 
               </h3>
             </div>
@@ -33,7 +41,19 @@
                     <td>{{$UnapprovedSpeakers->name}}</td>
                     <td>{{$UnapprovedSpeakers->email}}</td>
                     <td>{{$UnapprovedSpeakers->country}}</td>
-                    <td><a href="#"><button class="btn btn-warning">Send Email</button></a></td>
+
+                    @php
+                        $userid = $UnapprovedSpeakers->id;
+                        $getstatus = DB::table('payment_emails')->where('payment_emails.user_id' , $userid)->get();
+                    @endphp
+                    @if ($getstatus->count() == "1")
+                      <td><a href="/admin/paymentemailsendagain/{{$UnapprovedSpeakers->id}}"><button class="btn btn-warning">Send Again</button></a></td>
+                    @endif
+
+                    @if ($getstatus->count() == "0")
+                      <td><a href="/admin/paymentemailsend/{{$UnapprovedSpeakers->id}}"><button class="btn btn-secondary">Send Email</button></a></td>
+                    @endif
+
                     <td>Unpaid</td> 
                     <td>
                       <a href="/admin/profile/{{$UnapprovedSpeakers->id}}"><button class="btn btn-success">View</button></a>
@@ -67,6 +87,7 @@
     <script>
     $(document).ready(function(){
     $("#deleted").delay(1500).slideUp(300);
+     $("#EmailSend").delay(2500).slideUp(300);
     });
 
     </script>

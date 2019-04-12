@@ -2,84 +2,58 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\PaymentEmail;
 use Illuminate\Http\Request;
+use App\Mail\PaymentDetailsMail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class PaymentEmailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+ 
+    public function PaymentEmailSend(Request $request){
+        
+    $userid = $request->id;
+    $mailsend = DB::table('users')->where('users.id' , $userid)->first();
+
+    $email = $mailsend->email;
+
+
+    $data = array(
+        'name' => $request->name
+    );
+       
+        $paymentemail = new PaymentEmail();
+        $paymentemail->user_id = $userid;
+        $paymentemail->email_status = 'Send';
+        $paymentEmailDetailsSave = $paymentemail->save();
+
+        Mail::to($email)->send(new PaymentDetailsMail($data));
+       
+        
+        Session::flash('EmailSend', "Email Has Been Send Successfully!!");
+        return Redirect::back();
+        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function PaymentEmailSendAgain(Request $request){
+        $userid = $request->id;
+        $mailsend = DB::table('users')->where('users.id' , $userid)->first();
+
+        $email = $mailsend->email;
+
+
+        $data = array(
+            'name' => $request->name
+        );
+
+        Mail::to($email)->send(new PaymentDetailsMail($data));
+       
+        Session::flash('EmailSend', "Email Has Been Send Successfully!!");
+        return Redirect::back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\PaymentEmail  $paymentEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PaymentEmail $paymentEmail)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\PaymentEmail  $paymentEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PaymentEmail $paymentEmail)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\PaymentEmail  $paymentEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PaymentEmail $paymentEmail)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\PaymentEmail  $paymentEmail
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PaymentEmail $paymentEmail)
-    {
-        //
-    }
 }

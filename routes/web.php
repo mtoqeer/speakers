@@ -138,4 +138,15 @@ Route::post('dashboard/available-for/update', 'AvailableForController@userAvaila
 
 
 // Basic Details Update Reqest
-Route::post('/dashboard/update', 'HomeController@update')->name('user-basic-update')->middleware('verified');;
+Route::post('/dashboard/update', 'HomeController@update')->name('user-basic-update')->middleware('verified');
+
+
+
+
+
+// Payment Details Send Button Controller
+Route::get('admin/paymentemailsend/{id}', 'PaymentEmailController@PaymentEmailSend')->name('PaymentEmailSend')->middleware('admin.auth:admin');
+
+
+// Send Again
+Route::get('admin/paymentemailsendagain/{id}', 'PaymentEmailController@PaymentEmailSendAgain')->name('PaymentEmailSendAgain')->middleware('admin.auth:admin');

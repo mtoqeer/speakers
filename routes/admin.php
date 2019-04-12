@@ -33,9 +33,12 @@ Route::get('active-speakers/{id}', 'HomeController@changeToUnapprovespeakers')->
 Route::get('active-speakers/featured/{id}', 'HomeController@changeToFeaturedSpeakers')->name('statusChangeToFeatured');
 
 
+
+
 Route::get('inactive-speakers', 'HomeController@showinactivespeakers')->name('inactive-speaker-page');
 Route::get('inactive-speakers/{id}', 'HomeController@changeToApprovespeakers')->name('statusChangeToApproved');
 Route::get('inactive-speakers/delete/{id}', 'HomeController@userDelete')->name('userDelete');
+
 
 
 Route::get('/featured', 'HomeController@showFeaturedSpeaker')->name('featured-speaker-page');
