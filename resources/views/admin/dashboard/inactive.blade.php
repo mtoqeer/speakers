@@ -1,12 +1,12 @@
 @extends('admin.dashboard.layouts.app')
-@section('title','Admin - Active')
-@section('pagename', 'Inactive')
+@section('title','Admin - Pending')
+@section('pagename', 'Pending')
 @section('main-content')
 <div class="row">
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Inactive Speakers 
+              <h3 class="card-title">Pending Speakers 
 
                 @if (session('deleted'))
                 <span id="deleted" style="color:red;">{{session('deleted')}}</span>

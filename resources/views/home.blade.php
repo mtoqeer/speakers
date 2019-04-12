@@ -16,8 +16,8 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 offset-lg-2">
-                                        <h2>The BEST SPEAKERS make The BEST EVENTS</h2>
-                                        <p>Find Your Best Speakers Now</p> 
+                                        <h2 class="mb-3">The Best Speakers <br> Make The Most Memorable Events</h2>
+                                        {{-- <p>Find Your Best Speakers Now</p>  --}}
                                         <a style="opacity: 1;" href="{{route('webspeakers')}}" class="biddaloy-btn animated fadeInLeft">Find The PERFECT Speaker</a>
                                     </div>
                                 </div>
@@ -32,8 +32,8 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
-                                            <h2>Your Event Is About To Get A LOT More Interesting (And Easier To Manage)</h2>
-                                            <p>Find Your Best Speakers Now</p>
+                                            <h2 class="mb-3">Your Event Is About To Get A LOT More Interesting (And Easier To Manage)</h2>
+                                            {{-- <p>Find Your Best Speakers Now</p> --}}
                                             <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
 
                                         </div>
@@ -50,8 +50,8 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-8 offset-lg-2">
-                                            <h2>Wisdom Speakers Bureau Is The PERFECT Answer For Your Next Event</h2>
-                                            <p>Find Your Best Speakers Now</p>
+                                            <h2 class="mb-3">Wisdom Speakers Bureau Is The PERFECT Answer For Your Next Event</h2>
+                                            {{-- <p>Find Your Best Speakers Now</p> --}}
                                             <a href="{{route('webspeakers')}}" class="biddaloy-btn">Find The PERFECT Speaker</a>
 
                                         </div>
@@ -75,9 +75,10 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
                             <h2 style="text-transform: uppercase;">Wisdom Speakers Bureau</h2>
-                            <p>A collection of handpicked pros all chosen with one singular goal in mind: To make YOUR event 
-                                the one everyone talks about this year! Not only will our experienced collection of thought leaders 
-                                deliver the top tier content you seek, They will be a breeze to work with and make you SO glad you chose them for your gathering!</p>
+                            <p>A collection of handpicked  professionals all chosen with one singular goal in mind: to make YOUR event 
+                                the one everyone talks about! Not only will 
+                                our experienced thought leaders deliver the top tier content you seek, they 
+                                will be easy to work with and make you glad you chose them for your program!</p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +107,7 @@
                     <a href="speaker.php">
                         <div class="icon-wrapper"><a href="{{route('webcontact')}}"><img src="{{asset('websiteassests/icons/professional.svg')}}"></a></div>
                         <p><a href="{{route('webcontact')}}" style="margin-top: 13px;width:38%;" class="get-details mb-2">CONNECT</a></p>
-                        <p class="text-center">Reach out to us so we can assist you in <br> your search, We would LOVE to help!</p>
+                        <p class="text-center">Reach out to us so we can assist you in <br> your search, we would LOVE to help!</p>
                     </a>
     
                   </div>
@@ -128,7 +129,7 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
                             <h2 style="text-transform: uppercase;">Featured Speakers</h2>
-                            <p>Below are a few of our Favorite speakers guaranteed to make your next event spectacular!</p>
+                            <p>Below are a few of our featured speakers excited to make your next event spectacular!</p>
                         </div>
                     </div>
                 </div>
@@ -219,13 +220,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-9 col-md-9">
-                        <h2 class="h2-bold">Are you a speaker? Join us now!</h2>
-                        <h2 class="h2-light">We are looking for great speakers with great content to help our planning community. 
-                            Please click the button to apply. We look forward to hearing from you!</h2>
+                        <h2 class="h2-bold">Are you a speaker?</h2>
+                        <h2 class="h2-light">We are looking for great speakers with outstanding 
+                            content to help our planning community.  Please click the button to apply. We look forward to hearing from you!</h2>
          
                     </div>
                     <div class="col-lg-3 col-md-3 text-right">
-                        <a href="{{route('webhome')}}" class="biddaloy-btn">Apply</a>
+                        <a href="{{ route('register') }}" class="biddaloy-btn">Apply</a>
                     </div>
     
                 </div>
@@ -239,84 +240,45 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
-                            <h2 style="text-transform: uppercase;">Resources</h2>
+                            <h2 style="text-transform: uppercase;">Clients</h2>
                             <p>We are always looking for great resources for our 
                                 Planners and Promoters.  Here are a few we have found that 
                                 have great information or assistance.</p>
                         </div>
                             
                         <div class="row">        
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/google.png" class="img-responsive">
+                                <div class="col-lg-3 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/chs_logo.jpg')}}" class="img-responsive">
                                 </div>
                                 
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/coca.png" class="img-responsive">
+                                <div class="col-lg-3 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/25Klogo.jpg')}}" class="img-responsive">
                                 </div>
                                 
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
+                                <div class="col-lg-3 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/ibm_logo.jpg')}}" class="img-responsive">
                                 </div>
                                 
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-    
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-    
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
+                                <div class="col-lg-3 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/Inc_Logo.png')}}" class="img-responsive">
                                 </div>
                         </div>
                         <div class="row">
-                                <div class="col-lg-2"></div>
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/google.png" class="img-responsive">
+
+                                <div class="col-lg-4 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/kraft_logo.png')}}" class="img-responsive">
                                 </div>
                                 
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/coca.png" class="img-responsive">
+                                <div class="col-lg-4 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/bell_south logo.png')}}" class="img-responsive">
                                 </div>
                                 
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
+                                <div class="col-lg-4 mb-5">
+                                    <img src="{{asset('websiteassests/img/clients/Isagenix_logo.png')}}" class="img-responsive">
                                 </div>
-                                
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-                                <div class="col-lg-2"></div>
+
                              
                         </div>
-                        <div class="row">
-    
-                                <div class="col-lg-2 mb-5">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-    
-                                 <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/google.png" class="img-responsive">
-                                </div>
-                                
-                                <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/coca.png" class="img-responsive">
-                                </div>
-                                
-                                <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-                                
-                                <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-                                
-                                <div class="col-lg-2">
-                                    <img src="https://speakerhub.com/profiles/speakerhub/themes/speakerhub_theme/assets/img/companies/redhat.png" class="img-responsive">
-                                </div>
-    
-                         </div>
                     </div>
                 </div>
                 </div>

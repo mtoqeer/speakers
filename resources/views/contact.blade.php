@@ -44,8 +44,9 @@ transition: all .4s ease;
                  <div class="container">
                      <div class="row">
                          <div class="col">
-                                <h3 style="color: #26436c;font-size: 38px;line-height: 52px;text-align: center;">You’re looking for a world class speaker. <br>The more information you give, the better we can help you.</h3>
-                         </div>
+                                <h3 style="color: #26436c;font-size: 38px;line-height: 52px;text-align: center;">You’re looking for a World Class Speaker...<br>We are here to help.</h3>
+                                <p style="color:black;text-align:center" class="mb-5">Please provide us as much information on your upcoming event as you can so that we can best support you.</p>
+                            </div>
                      </div>
                      <div class="row">
                          

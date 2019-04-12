@@ -21,16 +21,16 @@
                      <div class="col-lg-6">
                          <div class="section-heading ">
                              <h2>About the Founder</h2>
-                             <p>Founder, Gail Kingsbury has been in the event and public speaking industry for 30 years.  
-                                 Working with companies such as Kodak, Pizza Hut, Inc. Magazine and local events around the world. 
-                                 And speakers like Tony Robbins, Brendon Burchard, Dr. Barbara DeAngelis, Seth Godin, sales trainer, motivation, etc.   
-                                 Assisting with everything from initial event planning for 10 to 20,000 people focusing on making sure 
-                                 the right people are on the stage helping the right audience,</p>
+                             <p>Gail Kingsbury has been in the event and public speaking industry for 30 years, working with companies 
+                                 such as Kodak, Pizza Hut, Inc. Magazine and producing numerous events around the globe. She has worked with 
+                                 the top speakers in the world, including Tony Robbins, Brendon Burchard, Brian Tracy, Dr. Barbara DeAngelis and Seth Godin, assisting with 
+                                 everything from event production for 10 to 20,000 people, to focusing on making sure the right people are on the stage to best support the audience.</p>
      
                              <h2>Our Mission</h2>
-                             <p>Wisdom Speakers Bureau is here to make finding the right speaker for your event simple.  We will work 
-                                 with you directly to see what specific outcomes you are looking for within your budget and make sure 
-                                 that your audience leaves with the tools and resources they need.</p>
+                             <p>The mission of the Wisdom Speakers Bureau is to make finding the perfect speaker for your 
+                                 event simple. We will work with you directly to 
+                                 understand your specific event outcomes and budget in order to source the best speaker to 
+                                 ensure your attendees leave with the tools and resources they need.</p>
      
 
                          </div>

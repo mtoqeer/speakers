@@ -8,9 +8,9 @@
                             <a href="index.html"><img src="{{asset('websiteassests/img/logo/logo2.png')}}" alt="Logo" width="40%"></a>
                         </div>
                         <p style="font-size: 10px;" class="text-center">&copy; 2019 Wisdom Speakers Bureau <br> All Rights Reserved <br> Designed by <a style="font-size:11px !important;" href="https://launchyoursoul.com" target="_blank">Launch Your Soul</a></p>
-                        <p style="font-size: 10px;" class="text-center">Powered by Speak & Grow Reach</p>
+                        <p style="font-size: 10px;" class="text-center">Powered by Speak & Grow Rich</p>
                         <div class="footer-logo mt-2 mb-2 text-center">
-                                <a href="index.html"><img src="{{asset('websiteassests/img/logo/poweredby.png')}}" alt="Logo" width="40%"></a>
+                                <a href="index.html"><img src="{{asset('websiteassests/img/logo/poweredby.png')}}" alt="Logo" width="80%"></a>
                         </div>
                         
                         <div class="footer-social text-center">
@@ -18,7 +18,7 @@
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
                         
@@ -60,9 +60,8 @@
                 <div class="col-lg-3 col-md-5 col-sm-12 res-pad-top-30" style="border-left: 1px solid rgba(255,255,255,0.1);">
                     <div class="footer-form">
                         <h6 style="color: #fff;">GET PLANNING TIPS & SO MUCH MORE</h6>
-                        <h6 style="color: #fff;" class="mb-2 mt-2">Once a month we will send articles and resources we
-                             find to help make your meetings the most
-                             successful possible. *We never sell your information.</h6>
+                        <h6 style="color: #fff;" class="mb-2 mt-2">Once a month we will send articles and 
+                            resources  to help make your meetings as successful as possible. <br> *We never sell your information. </h6>
                         <form accept-charset="UTF-8" action="https://gail.infusionsoft.com/app/form/process/f9316db8bc3138da13626f9db997ceb4" class="infusion-form" id="inf_form_f9316db8bc3138da13626f9db997ceb4" method="POST">
                             @csrf
                             <input name="inf_form_xid" type="hidden" value="f9316db8bc3138da13626f9db997ceb4" />

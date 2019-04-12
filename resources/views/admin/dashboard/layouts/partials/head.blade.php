@@ -9,4 +9,21 @@
     <link rel="stylesheet" href="{{asset('adminassets/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        li.activee{
+            background-color:#0069d9 !important;
+           
+        }
+        .heee p {
+            color:white !important;
+        }
+    
+         /* li.active:hover p {
+            color:black !important;
+        } */
+        li.menu-open {
+            background: #343a40 !important;
+        } 
+        
+        </style>
 </head>

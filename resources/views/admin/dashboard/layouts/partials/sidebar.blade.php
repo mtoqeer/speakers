@@ -32,7 +32,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <li class="nav-item activee">
                 <a href="{{route('active-speaker-page')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Active Speakers</p>
@@ -41,7 +41,7 @@
               <li class="nav-item">
                 <a href="{{route('inactive-speaker-page')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Inactive Speakers</p>
+                  <p>Pending Speakers</p>
                 </a>
               </li>
 

@@ -7,4 +7,17 @@
 <!-- AdminLTE App -->
 <script src="{{asset('adminassets/js/adminlte.min.js')}}"></script>
 
+<script>
+	$(function(){
+		$('.nav a').filter(function(){return this.href==location.href}).parent().addClass('activee').siblings().removeClass('activee')
+		$('.nav a').click(function(){
+			$(this).addClass(' activee').siblings().removeClass(' activee')	
+		})
+	});
+
+
+</script>
+
+
+
 @yield('customscripts')

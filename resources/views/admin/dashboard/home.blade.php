@@ -35,7 +35,7 @@
         <span class="info-box-icon bg-warning"><i class="fa fa-user-times"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Inactive Speakers</span>
+          <span class="info-box-text">Pending Speakers</span>
           <span class="info-box-number">{{$getUnapprovedSpeakers->count()}}</span>
         </div>
         <!-- /.info-box-content -->
@@ -167,7 +167,7 @@
        <div class="col-md-6">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Inactive Speakers</h3>
+            <h3 class="card-title">Pending Speakers</h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body table-responsive p-0">
