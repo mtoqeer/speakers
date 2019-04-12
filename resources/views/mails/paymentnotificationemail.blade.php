@@ -132,8 +132,8 @@
 
                                 <!-- Body content -->
                                <tr>
-                                   <td>
-                                    <p> {!! $data['email_content'] !!}</p>
+                                   <td class="content-cell" style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; padding: 35px;">
+                                    {!! $data['email_content'] !!}
                                    </td>
                                </tr>
                                
