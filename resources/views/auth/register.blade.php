@@ -20,7 +20,7 @@
         <div class="col-md-8 text-center">
             <p style="color:black;">If you are a speaker, please apply below. We are looking 
                 for great speakers with great content to help our planning community. We will 
-                go through your materials and get back to you quickly. <br> Once we go through you materials 
+                go through your materials and get back to you quickly. </p><p style="color:black;"> Once we go through you materials 
                 and you are approved, you’ll be sent a link for your <strong>$100</strong> one-time payment. We 
                 look forward to hearing from you!</p>
         </div>
