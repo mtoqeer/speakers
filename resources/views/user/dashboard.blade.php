@@ -31,13 +31,14 @@
 
             <div class="col-md-5 offset-md-1 border-left">
                     <h4>Your Profile is <span style="color:green;">{{ (auth()->user()->status == 'unapproved') ? "Pending" : "Approved" }}</span> </h4>
-                    <p>Welcome to The Wisdom Speakers Bureau!
-                            <br>
+                    <p>Welcome to The Wisdom Speakers Bureau!</p>
+                         <p>
                             We are looking forward to working with you.  Please make sure to include as much 
                             information as you can in this profile to help us understand you and your speaking needs.  
                             We pride ourselves on matching the best speakers to the right events and creating long 
                             lasting relationships.
-                            <br>
+                        </p>
+                        <p>
                             The more information and tools you can give us the better we will be able to promote you 
                             to meeting and event planners around the world.  No detail is too small.
                     </p>
