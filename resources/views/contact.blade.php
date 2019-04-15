@@ -51,7 +51,9 @@ transition: all .4s ease;
                      <div class="row">
                          
                          <div class="col-lg-10 offset-lg-1 res-pad-top-30">
-                             
+                            @if (Session::has('ContactFormSend'))
+                            <div class="alert alert-info" id="ContactFormSend">{{ Session::get('ContactFormSend') }}</div>
+                            @endif
                              <div class="sign-up-area">
                                  
                                 <form method="POST" role="form" id="contactForm" action="{{route('contactform')}}">
@@ -154,20 +156,20 @@ transition: all .4s ease;
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('event_time_needed') }}" type="text" class="form-control" id="event_time_needed" name="event_time_needed" placeholder="Event Time Needed">
-                                                @if ($errors->has('event_time_needed'))
+                                                <input value="{{ old('program_length') }}" type="text" class="form-control" id="program_length" name="program_length" placeholder="Program Length">
+                                                @if ($errors->has('program_length'))
                                                     <span style="font-size:14px;color:red;" role="alert">
-                                                        <strong>{{ $errors->first('event_time_needed') }}</strong>
-                                                    </span>
+                                                        <strong>{{ $errors->first('program_length') }}</strong>
+                                                    </span>.
                                                 @endif
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('speaking_topic') }}" type="text" class="form-control" id="speaking_topic" name="speaking_topic" placeholder="Speaking Topic">
-                                                @if ($errors->has('speaking_topic'))
+                                                <input value="{{ old('requested_topic') }}" type="text" class="form-control" id="requested_topic" name="requested_topic" placeholder="Requested Topic">
+                                                @if ($errors->has('requested_topic'))
                                                     <span style="font-size:14px;color:red;" role="alert">
-                                                        <strong>{{ $errors->first('speaking_topic') }}</strong>
+                                                        <strong>{{ $errors->first('requested_topic') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
@@ -201,10 +203,10 @@ transition: all .4s ease;
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('how_many_time') }}" type="text" class="form-control" id="how_many_time" name="how_many_time" placeholder="How Many Time Will It Be Presented?">
-                                                @if ($errors->has('how_many_time'))
+                                                <input value="{{ old('event_theme') }}" type="text" class="form-control" id="event_theme" name="event_theme" placeholder="Event Theme">
+                                                @if ($errors->has('event_theme'))
                                                     <span style="font-size:14px;color:red;" role="alert">
-                                                        <strong>{{ $errors->first('how_many_time') }}</strong>
+                                                        <strong>{{ $errors->first('event_theme') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
@@ -224,10 +226,10 @@ transition: all .4s ease;
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('type_of_audience') }}" type="text" class="form-control" id="type_of_audience" name="type_of_audience" placeholder="Type of Audience (purpose for being there, etc.)">
-                                                @if ($errors->has('type_of_audience'))
+                                                <input value="{{ old('total_presenters_needed') }}" type="text" class="form-control" id="total_presenters_needed" name="total_presenters_needed" placeholder="Total Presenters Needed">
+                                                @if ($errors->has('total_presenters_needed'))
                                                     <span style="font-size:14px;color:red;" role="alert">
-                                                        <strong>{{ $errors->first('type_of_audience') }}</strong>
+                                                        <strong>{{ $errors->first('total_presenters_needed') }}</strong>
                                                     </span>
                                                 @endif
                                             </div>
@@ -294,7 +296,7 @@ transition: all .4s ease;
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('vendor_table') }}" type="text" class="form-control" id="vendor_table" name="vendor_table" placeholder="Back of the room Vendor Table?">
+                                                <input value="{{ old('vendor_table') }}" type="text" class="form-control" id="vendor_table" name="vendor_table" placeholder="Will there be vendors?">
                                                 @if ($errors->has('vendor_table'))
                                                     <span style="font-size:14px;color:red;" role="alert">
                                                         <strong>{{ $errors->first('vendor_table') }}</strong>
@@ -307,7 +309,7 @@ transition: all .4s ease;
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('buying_books') }}" type="text" class="form-control" id="buying_books" name="buying_books" placeholder="Will you be buying books for the audience?">
+                                                <input value="{{ old('buying_books') }}" type="text" class="form-control" id="buying_books" name="buying_books" placeholder="Are you interested in Pre-purchasing books?">
                                                 @if ($errors->has('buying_books'))
                                                     <span style="font-size:14px;color:red;" role="alert">
                                                         <strong>{{ $errors->first('buying_books') }}</strong>
@@ -367,5 +369,12 @@ transition: all .4s ease;
 @endsection
     
 @section('customjs')
+
+    <script>
+    $(document).ready(function(){
+     $("#ContactFormSend").delay(2500).slideUp(300);
+    });
+
+    </script>
 
 @endsection

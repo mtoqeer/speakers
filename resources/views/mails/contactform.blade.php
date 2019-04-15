@@ -206,9 +206,9 @@
 
                                     <tr>
 
-                                        <td>Event Time Needed</td>
+                                        <td>Program Length</td>
 
-                                        <td>{{$data['event_time_needed']}}</td>
+                                        <td>{{$data['program_length']}}</td>
 
                                     </tr>
 
@@ -216,9 +216,9 @@
 
                                     <tr>
 
-                                        <td>Speaking Topic</td>
+                                        <td>Requested Topic</td>
 
-                                        <td>{{$data['speaking_topic']}}</td>
+                                        <td>{{$data['requested_topic']}}</td>
 
                                     </tr>
 
@@ -246,9 +246,9 @@
 
                                     <tr>
 
-                                        <td>How Many Time Will it Be Presented?</td>
+                                        <td>Event Theme</td>
 
-                                        <td>{{$data['how_many_time']}}</td>
+                                        <td>{{$data['event_theme']}}</td>
 
                                     </tr>
 
@@ -266,9 +266,9 @@
 
                                     <tr>
 
-                                        <td>Type of Audience (purpose for being there, etc.)</td>
+                                        <td>Total Presenters Needed</td>
 
-                                        <td>{{$data['type_of_audience']}}</td>
+                                        <td>{{$data['total_presenters_needed']}}</td>
 
                                     </tr>
 
@@ -326,7 +326,7 @@
 
                                     <tr>
 
-                                        <td>Back of the room Vendor Table?</td>
+                                        <td>Will there be vendors?</td>
 
                                         <td>{{$data['vendor_table']}}</td>
 
@@ -336,7 +336,7 @@
 
                                     <tr>
 
-                                        <td>Will you be buying books for the audience?</td>
+                                        <td>Are you interested in Pre-purchasing books?</td>
 
                                         <td>{{$data['buying_books']}}</td>
 

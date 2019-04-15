@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 use Response;
+use Newsletter;
 use App\Mail\ContactForm;
 use Illuminate\Http\Request;
-use Newsletter;
+Use Session;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class AllFormsSubmissionController extends Controller
 {
@@ -21,13 +23,13 @@ class AllFormsSubmissionController extends Controller
             'email' => 'required',
             'event_name' => 'required',
             'event_date' => 'required',
-            'event_time_needed' => 'required',
-            'speaking_topic' => 'required',
+            'program_length' => 'required',
+            'requested_topic' => 'required',
             'event_city' => 'required',
             'event_length' => 'required',
-            'how_many_time' => 'required',
+            'event_theme' => 'required',
             'audience_size' => 'required',
-            'type_of_audience' => 'required',
+            'total_presenters_needed' => 'required',
             'challenge' => 'required',
             'equipement' => 'required',
             'film_the_event' => 'required',
@@ -48,13 +50,13 @@ class AllFormsSubmissionController extends Controller
             'email' => $request->email,
             'event_name' => $request->event_name,
             'event_date' => $request->event_date,
-            'event_time_needed' => $request->event_time_needed,
-            'speaking_topic' => $request->speaking_topic,
+            'program_length' => $request->program_length,
+            'requested_topic' => $request->requested_topic,
             'event_city' => $request->event_city,
             'event_length' => $request->event_length,
-            'how_many_time' => $request->how_many_time,
+            'event_theme' => $request->event_theme,
             'audience_size' => $request->audience_size,
-            'type_of_audience' => $request->type_of_audience,
+            'total_presenters_needed' => $request->total_presenters_needed,
             'looking_to_gain'=>$request->looking_to_gain,
             'challenge' => $request->challenge,
             'equipement' => $request->equipement,
@@ -68,7 +70,8 @@ class AllFormsSubmissionController extends Controller
 
         );
         Mail::to('admin@wisdomspeakersbureau.com')->send(new ContactForm($data));    
-        return view('contact');
+        Session::flash('ContactFormSend', "Your Message has been sent successfully!");
+        return Redirect::back();
     }
 
     // public function speakersContactForm(Request $request){
