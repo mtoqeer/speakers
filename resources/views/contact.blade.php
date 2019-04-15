@@ -45,7 +45,7 @@ transition: all .4s ease;
                      <div class="row">
                          <div class="col">
                                 <h3 style="color: #26436c;font-size: 38px;line-height: 52px;text-align: center;">You’re looking for a World Class Speaker...<br>We are here to help.</h3>
-                                <p style="color:black;text-align:center" class="mb-5">Please provide us as much information on your upcoming event as you can so that we can best support you.</p>
+                                <p style="color:black;text-align:center;font-size:19px;" class="mb-5">Please provide us as much information on your upcoming event as you can so that we can best support you.</p>
                             </div>
                      </div>
                      <div class="row">
@@ -226,7 +226,7 @@ transition: all .4s ease;
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input value="{{ old('total_presenters_needed') }}" type="text" class="form-control" id="total_presenters_needed" name="total_presenters_needed" placeholder="Total Presenters Needed">
+                                                <input value="{{ old('total_presenters_needed') }}" type="text" class="form-control" id="total_presenters_needed" name="total_presenters_needed" placeholder="Total Presentations Needed">
                                                 @if ($errors->has('total_presenters_needed'))
                                                     <span style="font-size:14px;color:red;" role="alert">
                                                         <strong>{{ $errors->first('total_presenters_needed') }}</strong>

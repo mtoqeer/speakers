@@ -266,7 +266,7 @@
 
                                     <tr>
 
-                                        <td>Total Presenters Needed</td>
+                                        <td>Total Presentations Needed</td>
 
                                         <td>{{$data['total_presenters_needed']}}</td>
 

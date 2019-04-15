@@ -31,14 +31,15 @@
 
             <div class="col-md-5 offset-md-1 border-left">
                     <h4>Your Profile is <span style="color:green;">{{ (auth()->user()->status == 'unapproved') ? "Pending" : "Approved" }}</span> </h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type 
-                        specimen book. It has survived not only five centuries, but also the leap into 
-                        electronic typesetting, remaining essentially unchanged. It was popularised in 
-                        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                        and more recently with desktop publishing software like Aldus PageMaker including 
-                        versions of Lorem Ipsum.
+                    <p>Welcome to The Wisdom Speakers Bureau!
+                            <br>
+                            We are looking forward to working with you.  Please make sure to include as much 
+                            information as you can in this profile to help us understand you and your speaking needs.  
+                            We pride ourselves on matching the best speakers to the right events and creating long 
+                            lasting relationships.
+                            <br>
+                            The more information and tools you can give us the better we will be able to promote you 
+                            to meeting and event planners around the world.  No detail is too small.
                     </p>
             </div>
         </div>

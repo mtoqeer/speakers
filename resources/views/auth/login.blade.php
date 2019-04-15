@@ -1,5 +1,5 @@
 @extends('layouts.weblayout')
-@section('title', 'Login')
+@section('title', 'Speaker Login')
 @section('customstyles')
     
 @endsection
@@ -9,7 +9,7 @@
 <!-- hero area start -->
 <section class="all-page-hero about-page">
     <div class="page-content container">
-            <span class="about-active"> Login</span>
+            <span class="about-active">Speaker Login</span>
         </div>
 </section>
 
@@ -20,7 +20,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <p style="color:black;">If you are a speaker, please log in here to make any updates to your profile and help us
-                        give Meeting Planners your most current info. Not yet a member? Register now!</p>
+                        give Meeting Planners your most current info.</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Speaker Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

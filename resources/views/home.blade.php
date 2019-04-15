@@ -240,7 +240,7 @@
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="section-heading">
-                            <h2 style="text-transform: uppercase;">Clients</h2>
+                            <h2 style="text-transform: uppercase;">Companies That Trust Us</h2>
                             <p>We are always looking for great resources for our 
                                 Planners and Promoters.  Here are a few we have found that 
                                 have great information or assistance.</p>
