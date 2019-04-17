@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="position_department">Department</label>
+                    <label for="position_department">Company</label>
                     <input type="text" name="position_department" value="" class="form-control" required>
                 </div>
                 @if (session('message'))

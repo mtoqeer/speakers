@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="degree_year">Year</label>
+                    <label for="degree_year">Year Graduated</label>
                     <input type="text" name="degree_year" value="" class="form-control" required>
                 </div>
 
