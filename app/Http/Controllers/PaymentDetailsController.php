@@ -57,4 +57,14 @@ class PaymentDetailsController extends Controller
     public function pay(){
         return view('user.pay');
     }
+
+    public function delete($id){
+
+        $paymentStatus = PaymentDetails::find($id);
+        $paymentStatusDelete = $paymentStatus->delete();
+        if($paymentStatusDelete){
+            return redirect('/admin/paymentconfirmation')->with('deleted','Deleted Successfully!!');
+        }
+
+    }
 }

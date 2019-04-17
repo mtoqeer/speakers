@@ -29,7 +29,7 @@
                         <th>ID</th>
                         <th>Paypal Email</th>
                         <th>Payment Date</th>
-                        <th>Actions</th>
+                        <th colspan="2">Actions</th>
                     </tr>
                     @foreach ($getPaymentStatus as $paymentstatus)
                     

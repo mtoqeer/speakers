@@ -168,3 +168,4 @@ Route::post('admin/emailedit/{id}', 'PaymentInfoEmailContentController@saveconte
 // Payment Confirmation 
 Route::get('admin/paymentconfirmation/', 'PaymentDetailsController@confirmPageShow')->name('ConfirmPageShow')->middleware('admin.auth:admin');
 Route::get('admin/paymentconfirmation/{id}', 'PaymentDetailsController@updateToConfirm')->name('updateToConfirm')->middleware('admin.auth:admin');
+Route::get('admin/paymentconfirmation/delete/{id}', 'PaymentDetailsController@delete')->name('deletePaymentDetails')->middleware('admin.auth:admin');
