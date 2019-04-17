@@ -15,11 +15,11 @@
 <body>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5 mt-5 text-center">
+        <div class="col-md-5 text-center">
              
-            <img src="https://wisdomspeakersbureau.com/websiteassests/img/paylogo.png" width="80%" alt="">
+            <img style="margin-top:-25px;" src="https://wisdomspeakersbureau.com/websiteassests/img/paylogo.png" width="80%" alt="">
             
-            <p>You're one step away from completing your registration. </p>
+            <p style="margin-top:-25px;">You're one step away from completing your registration. </p>
             <p>    Please click the button below to pay our one-time registration fee of $100 USD. 
                     The button connects to Paypal, where you can pay using your balance or thru a debit/credit card. We request that you stay logged on until the payment is completed, so our system can verify your payment details. Thank you!
                 </p> 
