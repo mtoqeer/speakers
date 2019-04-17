@@ -8,6 +8,7 @@
                 <form method="POST" action="{{route('userexpertisesave')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
+                    <h5 style="text-align:center;"> Have you received any certification? Please share your expertise below.</h5>
                     <div class="form-group">
                         <label for="expertise">Expertise</label>
                         <input type="text" name="expertise" value="" class="form-control" required>

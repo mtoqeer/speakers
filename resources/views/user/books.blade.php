@@ -11,7 +11,7 @@
             
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-
+                <h5 style="text-align:center;">Have you published any books? Please share the link below.</h5>
                 <div class="form-group">
                     <label for="book_title">Title</label>
                     <input type="text" name="book_title" value="" class="form-control" required>

@@ -23,7 +23,7 @@
         color:black !important;
     } */
     li.menu-open {
-        background: rgba(75, 84, 92) !important;
+        background: #343a40 !important;
     } 
     
     </style>
