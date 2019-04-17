@@ -8,7 +8,13 @@ use Illuminate\Support\Facades\DB;
 class PaymentDetailsController extends Controller
 {
     public function show(){
-        return view('user.paypalpayment');
+        $userid = auth()->user()->id;
+        $getPaymentStatus = DB::table('payment_details')          
+            ->select('payment_details.*')
+            ->where('payment_details.user_id' , $userid)->get();
+        
+        
+        return view('user.paypalpayment')->with('getPaymentStatus', $getPaymentStatus);
     }
 
 

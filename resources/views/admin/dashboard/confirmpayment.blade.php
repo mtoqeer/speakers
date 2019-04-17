@@ -39,6 +39,7 @@
                         <td>{{$paymentstatus->paypal_email}}</td>
                         <td>{{$paymentstatus->payment_date}}</td>
                         <td><a href="/admin/paymentconfirmation/{{$paymentstatus->id}}"><button  class="btn btn-info">Confirm</button></a></td>
+                        <td><a href="/admin/paymentconfirmation/delete/{{$paymentstatus->id}}"><button  class="btn btn-danger">Delete</button></a></td>
                     </tr>
                     @endforeach 
                   </tr>
