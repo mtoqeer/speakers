@@ -11,7 +11,22 @@
                     <h5 style="text-align:center;"> Have you received any certification? Please share your expertise below.</h5>
                     <div class="form-group">
                         <label for="expertise">Expertise</label>
-                        <input type="text" name="expertise" value="" class="form-control" required>
+                        <select name="expertise" id="" class="form-control">
+                                <option title='Motivation/Inspiration' value='Motivation/Inspiration'>Motivation/Inspiration</option>
+                                <option title='Innovation' value='Innovation'>Innovation</option>
+                                <option title='Sales' value='Sales'>Sales</option>
+                                <option title='Technology' value='Technology'>Technology</option>
+                                <option title='Leadership' value='Leadership'>Leadership</option>
+                                <option title='Finance &amp; Economics' value='Finance &amp; Economics'>Finance &amp; Economics</option>
+                                <option title='Diversity' value='Diversity'>Diversity</option>
+                                <option title='Health/Wellness' value='Health/Wellness'>Health/Wellness</option>
+                                <option title='Culture' value='Culture'>Culture</option>
+                                <option title='CSR' value='CSR'>CSR</option>
+                                <option title='Risk' value='Risk'>Risk</option>
+                                <option title='Business Change' value='Business Change'>Business Change</option>
+                                <option title='Strategic Planning' value='Strategic Planning'>Strategic Planning</option>
+                        </select>
+
                     </div>
                     @if (session('message'))
                         <p id="expertise_added" class="alert alert-success">{{session('message')}}</p>
