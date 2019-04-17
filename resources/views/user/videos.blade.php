@@ -8,7 +8,15 @@
             
             
             <form method="POST" action="{{route('userVideoSave')}}">
-
+                 <p>   Do you have videos you want to share? Please enter your embed video links below. For the video to show correctly on the site, please follow the instructions below.
+                    </p>
+                <p>  Step 1: Get your video link. <br>
+                  Sample: https://www.youtube.com/watch?v=x55YlGtKbJE</p> 
+                    
+             <p>     Step 2: Change the "watch?v" portion of the link to "embed" <br>
+                    Sample: https://www.youtube.com/embed/x55YlGtKbJE </p> 
+                    
+                 <p>   Step 3: Paste the final link below!</p>
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
                     
