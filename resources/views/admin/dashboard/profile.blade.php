@@ -119,6 +119,7 @@
             <li class="nav-item"><a class="nav-link" href="#video" data-toggle="tab">Video</a></li>
             <li class="nav-item"><a class="nav-link" href="#books" data-toggle="tab">Books and Articles</a></li>
             <li class="nav-item"><a class="nav-link" href="#awards" data-toggle="tab">Awards and Certificates</a></li>
+            <li class="nav-item"><a class="nav-link" href="#payment" data-toggle="tab">Payment Details</a></li>
           </ul>
         </div><!-- /.card-header -->
         <div class="card-body">
@@ -244,6 +245,19 @@
                 @foreach ($getAwards as $awards)
                   <h5>{{$awards->name}}</h5>
                   <p>{{$awards->year}}</p>
+                @endforeach
+                
+            </div>
+            <!-- /.tab-pane -->
+
+
+            <div class="tab-pane" id="payment">
+                @foreach ($getPaymentStatus as $status)
+                  <ul>
+                    <li> <strong>Email:</strong>  {{$status->paypal_email}}</li>
+                    <li><strong>Date:</strong>  {{$status->payment_date}}</li>
+                    <li><strong>Status: </strong> {{$status->status}}</li>
+                  </ul>
                 @endforeach
                 
             </div>

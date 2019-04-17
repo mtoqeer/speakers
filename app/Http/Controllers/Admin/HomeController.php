@@ -239,11 +239,14 @@ class HomeController extends Controller
         ->where('languages.user_id' , $id)->get();
 
 
+        $getPaymentStatus = DB::table('payment_details')          
+        ->select('payment_details.*')
+        ->where('payment_details.user_id' , $id)->get();
 
 
         return view('admin.dashboard.profile', compact('getGeneralInfo','getWorkShops', 'getVideos','getSocialMediaAccounts', 
         'getPresentations', 'getPastTalks','getImages','getExpertises','getDegrees','getCurrentPositions',
-        'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor','getLanguages'));
+        'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor','getLanguages','getPaymentStatus'));
 
     }
 
