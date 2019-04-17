@@ -15,10 +15,10 @@
                         
                         <div class="footer-social text-center">
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.facebook.com/SpeakandGrowRich/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/SpeakGrowRich"><i class="fab fa-twitter" target="_blank"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in" target="_blank"></i></a></li>
+                                <li><a href="https://www.instagram.com/speakandgrowrich/"><i class="fab fa-instagram" target="_blank"></i></a></li>
                             </ul>
                         </div>
                         
