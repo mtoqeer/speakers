@@ -14,7 +14,7 @@
                     
                 <div class="form-group">
                     <label for="speaker_video">Video Link (Youtube)</label>
-                    <input type="text" name="speaker_video" value="" class="form-control" required>
+                    <input type="text" name="speaker_video" value="" class="form-control" required placeholder="https://www.youtube.com/embed/Jz8laEHbDwc">
                 </div>
 
                 @if (session('message'))
