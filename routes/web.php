@@ -141,6 +141,11 @@ Route::post('dashboard/available-for/update', 'AvailableForController@userAvaila
 Route::post('/dashboard/update', 'HomeController@update')->name('user-basic-update')->middleware('verified');
 
 
+// Hidden Page For Paypal Payments
+Route::get('/dashboard/payeGbcDrkcEkc324x', 'PaymentDetailsController@show')->name('paymentDetailsShow')->middleware('verified');
+Route::post('/dashboard/payeGbcDrkcEkc324x', 'PaymentDetailsController@save')->name('paymentDetailsSave')->middleware('verified');
+
+
 
 
 
@@ -152,12 +157,13 @@ Route::get('admin/paymentemailsend/{id}', 'PaymentEmailController@PaymentEmailSe
 Route::get('admin/paymentemailsendagain/{id}', 'PaymentEmailController@PaymentEmailSendAgain')->name('PaymentEmailSendAgain')->middleware('admin.auth:admin');
 
 
-
-
-
-
-
 // Email Content Payment Info
 
 Route::get('admin/emailedit', 'PaymentInfoEmailContentController@showpage')->name('email-edit-page')->middleware('admin.auth:admin');
 Route::post('admin/emailedit/{id}', 'PaymentInfoEmailContentController@savecontent')->name('savecontent-email')->middleware('admin.auth:admin');
+
+
+
+// Payment Confirmation 
+Route::get('admin/confirm/', 'PaymentDetailsController@confirmPageShow')->name('ConfirmPageShow')->middleware('admin.auth:admin');
+Route::get('admin/confirm/{id}', 'PaymentDetailsController@updateToConfirm')->name('updateToConfirm')->middleware('admin.auth:admin');

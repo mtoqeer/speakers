@@ -45,6 +45,7 @@
                     @php
                         $userid = $UnapprovedSpeakers->id;
                         $getstatus = DB::table('payment_emails')->where('payment_emails.user_id' , $userid)->get();
+                        $getpaymentstatus = DB::table('payment_details')->where('payment_details.user_id' , $userid)->get();
                     @endphp
                     @if ($getstatus->count() == "1")
                       <td><a href="/admin/paymentemailsendagain/{{$UnapprovedSpeakers->id}}"><button class="btn btn-warning">Send Again</button></a></td>
@@ -54,7 +55,23 @@
                       <td><a href="/admin/paymentemailsend/{{$UnapprovedSpeakers->id}}"><button class="btn btn-secondary">Send Email</button></a></td>
                     @endif
 
-                    <td>Unpaid</td> 
+                    @foreach ($getpaymentstatus as $status)
+                        @if ($status->status == "Awaiting Confirmation")
+                        <td>Awaiting Confirmation</td> 
+                        @endif
+
+                        @if ($status->status == "Paid")
+                          <td>Paid</td> 
+                        @endif
+                    @endforeach
+
+                    @if ($getpaymentstatus->count() == "0")
+                        <td>Unpaid</td>
+                    @endif
+
+                   
+
+                    
                     <td>
                       <a href="/admin/profile/{{$UnapprovedSpeakers->id}}"><button class="btn btn-success">View</button></a>
                       <a href="/admin/inactive-speakers/{{$UnapprovedSpeakers->id}}"><button class="btn btn-info">Approve</button></a>

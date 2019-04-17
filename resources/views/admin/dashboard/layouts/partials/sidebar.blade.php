@@ -75,6 +75,13 @@
                     </a>
                   </li>
 
+                  <li class="nav-item">
+                      <a href="{{route('ConfirmPageShow')}}" class="nav-link">
+                        <i class="fa fa-circle-o nav-icon"></i>
+                        <p>Confirm Payment</p>
+                      </a>
+                    </li>
+
                   
                 <li class="nav-item">
                     <a href="{{route('updatespage')}}" class="nav-link">
