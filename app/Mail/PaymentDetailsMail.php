@@ -29,7 +29,7 @@ class PaymentDetailsMail extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@wisdomspeakersbureau.com')
+        return $this->from('admin@wisdomspeakersbureau.com')->subject("You're one step away from completing your registration at Wisdom Speakers Bureau.")
                 ->view('mails.paymentnotificationemail')->with('data', $this->data);
     }
 }
