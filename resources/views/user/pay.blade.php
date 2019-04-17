@@ -27,7 +27,7 @@
                     
                     
                    
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="5TCV7CAPC96YU">
                 <input type="image" src="https://www.ijsr.net/images/paynow.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
