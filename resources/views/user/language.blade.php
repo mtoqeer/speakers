@@ -9,7 +9,7 @@
                     @csrf
                     <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
                     <div class="form-group">
-                        <label for="expertise">Language</label>
+                        <label for="expertise">Language - Our meeting and event planners may look for speakers who speak a certain language. Please choose all the languages you're fluent with.</label>
                         <select name="language" id="language" class="form-control">
                                 <option value="Afrikanns">Afrikanns</option>
                                 <option value="Albanian">Albanian</option>

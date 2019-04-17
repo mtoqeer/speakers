@@ -10,7 +10,7 @@
             <form method="POST" action="{{route('userCurrentPositionSave')}}">
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-
+                <label for="">Where are you currently connected? Please share your title and the company you’re working for.</label>
                 <div class="form-group">
                     <label for="position_title">Title</label>
                     <input type="text" name="position_title" value="" class="form-control" required>

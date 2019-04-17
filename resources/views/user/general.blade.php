@@ -288,7 +288,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="why_choose">Why Choose Me (250 Characters Max)</label>
+                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (250 Characters Max) </label>
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">
                             {{ $errors->first('why_choose') }}
@@ -297,7 +297,7 @@
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="bio">Bio</label>
+                        <label for="bio">Bio - Please share your bio below. We recommend highlighting your journey and your achievements.</label>
                         <textarea class="form-control" id="bio" name="bio" rows="7"></textarea>
                     </div>
                     <div class="form-group">
@@ -609,7 +609,7 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="why_choose">Why Choose Me (250 Characters Max)</label>
+                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (250 Characters Max) </label>
                     
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">
@@ -620,7 +620,7 @@
                         <textarea class="form-control" id="why_choose" name="why_choose" rows="4">{{$generalinfo->why_choose}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="bio">Bio</label>
+                        <label for="bio">Bio - Please share your bio below. We recommend highlighting your journey and your achievements.</label>
                         <textarea class="form-control" id="bio" name="bio" rows="7">{{$generalinfo->bio}}</textarea>
                     </div>
                     <div class="form-group">

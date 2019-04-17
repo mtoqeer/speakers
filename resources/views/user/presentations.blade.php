@@ -11,7 +11,7 @@
 
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                    
+                    <label for="">What presentation topic/s are you known for? Please share below.</label>
                 <div class="form-group">
                     <label for="presentation_title">Title</label>
                     <input type="text" name="presentation_title" value="" class="form-control" required>

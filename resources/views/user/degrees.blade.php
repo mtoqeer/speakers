@@ -11,7 +11,7 @@
                 
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-
+                <label for="">Please share your academic achievements below.</label>
                 <div class="form-group">
                     <label for="degree_title">Academic Degree</label>
                     <input type="text" name="degree_title" value="" class="form-control" required>

@@ -11,7 +11,7 @@
             
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                <h5 style="text-align:center;">Have you published any books? Please share the link below.</h5>
+                <label for="">Have you published any books? Please share the link below. We recommend that you share the direct link of the book (whether Amazon or the direct link from your website).</label>
                 <div class="form-group">
                     <label for="book_title">Title</label>
                     <input type="text" name="book_title" value="" class="form-control" required>

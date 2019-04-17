@@ -10,7 +10,7 @@
                 <form method="POST" action="{{route('userachievementsave')}}">
                 @csrf
                 <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
-               <h5 style="text-align:center;"> Have you received any awards lately? Please share your achievements below.</h5>
+               <label for="">Please share important milestones you’ve achieved lately. </label>
                 <div class="form-group">
                     <label for="acheivement_title">Title</label>
                     <input type="text" name="acheivement_title" value="" class="form-control" required>

@@ -10,7 +10,7 @@
             <form method="POST" action="{{route('userAwardSave')}}">
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-
+                <label for="">Have you received any awards lately? Please share your achievements below.</label>
                 <div class="form-group">
                     <label for="award_name">Award Name</label>
                     <input type="text" name="award_name" value="" class="form-control" required>

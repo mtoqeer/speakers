@@ -10,7 +10,7 @@
             <form method="POST" action="{{route('userWorkshopSave')}}">
                     @csrf
                     <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                    
+                    <label for="">Are you holding your own workshop soon? Please share the info about it below.</label>
                 <div class="form-group">
                     <label for="workshop_title">Title</label>
                     <input type="text" name="workshop_title" value="" class="form-control" required>

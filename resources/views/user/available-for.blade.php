@@ -10,7 +10,7 @@
                 <form method="POST" action="{{route('userAvailableForSave')}}">
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                <h5 style="text-align:center;"> Please let us know what kind of speaking engagements you're available for.</h5>
+                <label for="">Please let us know what kind of speaking engagements you're available for.</label>
                 <div class="form-group">
                     <label for="confernce">Conference</label>
                     <select class="form-control" id="confernce" name="conference">
@@ -66,7 +66,7 @@
             <form method="POST" action="{{route('userAvailableForUpdate')}}">
                 @csrf
                 <input type="hidden" name="id" value="{{$availablefor->id}}" class="form-control">
-
+                <label for="">Please let us know what kind of speaking engagements you're available for.</label>
                 <div class="form-group">
                     <label for="confernce">Conference</label>
                     <select class="form-control" id="confernce" name="conference">

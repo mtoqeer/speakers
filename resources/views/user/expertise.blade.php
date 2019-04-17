@@ -8,9 +8,8 @@
                 <form method="POST" action="{{route('userexpertisesave')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
-                    <h5 style="text-align:center;"> Have you received any certification? Please share your expertise below.</h5>
                     <div class="form-group">
-                        <label for="expertise">Expertise</label>
+                        <label for="expertise">Expertise - Please choose your expertise from the options below. If you can’t find your topic, please send us an email so we can add your expertise to the list. Thank you!</label>
                         <select name="expertise" id="" class="form-control">
                                 <option title='Motivation/Inspiration' value='Motivation/Inspiration'>Motivation/Inspiration</option>
                                 <option title='Innovation' value='Innovation'>Innovation</option>

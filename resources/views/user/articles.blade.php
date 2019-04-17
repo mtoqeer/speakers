@@ -10,7 +10,7 @@
             <form method="POST" action="{{route('userArticleSave')}}">
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
-                <h5 style="text-align:center;">Have you been featured or mentioned in an article lately? Please share the articles with us. </h5>
+                <label for="">Have you been featured or mentioned in an article lately? Please share the articles with us.</label>
 
                 <div class="form-group">
                     <label for="article_title">Title</label>

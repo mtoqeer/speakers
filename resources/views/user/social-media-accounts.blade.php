@@ -15,7 +15,7 @@
         <div class="col-md-5">
             @if ($getSocialAccount->count() == 0 )
             <form method="POST" action="{{route('userSocialMediaAccountSave')}}">
-                
+                <label for="">Please enter your complete social media links below. </label>
                 @csrf
                 <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
 
@@ -66,7 +66,7 @@
                 @foreach ($getSocialAccount as $sociallinks)
                      @if ($getSocialAccount->count() == 1 )
                      <form method="POST" action="{{route('userSocialMediaAccountUpdate')}}">
-                
+                            <label for="">Please enter your complete social media links below. </label>
                         @csrf
                         <input type="hidden" name="id" value="{{$sociallinks->id}}" class="form-control">
 

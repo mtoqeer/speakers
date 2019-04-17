@@ -9,7 +9,7 @@
                      
             @if ($getImage->count() < 3)
                 <form method="POST" action="{{route('userImageSave')}}" enctype="multipart/form-data">
-                    
+                    <label for="">Please upload up to 3 images below. Strictly 5MB or less per image.</label>
                     @csrf
                     <input type="hidden" name="user_id" value="{{auth()->user()->id}}" class="form-control">
                     
@@ -22,7 +22,6 @@
                         <strong class="text-danger">{{ $errors->first('images') }}</strong>
                         </span>
                     @endif
-                    <h5>Please add a maximum of three photos under 5MB</h5>
                     @if (session('message'))
                     <p id="image_added" class="alert alert-success">{{session('message')}}</p>
                     @endif
