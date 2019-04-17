@@ -22,7 +22,7 @@ class PaymentDetailsController extends Controller
         $paymentdetailsSave = $paymentdetails->save();
 
         if($paymentdetailsSave){
-            return redirect('/dashboard/payeGbcDrkcEkc324x')->with('message','Payment Details Has Been Submitted!!');
+            return redirect('/dashboard/paymentconfirmation')->with('message','Payment Details Has Been Submitted!!');
         }
 
     }
@@ -46,5 +46,9 @@ class PaymentDetailsController extends Controller
             ->select('payment_details.*')
             ->where('payment_details.status' , "Awaiting Confirmation")->get();
         return view('admin.dashboard.confirmpayment')->with('getPaymentStatus', $getPaymentStatus);
+    }
+
+    public function pay(){
+        return view('user.pay');
     }
 }
