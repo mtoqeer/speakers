@@ -325,76 +325,85 @@
         
         
                             <!-- Videos -->
-                            <div class="row p-4 mb-3 mls-1  bg-white rounded">
-                                <div class="col-md-12">
-                                    <h5>VIDEOS</h5>
-                                    <div class="row mt-3">
-                                        @foreach ($getVideos as $video)
-                                            <div class="col-md-4 mb-3">
-                                                <iframe width="100%" height="100%" src="{{$video->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                            </div>
-                                        @endforeach
-        
+                            @if ($getVideos->count() > 0) 
+                                <div class="row p-4 mb-3 mls-1  bg-white rounded">
+                                    <div class="col-md-12">
+                                        <h5>VIDEOS</h5>
+                                        <div class="row mt-3">
+                                            @foreach ($getVideos as $video)
+                                                <div class="col-md-4 mb-3">
+                                                    <iframe width="100%" height="100%" src="{{$video->link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            @endforeach
+            
+                                            
+                                            
+                                        </div>
                                         
-                                        
-                                    </div>
-                                    
-                                </div>                        
-                            </div> 
+                                    </div>                        
+                                </div> 
+                            @endif
                             <!-- Vedios End -->
         
         
                             <!-- photos -->
-                            <div class="row p-4 mb-3 mls-1  bg-white rounded">
-                                <div class="col-md-12">
-                                    <h5>PHOTOS</h5>
-                                    <div class="row mt-3" id="lightgallery">
-                                        @foreach ($getImages as $image)
-                                            <div class="col-md-3 mb-3">
-                                                <a href="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" data-fancybox data-caption="">
-                                                    <img src="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" class="img-thumbnail">
-                                                </a>
-                                            </div>
-                                        @endforeach
-        
-                                       
-                                    </div>
-                                    
-                                </div>                        
-                            </div> 
+                            @if ($getImages->count() > 0) 
+                                <div class="row p-4 mb-3 mls-1  bg-white rounded">
+                                    <div class="col-md-12">
+                                        <h5>PHOTOS</h5>
+                                        <div class="row mt-3" id="lightgallery">
+                                            @foreach ($getImages as $image)
+                                                <div class="col-md-3 mb-3">
+                                                    <a href="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" data-fancybox data-caption="">
+                                                        <img src="{{asset('adminassets/img/speakerimages/')}}/{{$image->path}}" class="img-thumbnail">
+                                                    </a>
+                                                </div>
+                                            @endforeach
+            
+                                        
+                                        </div>
+                                        
+                                    </div>                        
+                                </div> 
+                            @endif
                             <!-- photos End -->
         
         
                                <!-- Books start -->
-                              <div class="row p-4 mb-3 mls-1  bg-white rounded">
-                                    <div class="col-md-12">
-                                        <h5 class="mb-2">BOOKS</h5>
-                                        @foreach ($getBooks as $books)
-                                            <div class="book mt-2">
-                                                <a href="{{$books->link}}" target="_blank"><h5>{{$books->title}}</h5></a>
-                                            </div>
-                                        @endforeach
+                               @if ($getBooks->count() > 0) 
+                                <div class="row p-4 mb-3 mls-1  bg-white rounded">
+                                        <div class="col-md-12">
+                                            <h5 class="mb-2">BOOKS</h5>
+                                            @foreach ($getBooks as $books)
+                                                <div class="book mt-2">
+                                                    <a href="{{$books->link}}" target="_blank"><h5>{{$books->title}}</h5></a>
+                                                </div>
+                                            @endforeach
 
-                                    </div>    
-                                </div> 
+                                        </div>    
+                                    </div> 
+                                @endif
                             <!-- Books End -->
 
                              <!-- Article start -->
-                             <div class="row p-4 mb-3 mls-1  bg-white rounded">
-                                <div class="col-md-12">
-                                    <h5 class="mb-2">ARTICLES</h5>
-                                    @foreach ($getArticles as $article)
-                                        <div class="article mt-2">
-                                            <a href="{{$article->link}}" target="_blank"><h5>{{$article->title}}</h5></a>
-                                        </div>
-                                    @endforeach
-                                        
-                                </div>    
-                            </div> 
+                             @if ($getArticles->count() > 0)
+                                <div class="row p-4 mb-3 mls-1  bg-white rounded">
+                                    <div class="col-md-12">
+                                        <h5 class="mb-2">ARTICLES</h5>
+                                        @foreach ($getArticles as $article)
+                                            <div class="article mt-2">
+                                                <a href="{{$article->link}}" target="_blank"><h5>{{$article->title}}</h5></a>
+                                            </div>
+                                        @endforeach
+                                            
+                                    </div>    
+                                </div> 
+                            @endif
                         <!-- Article End -->
         
         
                              <!-- Awards and Certificate start -->
+                        @if ($getAwards->count() > 0)
                              <div class="row p-4 mb-3 mls-1  bg-white rounded">
                                 
                                 <div class="col-md-12">
@@ -406,7 +415,7 @@
                                         </div>
                                     @endforeach
                                 </div>    
-                            
+                        @endif    
                             
                             </div> 
                         <!-- Awards and Certificate End -->
@@ -433,57 +442,7 @@
                      </div><!-- row end -->
                 </div><!-- container end -->
         
-            
-        
-                <!-- Speaker Contact Info -->
-        
-                <!-- Modal -->
-                    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                                @foreach ($getGeneralInfo as $generalInfo)
-                            <h5 class="modal-title" id="exampleModalLabel">Contact {{$generalInfo->name}}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            
-                            <form class="speakersContactForm" method="POST" action="/speakerscontactform" id="speakercontact">
-                                @csrf
-                                <div class="form-group speaker-contact-form"">
-                                    <label for="customer-name">Name:</label>
-                                    <input name="customer_name" type="text" class="form-control" class="speaker_contact-form" id="customer_name" placeholder="">
-                                </div>
-        
-                                <div class="form-group speaker-contact-form"">
-                                    <label for="customer-email">Email:</label>
-                                    <input type="email" class="form-control" id="customer-email" placeholder="" name="customer_email">
-                                </div>
-        
-                                
-                                    <input type="hidden" class="form-control" id="customer-subject" name="customer_subject" placeholder="" value="{{$generalInfo->name}}">
-                                @endforeach
-                                
-                                <div class="form-group speaker-contact-form"">
-                                    <label for="customer-message">Message:</label>
-                                    <textarea id="customer-message" name="customer_message" class="form-control" rows="4"></textarea>
-                                </div>
     
-
-                                <button class="biddaloy-btn-sm" type="submit" name="submit" style="cursor: pointer;border: none;width: 100%;">Contact <i id="buttonloader" class=""></i></button>
-                                <div id="speakerscontactformalert" class="alert alert-success mt-3 text-center d-none">
-                                    <strong>Success!</strong> You Message Has Been Sent!!
-                                </div>
-        
-                            </form>
-
-                        </div>
-                        </div>
-                    </div>
-                    </div> --}}
-                <!-- Speakers Contact Info End -->
 @endsection
     
 @section('customjs')
