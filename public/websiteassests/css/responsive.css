@@ -1,10 +1,6 @@
 /*		Medium Device	*/
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    img.profileimg {
-        width: 254px !important;
-        height: 270px !important;
-        }
 
 
     .number-area p {

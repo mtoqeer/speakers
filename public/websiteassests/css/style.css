@@ -1307,3 +1307,12 @@ margin-right: 12px;
     border-color: #e2a738; 
 }
 
+
+
+
+@media only screen and (min-width: 992px) and (max-width: 1999px) { 
+    img.profileimg {
+        width: 254px !important;
+        height: 270px !important;
+        }
+}
