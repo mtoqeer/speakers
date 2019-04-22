@@ -162,7 +162,7 @@
                                 </div>                        
                             </div>
         
-                            {{-- <div class="row">
+                            <div class="row">
                                 <div class="col-md-12  mt-3">
                                     <h5>SIMILAR SPEAKERS</h5>
                                     <hr>
@@ -183,7 +183,7 @@
 
 
                                     @endphp
-                                    
+                                    G
 
                                         @foreach ($getRelated as $item)
                                             
@@ -196,21 +196,17 @@
                                                 @php
                                                     $getCp = DB::table('users')
                                                     ->join('current_positions', 'users.id', '=', 'current_positions.user_id')->select('current_positions.title','current_positions.department','current_positions.user_id')
-                                                    ->where('current_positions.user_id' , $item->id)->first();
-                                                    
+                                                    ->where('current_positions.user_id' , $item->id)->first();  
                                                 @endphp
                                                 <p class="">{{$getCp->title}}</p>
                                                 <p class="">{{$getCp->department}}</p>
 
-                                                   
-                                                
-                                            
                                             </div>
                                         </div>
                                         @endforeach
                                     @endforeach
                                 </div>                        
-                            </div> --}}
+                            </div> 
         
                         </div>
         
