@@ -301,7 +301,7 @@
                         <textarea class="form-control" id="bio" name="bio" rows="7"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="profile_image">Profile Image (270X308)</label>
+                        <label for="profile_image">Profile Image</label>
                         <input type="file" class="form-control-file" id="profile_image" name="profile_image">
                     </div>
                     @if ($errors->has('profile_image'))
@@ -624,7 +624,7 @@
                         <textarea class="form-control" id="bio" name="bio" rows="7">{{$generalinfo->bio}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="profile_image">Profile Image (270X308)</label>
+                        <label for="profile_image">Profile Image</label>
                         <input type="file" class="form-control-file" id="profile_image" name="profile_image" value="{{$generalinfo->profile_img}}">
                     </div>
                     @if ($errors->has('profile_image'))

@@ -185,28 +185,28 @@
                                     @endphp
                                     
 
-                                    @foreach ($getRelated as $item)
-                                        
-                                    <div class="row mb-4">
-                                        <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                           <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" class="rounded-circle" alt=""></a>
-                                        </div>
-                                        <div class="col-md-9 single-page-speaker-details">
-                                            <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
-                                            @php
-                                                $getCp = DB::table('users')
-                                                ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
-                                                ->select('current_positions.title','current_positions.department','current_positions.user_id')
-                                                ->where('current_positions.user_id' , $item->id)->first();
-                                            @endphp
+                                        @foreach ($getRelated as $item)
                                             
-                                                <p class="">{{$getCp->title}}</p>
-                                                <p class="">{{$getCp->department}}</p>
+                                        <div class="row mb-4">
+                                            <div class="col-md-3 col-sm-12 similar-single-img text-center">
+                                            <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" class="rounded-circle" alt=""></a>
+                                            </div>
+                                            <div class="col-md-9 single-page-speaker-details">
+                                                <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
+                                                @php
+                                                    $getCp = DB::table('users')
+                                                    ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
+                                                    ->select('current_positions.title','current_positions.department','current_positions.user_id')
+                                                    ->where('current_positions.user_id' , $item->id)->first();
+                                                @endphp
+                                                
+                                                    <p class="">{{$getCp->title}}</p>
+                                                    <p class="">{{$getCp->department}}</p>
+                                                
                                             
-                                           
+                                            </div>
                                         </div>
-                                    </div>
-                                    @endforeach
+                                        @endforeach
                                     @endforeach
                                 </div>                        
                             </div>
@@ -221,13 +221,24 @@
                             <div class="col-md-4">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="v-pills-bio-tab" data-toggle="pill" href="#v-pills-bio" role="tab" aria-controls="v-pills-home" aria-selected="true">Bio</a>
-                                <a class="nav-link" id="v-pills-current-position-tab" data-toggle="pill" href="#v-pills-current-position" role="tab" aria-controls="v-pills-profile" aria-selected="false">Current Position</a>
-                                <a class="nav-link" id="v-pills-degrees-tab" data-toggle="pill" href="#v-pills-degrees" role="tab" aria-controls="v-pills-messages" aria-selected="false">Degrees</a>
-                                <a class="nav-link" id="v-pills-achievement-tab" data-toggle="pill" href="#v-pills-achievement" role="tab" aria-controls="v-pills-messages" aria-selected="false">Achievements</a>
-                                <a class="nav-link" id="v-pills-presentations-tab" data-toggle="pill" href="#v-pills-presentations" role="tab" aria-controls="v-pills-messages" aria-selected="false">Presentations</a>
-        
-                                <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Previous Clients</a>
-                                <a class="nav-link" id="v-pills-workshops-tab" data-toggle="pill" href="#v-pills-workshops" role="tab" aria-controls="v-pills-messages" aria-selected="false">Workshops</a>
+                                @if ($getCurrentPositions->count() > 0)
+                                    <a class="nav-link" id="v-pills-current-position-tab" data-toggle="pill" href="#v-pills-current-position" role="tab" aria-controls="v-pills-profile" aria-selected="false">Current Position</a>
+                                @endif
+                                @if ($getDegrees->count() > 0)
+                                    <a class="nav-link" id="v-pills-degrees-tab" data-toggle="pill" href="#v-pills-degrees" role="tab" aria-controls="v-pills-messages" aria-selected="false">Degrees</a>
+                                @endif
+                                @if ($getAchievements->count() > 0)
+                                    <a class="nav-link" id="v-pills-achievement-tab" data-toggle="pill" href="#v-pills-achievement" role="tab" aria-controls="v-pills-messages" aria-selected="false">Achievements</a>
+                                @endif
+                                @if ($getPresentations->count() > 0)
+                                    <a class="nav-link" id="v-pills-presentations-tab" data-toggle="pill" href="#v-pills-presentations" role="tab" aria-controls="v-pills-messages" aria-selected="false">Presentations</a>
+                                @endif
+                                @if ($getPastTalks->count() > 0)
+                                    <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Previous Clients</a>
+                                @endif
+                                @if ($getWorkShops->count() > 0)
+                                    <a class="nav-link" id="v-pills-workshops-tab" data-toggle="pill" href="#v-pills-workshops" role="tab" aria-controls="v-pills-messages" aria-selected="false">Workshops</a>
+                                @endif
                                 </div>
         
                             </div>

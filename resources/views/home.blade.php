@@ -140,7 +140,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30 owl-carousel">
                         <div class="single-speaker">
                             <div class="speaker-to-card">
-                                <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
+                                <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
                                 <ul class="speaker-social" style="width: 90%;left: 11px;">
                                     <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$featuredSpeakers->why_choose}}</p></li>
                                     <li><i class="fas fa-map-marked-alt"></i> {{$featuredSpeakers->country}}</li>

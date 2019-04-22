@@ -27,7 +27,7 @@ class UserMetaController extends Controller
     public function userMetaSave(Request $request)
     {
         $rules = [
-            'profile_image' => 'image|dimensions:width=270,height=308',
+            // 'profile_image' => 'image|dimensions:width=270,height=308',
             'why_choose' => 'max:250',
         ];
         $customMessages = [
@@ -64,7 +64,7 @@ class UserMetaController extends Controller
 
     public function userMetaupdate(Request $request){
         $rules = [
-            'profile_image' => 'image|dimensions:width=270,height=308',
+            // 'profile_image' => 'image|dimensions:width=270,height=308',
             'why_choose' => 'max:250',
         ];
         $customMessages = [

@@ -1306,3 +1306,8 @@ margin-right: 12px;
     background-color: #e2a738;
     border-color: #e2a738; 
 }
+
+img.profileimg {
+width: 254px !important;
+height: 270px !important;
+}
