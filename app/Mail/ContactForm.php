@@ -29,7 +29,7 @@ class ContactForm extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@wisdomspeakersbureau.com')
+        return $this->from('NoReply@wisdomspeakersbureau.com')
                 ->view('mails.contactform')->with('data', $this->data);
     }
 }

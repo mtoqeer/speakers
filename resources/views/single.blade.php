@@ -162,7 +162,7 @@
                                 </div>                        
                             </div>
         
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-12  mt-3">
                                     <h5>SIMILAR SPEAKERS</h5>
                                     <hr>
@@ -195,13 +195,14 @@
                                                 <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
                                                 @php
                                                     $getCp = DB::table('users')
-                                                    ->join('current_positions', 'users.id', '=', 'current_positions.user_id')
-                                                    ->select('current_positions.title','current_positions.department','current_positions.user_id')
+                                                    ->join('current_positions', 'users.id', '=', 'current_positions.user_id')->select('current_positions.title','current_positions.department','current_positions.user_id')
                                                     ->where('current_positions.user_id' , $item->id)->first();
+                                                    
                                                 @endphp
-                                                
-                                                    <p class="">{{$getCp->title}}</p>
-                                                    <p class="">{{$getCp->department}}</p>
+                                                <p class="">{{$getCp->title}}</p>
+                                                <p class="">{{$getCp->department}}</p>
+
+                                                   
                                                 
                                             
                                             </div>
@@ -209,7 +210,7 @@
                                         @endforeach
                                     @endforeach
                                 </div>                        
-                            </div>
+                            </div> --}}
         
                         </div>
         
@@ -426,9 +427,10 @@
                                         </div>
                                     @endforeach
                                 </div>    
+                            </div> 
                         @endif    
                             
-                            </div> 
+                            
                         <!-- Awards and Certificate End -->
         
                             <!-- Expertise -->
