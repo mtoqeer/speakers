@@ -282,6 +282,7 @@
                     <div class="form-group">
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender" class="form-control">
+                            <option value="any" selected>Any</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -294,11 +295,11 @@
                             {{ $errors->first('why_choose') }}
                             </p>
                         @endif
-                        <textarea class="form-control" id="why_choose" name="why_choose" rows="4"></textarea>
+                        <textarea class="form-control" id="why_choose" name="why_choose" rows="4" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="bio">Bio - Please share your bio below. We recommend highlighting your journey and your achievements.</label>
-                        <textarea class="form-control" id="bio" name="bio" rows="7"></textarea>
+                        <textarea class="form-control" id="bio" name="bio" rows="7" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="profile_image">Profile Image</label>
