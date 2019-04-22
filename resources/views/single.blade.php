@@ -461,48 +461,4 @@
 @section('customjs')
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
-{{-- <script>
-
-
-
-    $("button").click(function(){
-    $("#buttonloader").addClass("fa fa-spinner fa-spin");
-    });
-
-    $(function(){
-        $('.speakersContactForm').on('submit', function(event){
-            event.preventDefault();
-            $form = $(this);
-            contactRequest($form);
-            
-        });
-    });
-
-    function contactRequest($form){
-        $.ajax({
-            url: $form.attr('action'),
-            method: $form.attr('method'),
-            data: $form.serialize(),
-            success: function(response){
-                
-                $("#buttonloader").removeClass("fa fa-spinner fa-spin");
-                $('#speakerscontactformalert').removeClass('d-none');
-                $("#speakerscontactformalert").delay(1500).slideUp(300);
-                
-                document.getElementById("speakercontact").reset();
-                
-                
-            },error:function(response){ 
-                    alert(response);
-                }
-                    
-        
-        
-        });
-    }
-
-   
-
-</script> --}}
-
 @endsection
