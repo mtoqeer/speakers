@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -249,5 +251,16 @@ class HomeController extends Controller
         'getBooks', 'getAwards','getAvailable_fors','getAchievements','getArticles','getSingleCurrentPosition','getAvailableFor','getLanguages','getPaymentStatus'));
 
     }
+
+
+
+    // Export Users 
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
+
+        return view('admin.dashboard.home');
+    }
+    
 
 }

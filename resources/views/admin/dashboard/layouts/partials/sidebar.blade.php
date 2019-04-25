@@ -90,6 +90,13 @@
                     </a>
                   </li>
 
+                  <li class="nav-item">
+                    <a href="{{route('export-users')}}" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Export Users</p>
+                    </a>
+                  </li>
+
             </ul>
           </li>
           

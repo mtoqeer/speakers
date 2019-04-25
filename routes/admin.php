@@ -59,5 +59,6 @@ Route::get('updates', function(){
     return view('admin.dashboard.updates');
 })->name('updatespage')->middleware('admin.auth:admin');
 
+Route::get('/export', 'HomeController@export')->name('export-users')->middleware('admin.auth:admin');
 
 });
