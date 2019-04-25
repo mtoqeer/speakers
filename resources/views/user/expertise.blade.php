@@ -8,25 +8,12 @@
                 <form method="POST" action="{{route('userexpertisesave')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
+                    <label for="">Please share with us all the topics that you're an expert of.</label>
                     <div class="form-group">
-                        <label for="expertise">Expertise - Please choose your expertise from the options below. If you can’t find your topic, please send us an email so we can add your expertise to the list. Thank you!</label>
-                        <select name="expertise" id="" class="form-control">
-                                <option title='Motivation/Inspiration' value='Motivation/Inspiration'>Motivation/Inspiration</option>
-                                <option title='Innovation' value='Innovation'>Innovation</option>
-                                <option title='Sales' value='Sales'>Sales</option>
-                                <option title='Technology' value='Technology'>Technology</option>
-                                <option title='Leadership' value='Leadership'>Leadership</option>
-                                <option title='Finance &amp; Economics' value='Finance &amp; Economics'>Finance &amp; Economics</option>
-                                <option title='Diversity' value='Diversity'>Diversity</option>
-                                <option title='Health/Wellness' value='Health/Wellness'>Health/Wellness</option>
-                                <option title='Culture' value='Culture'>Culture</option>
-                                <option title='CSR' value='CSR'>CSR</option>
-                                <option title='Risk' value='Risk'>Risk</option>
-                                <option title='Business Change' value='Business Change'>Business Change</option>
-                                <option title='Strategic Planning' value='Strategic Planning'>Strategic Planning</option>
-                        </select>
-
+                        <label for="expertise">Expertise</label>
+                        <input name="expertise" type="text" id="" class="form-control" required>
                     </div>
+                    
                     @if (session('message'))
                         <p id="expertise_added" class="alert alert-success">{{session('message')}}</p>
                     @endif
@@ -34,6 +21,20 @@
                     <button type="submit" class="btn btn-primary mb-5 mt-3 float-right" style="width:100%;">Add</button>
 
                 </form>
+                <label>Here are some suggestions:</label>
+                <ul>
+                    <li>Motivation/Inspiration</li>
+                    <li>Innovation </li>
+                    <li>Sales </li>
+                    <li>Technology </li>
+                    <li>Leadership </li>
+                    <li>Finance & Economics</li>
+                    <li>Diversity </li>
+                    <li>Health/Wellness</li>
+                    <li>Culture </li>
+                    <li>Business Change</li>
+                    <li>Strategic Planning</li>
+                </ul>
 
             </div>
 

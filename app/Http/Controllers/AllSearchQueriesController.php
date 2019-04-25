@@ -7,6 +7,33 @@ use Illuminate\Support\Facades\DB;
 
 class AllSearchQueriesController extends Controller
 {
+
+    public function speakerssearchkey(Request $request){
+
+        $searchTopic = $request->keyword;
+
+
+        $getAllSpeakers = DB::table('users')
+            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->join('expertises','users.id', '=','expertises.user_id')
+            ->join('available_fors','users.id', '=','available_fors.user_id')
+            ->join('languages','users.id', '=','languages.user_id')
+            ->select('users.*','available_fors.conference',
+            'available_fors.workshop','available_fors.moderator'
+            ,'available_fors.online','available_fors.school'
+            ,'available_fors.meetup','user_metas.country'
+            ,'user_metas.fee','user_metas.why_choose','user_metas.available_to'
+            ,'user_metas.profile_img', 'expertises.expertise_topic','languages.language','user_metas.gender')
+            ->where('expertises.expertise_topic', 'LIKE', '%' . $searchTopic . '%')
+            ->where('users.status','approved')->paginate(9);
+            
+
+            return view('speakers', compact('getAllSpeakers'));
+
+
+    }
+
+
     public function speakerssearch(Request $request){
         
         $searchFee = $request->fee;

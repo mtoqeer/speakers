@@ -45,6 +45,10 @@ Route::post('/sendcontactform', 'AllFormsSubmissionController@sendContactFormsDe
 Route::get('/speakerssearch', 'AllSearchQueriesController@speakerssearch')->name('speakerssearch');
 
 
+// Search Quries Controller
+Route::get('/speakerssearchkey', 'AllSearchQueriesController@speakerssearchkey')->name('speakerssearchkey');
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'HomeController@index')->name('userdashboard')->middleware('verified');

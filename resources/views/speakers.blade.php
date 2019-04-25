@@ -10,6 +10,28 @@
      margin-right: 17px;
      margin-left: -18px;
     }
+    .topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
   </style>
 @endsection
 
@@ -34,11 +56,21 @@
 
          <!-- First Row -->
          <div class="row">
-             <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30  shadow p-4 searchfilter" style="max-height: 732px;">
-                 <form method="GET" action="{{route('speakerssearch')}}">
+             <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30  shadow p-4 searchfilter mb-5" style="max-height: 792px;">
+                
+                <form method="GET" class="navbar-form mb-4" role="search" action="{{route('speakerssearchkey')}}">
+                    <div class="input-group add-on">
+                      <input value="{{ old('keyword') }}" class="form-control" placeholder="Keyword" name="keyword" id="srch-term" type="text">
+                      <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </form>
+
+
+                <form method="GET" action="{{route('speakerssearch')}}">
                      <div class="fee mb-4">
-                    
-                         <div class="form-group">
+                        <div class="form-group">
                            <label for="fee" style="font-weight: bold;">Fee Range</label>
                            @php
                                 
@@ -290,9 +322,9 @@
                                                 <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
                                             @endif
 
-                                        </div>
+                                </div>
                                     </div>
-                                    <a href="{{route('websingle', ['id' => $AllSpeakers->id, 'name' => str_slug($AllSpeakers->name, '-')])}}" style="margin-top: 13px;" class="get-details">learn more</a>
+                                 <a href="{{route('websingle', ['id' => $AllSpeakers->id, 'name' => str_slug($AllSpeakers->name, '-')])}}" style="margin-top: 13px;" class="get-details">learn more</a>
                                 </div>
                             </div>
                         </div>
