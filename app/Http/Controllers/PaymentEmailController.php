@@ -20,9 +20,14 @@ class PaymentEmailController extends Controller
     $email = $mailsend->email;
 
 
-    $data = array(
-        'name' => $request->name
-    );
+    $emailcontent = DB::table('payment_info_email_contents')->select('email_content','id')->first();
+        
+        $emailcontenthtml = $emailcontent->email_content;
+
+        $data = array(
+            'name' => $request->name,
+            'email_content' => $emailcontenthtml
+        );
        
         $paymentemail = new PaymentEmail();
         $paymentemail->user_id = $userid;
@@ -30,7 +35,6 @@ class PaymentEmailController extends Controller
         $paymentEmailDetailsSave = $paymentemail->save();
 
         Mail::to($email)->send(new PaymentDetailsMail($data));
-       
         
         Session::flash('EmailSend', "Email has been sent successfully!");
         return Redirect::back();
