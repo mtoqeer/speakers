@@ -169,7 +169,10 @@
                                             ->select('current_positions.*')
                                             ->where('current_positions.user_id' , $featuredSpeakers->id)->first();
                                     @endphp
-                                    <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
+                                    @if ($getUserId)
+                                        <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
+                                    @endif
+                                    
                                     <div class="row avl-for-icons" style="margin-top: -10px;">
                                         <div class="col-md-12">
                                             @if ($featuredSpeakers->conference == 'Yes')

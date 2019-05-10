@@ -1106,6 +1106,7 @@ a.reg-btn:hover,
 .speaker-single-img img {
     border-radius: 100%;
     height: 155px;
+    width: 100%;
 }
 .speaker-top-bar p {
     color: #000000;

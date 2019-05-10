@@ -8,5 +8,5 @@
     <link rel="stylesheet" href="{{asset('websiteassests/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/slicknav.min.css')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/default.css?v=5')}}">
-    <link rel="stylesheet" href="{{asset('websiteassests/css/style.css?v=17')}}">
+    <link rel="stylesheet" href="{{asset('websiteassests/css/style.css?v=18')}}">
     <link rel="stylesheet" href="{{asset('websiteassests/css/responsive.css?v=6')}}">

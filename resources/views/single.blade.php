@@ -185,7 +185,7 @@
                                             
                                         <div class="row mb-4">
                                             <div class="col-md-3 col-sm-12 similar-single-img text-center">
-                                            <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$item->profile_img}}" class="rounded-circle" alt=""></a>
+                                            <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$item->profile_img}}" class="rounded-circle" alt="" style="height:56px !important;width:100% !important;"></a>
                                             </div>
                                             <div class="col-md-9 single-page-speaker-details">
                                                 <a href="{{route('websingle', ['id' => $item->id, 'name' => str_slug($item->name, '-')])}}" style="color:black !important;"><h5 class="mt-2">{{$item->name}}</h5></a>
