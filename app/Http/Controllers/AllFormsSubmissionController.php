@@ -101,4 +101,6 @@ class AllFormsSubmissionController extends Controller
         return "Sorry you are already subscribed";
 
     }
+
+
 }

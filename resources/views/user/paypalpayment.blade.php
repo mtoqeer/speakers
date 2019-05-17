@@ -31,7 +31,7 @@
 
                         You're officially a part of Wisdom Speakers Bureau. We're excited to be a part of your journey and we look forward to connecting you to our meeting and event planners around the world.
                         <br><br>
-                        We will verify your payment details and will approve your profile within 24-48 hours. For concerns, please email us at support@wisdomspeakersbureau.com. 
+                        For concerns, please email us at support@wisdomspeakersbureau.com. 
                         <br>
                         Thank you!
                     - <a href="{{route('userdashboard')}}" style="color:yellow !important;">Back To Dashboard</a></p>
@@ -46,7 +46,7 @@
                     <input type="text" name="payment_date" value="" class="form-control" required placeholder="DD-MM-Y" {{ ($getPaymentStatus->count() == "1") ? "Disabled" : " " }}>
                 </div>
                 
-                <input type="hidden" name="payment_status" value="Awaiting Confirmation" class="form-control" required>
+                <input type="hidden" name="payment_status" value="Paid" class="form-control" required>
                 
                 <button type="submit" class="btn btn-info mb-5 mt-3 float-right" style="width:100%;" {{ ($getPaymentStatus->count() == "1") ? "Disabled" : " " }}>Submit</button>
             </form>

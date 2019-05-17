@@ -78,7 +78,7 @@
                   <li class="nav-item">
                       <a href="{{route('ConfirmPageShow')}}" class="nav-link">
                         <i class="fa fa-circle-o nav-icon"></i>
-                        <p>Confirm Payment</p>
+                        <p>Payment Information</p>
                       </a>
                     </li>
 

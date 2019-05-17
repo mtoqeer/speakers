@@ -56,10 +56,6 @@
                     @endif
 
                     @foreach ($getpaymentstatus as $status)
-                        @if ($status->status == "Awaiting Confirmation")
-                        <td>Awaiting Confirmation</td> 
-                        @endif
-
                         @if ($status->status == "Paid")
                           <td>Paid</td> 
                         @endif

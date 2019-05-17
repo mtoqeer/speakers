@@ -20,6 +20,9 @@ class PaymentDetailsController extends Controller
 
     public function save(Request $request){
 
+        DB::table('users')->where('id', $request->user_id)->update(['status' => 'approved']);
+
+
         $paymentdetails = new PaymentDetails();
         $paymentdetails->paypal_email = $request->paypal_email;
         $paymentdetails->payment_date  = $request->payment_date;
@@ -37,7 +40,7 @@ class PaymentDetailsController extends Controller
 
         $getPaymentStatus = DB::table('payment_details')          
             ->select('payment_details.*')
-            ->where('payment_details.status' , "Awaiting Confirmation")->get();
+            ->where('payment_details.status' , "Paid")->get();
         return view('admin.dashboard.confirmpayment')->with('getPaymentStatus', $getPaymentStatus);
 
     }

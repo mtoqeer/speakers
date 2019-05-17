@@ -1,6 +1,6 @@
 @extends('admin.dashboard.layouts.app')
-@section('title','Admin - Confirm Payment')
-@section('pagename', 'Confirm Payment')
+@section('title','Admin - Payments Info')
+@section('pagename', 'Payments Info')
 @section('main-content')
 <div class="row">
           @if (Session::has('EmailSend'))
@@ -9,7 +9,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Confirm Payments 
+              <h3 class="card-title">Payments Info
                  
 
 
@@ -38,7 +38,6 @@
                         <td>{{$paymentstatus->user_id}}</td>
                         <td>{{$paymentstatus->paypal_email}}</td>
                         <td>{{$paymentstatus->payment_date}}</td>
-                        <td><a href="/admin/paymentconfirmation/{{$paymentstatus->id}}"><button  class="btn btn-info">Confirm</button></a></td>
                         <td><a href="/admin/paymentconfirmation/delete/{{$paymentstatus->id}}"><button  class="btn btn-danger">Delete</button></a></td>
                     </tr>
                     @endforeach 
