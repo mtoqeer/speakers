@@ -289,7 +289,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (250 Characters Max) </label>
+                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (230 Characters Max) </label>
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">
                             {{ $errors->first('why_choose') }}
@@ -610,7 +610,7 @@
                             </select>
                     </div>
                     <div class="form-group">
-                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (250 Characters Max) </label>
+                        <label for="why_choose">Why Choose Me - Please share a short blurb about your expertise and experience. - (230 Characters Max) </label>
                     
                         @if ($errors->has('why_choose'))
                             <p style="color:red;">

@@ -28,12 +28,12 @@ class UserMetaController extends Controller
     {
         $rules = [
             // 'profile_image' => 'image|dimensions:width=270,height=308',
-            'why_choose' => 'max:250',
+            'why_choose' => 'max:230',
         ];
         $customMessages = [
             'image' => 'The file must be an image file',
             'dimensions' => 'Images Must be 270x308',
-            'max' => 'This section may not have more than 250 characters.',
+            'max' => 'This section may not have more than 230 characters.',
         ];   
         $this->validate($request, $rules, $customMessages);
         $userMeta = new User_meta();
