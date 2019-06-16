@@ -5,6 +5,7 @@ use App\User;
 use App\User_meta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 class UserMetaController extends Controller
 {
@@ -26,6 +27,8 @@ class UserMetaController extends Controller
 
     public function userMetaSave(Request $request)
     {
+
+        $currentusername = auth()->user()->name;
         $rules = [
             // 'profile_image' => 'image|dimensions:width=270,height=308',
             'why_choose' => 'max:230',
@@ -49,7 +52,7 @@ class UserMetaController extends Controller
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');
             $extension = $file->getClientOriginalExtension(); //getting Image Extension
-            $filename = time() . '.' . $extension;
+            $filename = $currentusername . '.' . $extension;
             $file->move('adminassets/img/speakerprofileimages', $filename);
             $userMeta->profile_img = $filename;
         } 
@@ -63,6 +66,10 @@ class UserMetaController extends Controller
     }
 
     public function userMetaupdate(Request $request){
+
+
+        $currentusername = auth()->user()->name;
+
         $rules = [
             // 'profile_image' => 'image|dimensions:width=270,height=308',
             'why_choose' => 'max:250',
@@ -88,12 +95,21 @@ class UserMetaController extends Controller
         if ($request->hasFile('profile_image')) {
             $file = $request->file('profile_image');
             $extension = $file->getClientOriginalExtension(); //getting Image Extension
-            $filename = time() . '.' . $extension;
+            $filename = $currentusername . '.' . $extension;
             $file->move('adminassets/img/speakerprofileimages', $filename);
             $generalinfo->profile_img = $filename;
         } 
 
         $userMetaSave = $generalinfo->save();
+
+        $userid = auth()->user()->id;
+        $getUserMeta = DB::table('users')
+            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->select('user_metas.*')
+            ->where('user_metas.user_id' , $userid)->first();
+        
+        $image = Image::make('adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerprofileimages' . DIRECTORY_SEPARATOR . $getUserMeta->profile_img)->fit(270,308);
+        $image->save();
 
         if($userMetaSave){
             return redirect('/dashboard/generalinfo')->with('message','Record Have Been Updated');
