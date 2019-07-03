@@ -235,7 +235,7 @@
                                     
                                     <div class="tab-pane fade show active mt-2" id="v-pills-bio" role="tabpanel" aria-labelledby="v-pills-bio-tab">
                                     @foreach ($getGeneralInfo as $generalinfo)
-                                        <p>{{$generalinfo->bio}}</p>
+                                        <p>{!!nl2br($generalinfo->bio)!!}</p>
                                     @endforeach
                                     </div>
                                     

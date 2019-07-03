@@ -10,15 +10,9 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Payments Info
-                 
-
-
-               
-
                 {{-- @if (session('EmailSend'))
                 <span id="EmailSend" style="color:red;">{{session('EmailSend')}}</span>
                 @endif --}}
-
               </h3>
             </div>
             <!-- /.card-header -->
