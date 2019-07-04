@@ -118,12 +118,12 @@ class UserMetaController extends Controller
     }
 
 
-    // All Websites Routes Functions Here
+    // All Websites Routes Functions Here Featured Speakers
     public function websiteHomePage(){
 
         $getFeaturedSpeakers = DB::table('users')
-            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
-            ->join('available_fors','users.id', '=','available_fors.user_id')
+            ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->leftjoin('available_fors','users.id', '=','available_fors.user_id')
             ->select('users.*','available_fors.conference',
             'available_fors.workshop','available_fors.moderator'
             ,'available_fors.online','available_fors.school'
@@ -136,8 +136,8 @@ class UserMetaController extends Controller
     // All Speakers Page
     public function ShowAllSpeakersOnWbsite(){
         $getAllSpeakers = DB::table('users')
-            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
-            ->join('available_fors','users.id', '=','available_fors.user_id')
+            ->leftjoin('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->leftjoin('available_fors','users.id', '=','available_fors.user_id')
             ->select('users.*','available_fors.conference',
             'available_fors.workshop','available_fors.moderator'
             ,'available_fors.online','available_fors.school'

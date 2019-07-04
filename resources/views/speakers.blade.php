@@ -271,7 +271,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 mob-to-res-30 mb-3">
                         <div class="single-speaker">
                             <div class="speaker-to-card">
-                                <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$AllSpeakers->profile_img}}" alt="Profile Pic">
+                                    @if ($AllSpeakers->profile_img)
+                                    <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$AllSpeakers->profile_img}}" alt="Profile Pic">
+                                @endif
+                                @if (!$AllSpeakers->profile_img)
+                                <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/default_img.jpg')}}" alt="Profile Pic">
+                            @endif
+
                                 <ul class="speaker-social" style="width: 90%;left: 11px;">
                                     <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$AllSpeakers->why_choose}}</p></li>
                                     <li><i class="fas fa-map-marked-alt"></i> {{$AllSpeakers->country}}</li>

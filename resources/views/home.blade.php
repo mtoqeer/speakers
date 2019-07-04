@@ -140,7 +140,14 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 mob-to-res-30 owl-carousel">
                         <div class="single-speaker">
                             <div class="speaker-to-card">
-                                <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
+                                @if ($featuredSpeakers->profile_img)
+                                    <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$featuredSpeakers->profile_img}}" alt="Profile Pic">
+                                @endif
+                                @if (!$featuredSpeakers->profile_img)
+                                <img class="profileimg" src="{{asset('adminassets/img/speakerprofileimages/default_img.jpg')}}" alt="Profile Pic">
+                            @endif
+                                
+                                
                                 <ul class="speaker-social" style="width: 90%;left: 11px;">
                                     <li style="text-align: center;"><p style="line-height: 20px;display: block;margin-bottom: 15px;">{{$featuredSpeakers->why_choose}}</p></li>
                                     <li><i class="fas fa-map-marked-alt"></i> {{$featuredSpeakers->country}}</li>
@@ -173,29 +180,31 @@
                                         <h5>{{$getUserId->title}} - {{$getUserId->department}}</h5>
                                     @endif
                                     
-                                    <div class="row avl-for-icons" style="margin-top: -10px;">
-                                        <div class="col-md-12">
-                                            @if ($featuredSpeakers->conference == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
-                                            @endif
-                                            @if ($featuredSpeakers->school == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
-                                            @endif
-                                            @if ($featuredSpeakers->moderator == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
-                                            @endif
-                                            @if ($featuredSpeakers->online == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
-                                            @endif
-                                            @if ($featuredSpeakers->workshop == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop (Incl. Charity)" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
-                                            @endif
-                                            @if ($featuredSpeakers->meetup == 'Yes')
-                                                <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
-                                            @endif
-
+                                    @if ($featuredSpeakers->conference == 'Yes' || $featuredSpeakers->conference == 'No')
+                                        <div class="row avl-for-icons" style="margin-top: -10px;">
+                                            <div class="col-md-12">
+                                                @if ($featuredSpeakers->conference == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Conference" src="{{asset('websiteassests/img/avl_for/conference.png')}}">
+                                                @endif
+                                                @if ($featuredSpeakers->school == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="School" src="{{asset('websiteassests/img/avl_for/school.png')}}">
+                                                @endif
+                                                @if ($featuredSpeakers->moderator == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Moderator" src="{{asset('websiteassests/img/avl_for/moderator.png')}}">
+                                                @endif
+                                                @if ($featuredSpeakers->online == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Online" src="{{asset('websiteassests/img/avl_for/online.png')}}">
+                                                @endif
+                                                @if ($featuredSpeakers->workshop == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Workshop (Incl. Charity)" src="{{asset('websiteassests/img/avl_for/workshop.png')}}">
+                                                @endif
+                                                @if ($featuredSpeakers->meetup == 'Yes')
+                                                    <img style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="Meetup" src="{{asset('websiteassests/img/avl_for/meetup.png')}}">
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endif
+
                                 <a href="{{route('websingle', ['id' => $featuredSpeakers->id, 'name' => str_slug($featuredSpeakers->name, '-')])}}" style="margin-top: 13px;" class="get-details">learn more</a>
                                 </div>
                             </div>

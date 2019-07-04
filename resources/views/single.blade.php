@@ -34,9 +34,10 @@
         
             <!-- hero area end -->
         
-                @foreach ($getGeneralInfo as $generalInfo)
+              
                 <div class="container mt-5">
                     <div class="row speaker-top-bar p-5 mb-3 bg-white rounded">
+                            @foreach ($getGeneralInfo as $generalInfo)
                         <div class="col-md-2 col-sm-12 speaker-single-img text-center">
                         <img src="{{asset('adminassets/img/speakerprofileimages/')}}/{{$generalInfo->profile_img}}" alt="">
                         </div>
@@ -114,6 +115,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endforeach {{-- $getGeneralInfo --}}
                     </div>
                 </div> 
         
@@ -121,7 +123,7 @@
                     <div class="row">
                         
                         <div class="col-md-4">
-        
+                                @foreach ($getGeneralInfo as $generalInfo)
                             <div class="row p-4 mb-3 bg-white rounded">
                                 <div class="col-md-12">
                                     <h5 class="mb-3">WHY CHOOSE ME?</h5>
