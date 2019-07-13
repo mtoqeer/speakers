@@ -60,6 +60,16 @@ class UserMetaController extends Controller
        
         $userMetaSave = $userMeta->save();
 
+
+        $userid = auth()->user()->id;
+        $getUserMeta = DB::table('users')
+            ->join('user_metas', 'users.id', '=', 'user_metas.user_id')
+            ->select('user_metas.*')
+            ->where('user_metas.user_id' , $userid)->first();
+        
+        $image = Image::make('adminassets' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'speakerprofileimages' . DIRECTORY_SEPARATOR . $getUserMeta->profile_img)->fit(270,308);
+        $image->save();
+
         if($userMetaSave){
             return redirect('/dashboard/generalinfo')->with('message','Record Have Been Added');
         }

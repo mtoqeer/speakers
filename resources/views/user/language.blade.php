@@ -98,7 +98,7 @@
 
             <div class="col-md-5 offset-md-1">
                 
-                <h4>Lanugages</h4>
+                <h4>Languages</h4>
                 @foreach ($getlanguages as $language)
                     <div class="row">
                         <div class="col-md-12 bg-light mb-3 shadow" style="padding:10px;">

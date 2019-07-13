@@ -8,7 +8,9 @@
                 <form method="POST" action="{{route('userexpertisesave')}}">
                     @csrf
                     <input type="hidden" name="id" value="{{auth()->user()->id}}" class="form-control">
-                    <label for="">Please share with us all the topics that you're an expert of.</label>
+                    <label for="">Please share all the topics that you're an expert of by adding each 
+                        topic individually below. This makes it easier for our website visitors 
+                        to search for speakers by topic.</label>
                     <div class="form-group">
                         <label for="expertise">Expertise</label>
                         <input name="expertise" type="text" id="" class="form-control" required>

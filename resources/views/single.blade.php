@@ -127,7 +127,7 @@
                             <div class="row p-4 mb-3 bg-white rounded">
                                 <div class="col-md-12">
                                     <h5 class="mb-3">WHY CHOOSE ME?</h5>
-                                <p>{{$generalInfo->why_choose}}</p>
+                                <p>{!!nl2br($generalInfo->why_choose)!!}</p>
                                 </div>
                             </div>
                             @endforeach {{-- $getGeneralInfo --}}
@@ -224,7 +224,7 @@
                                     <a class="nav-link" id="v-pills-presentations-tab" data-toggle="pill" href="#v-pills-presentations" role="tab" aria-controls="v-pills-messages" aria-selected="false">Presentations</a>
                                 @endif
                                 @if ($getPastTalks->count() > 0)
-                                    <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Previous Clients</a>
+                                    <a class="nav-link" id="v-pills-pasttalks-tab" data-toggle="pill" href="#v-pills-pasttalks" role="tab" aria-controls="v-pills-messages" aria-selected="false">Past Talks</a>
                                 @endif
                                 @if ($getWorkShops->count() > 0)
                                     <a class="nav-link" id="v-pills-workshops-tab" data-toggle="pill" href="#v-pills-workshops" role="tab" aria-controls="v-pills-messages" aria-selected="false">Workshops</a>
@@ -273,7 +273,7 @@
                                         @foreach ($getAchievements as $achievements)
                                             <div class="col-md-12 mb-3">
                                                 <h5>{{$achievements->title}}</h5>
-                                                    <p>{{$achievements->description}}</p>
+                                                    <p>{!!nl2br($achievements->description)!!}</p>
                                             </div>
                                         @endforeach
     
@@ -286,7 +286,7 @@
                                        @foreach ($getPresentations as $presentations)
                                             <div class="col-md-12 mb-3">
                                                 <h5>{{$presentations->title}}</h5>
-                                                  <p>{{$presentations->description}}</p>
+                                                  <p>{!!nl2br($presentations->description)!!}</p>
                                             </div>
                                         @endforeach
         
@@ -311,7 +311,7 @@
                                             <div class="col-md-12 mb-3">
                                                 <h5>{{$workshop->title}}</h5>
                                                 <h5 class="mt-1">{{$workshop->hours}}</h5>
-                                                <p>{{$workshop->description}}</p>
+                                                <p>{!!nl2br($workshop->description)!!}</p>
                                             </div>
                                         @endforeach
         

@@ -39,6 +39,12 @@
                     </a>
                   </li>
 
+                  <li class="nav-item">
+                      <a href="{{route('dashboard.current-positions')}}" class="nav-link heee">
+                        <i class="fa fa-circle-o nav-icon"></i>
+                        <p>Current Position/s</p>
+                      </a>
+                    </li>
 
               <li class="nav-item">
                 <a href="{{route('dashboard.generalinfo')}}" class="nav-link heee">
@@ -99,12 +105,7 @@
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="{{route('dashboard.current-positions')}}" class="nav-link heee">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Current Position/s</p>
-                </a>
-              </li>
+              
 
               <li class="nav-item">
                 <a href="{{route('dashboard.degress')}}" class="nav-link heee">
